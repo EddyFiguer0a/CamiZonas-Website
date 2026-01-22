@@ -1,0 +1,352 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import productos from '../data/productos.json';
+
+const novedades = productos.slice(0, 6);
+
+const banners = [
+    {
+        imagen: "/img/Banner/COPAbanner.webp",
+        categoria: "Edición Limitada",
+        titulo: "Mundial<br>2026",
+        descripcion: "Las camisetas oficiales de la próxima copa del mundo",
+        boton: "Ver Selecciones",
+        link: "/catalogo?categoria=Selecciones",
+        gradient: "from-blue-900/80 to-transparent"
+    },
+    {
+        imagen: "/img/Banner/UEFAbanner2.PNG", 
+        categoria: "Champions League",
+        titulo: "UEFA<br>Champions",
+        descripcion: "Viste los colores de los mejores clubes de Europa",
+        boton: "Ver Clubes",
+        link: "/catalogo?categoria=Clubes",
+        gradient: "from-purple-900/80 to-transparent"
+    },
+    {
+        imagen: "/img/Banner/MARADONAbanner.jpg",
+        categoria: "Nostalgia",
+        titulo: "Clásicos<br>Retro",
+        descripcion: "Revive la magia de las camisetas legendarias",
+        boton: "Ver Retro",
+        link: "/catalogo?categoria=Retro", 
+        gradient: "from-amber-900/80 to-transparent"
+    }
+];
+---
+
+<Layout title="CamiZonas | Catálogo Oficial">
+    <div class="max-w-[1400px] mx-auto">
+        <main class="bg-white pb-24 min-h-full">
+            
+            <header class="p-6 pt-12 flex flex-col gap-6 relative z-30">
+                <div class="flex justify-between items-center">
+                    <h1 class="text-2xl font-black italic tracking-tighter">CAMIZONAS.</h1>
+                    
+                    <button id="menu-toggle" class="w-10 h-10 bg-white border border-gray-100 shadow-sm rounded-full flex flex-col items-center justify-center gap-[5px] hover:bg-black group transition-all duration-300">
+                        <span class="w-5 h-0.5 bg-black group-hover:bg-white transition-colors rounded-full"></span>
+                        <span class="w-5 h-0.5 bg-black group-hover:bg-white transition-colors rounded-full"></span>
+                        <span class="w-5 h-0.5 bg-black group-hover:bg-white transition-colors rounded-full"></span>
+                    </button>
+                </div>
+                
+                <!-- ✅ BÚSQUEDA CON FUNCIONALIDAD REAL -->
+                <div class="relative group">
+                    <input 
+                        type="text" 
+                        id="search-input"
+                        placeholder="Buscar tu equipo..." 
+                        class="w-full bg-gray-50 border border-gray-100 rounded-2xl py-4 px-12 outline-none focus:ring-2 ring-black/5 transition-all" 
+                    />
+                    <span class="absolute left-4 top-4 text-gray-400 group-focus-within:text-black transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    </span>
+                </div>
+            </header>
+
+            <div id="side-menu-overlay" class="fixed inset-0 bg-black/20 z-50 hidden backdrop-blur-sm transition-opacity opacity-0"></div>
+
+            <aside id="side-menu" class="fixed top-0 right-0 h-full w-3/4 max-w-xs bg-white z-[60] shadow-2xl transform translate-x-full transition-transform duration-300 ease-out flex flex-col p-8">
+                <div class="flex justify-end mb-8">
+                    <button id="menu-close" class="text-3xl font-light hover:rotate-90 transition-transform">✕</button>
+                </div>
+                
+                <div class="flex flex-col gap-8">
+                    <div>
+                        <h3 class="text-xs font-black text-gray-400 uppercase tracking-widest mb-4">Ayuda & Soporte</h3>
+                        <nav class="flex flex-col gap-5 text-lg font-bold">
+                            <a href="#" class="flex items-center gap-3 hover:text-blue-600 transition-colors">
+                                <span>📏</span> Guía de Tallas
+                            </a>
+                            <a href="#" class="flex items-center gap-3 hover:text-blue-600 transition-colors">
+                                <span>🚚</span> Envíos y Entregas
+                            </a>
+                            <a href="#" class="flex items-center gap-3 hover:text-blue-600 transition-colors">
+                                <span>🔄</span> Cambios y Devoluciones
+                            </a>
+                            <a href="#" class="flex items-center gap-3 hover:text-blue-600 transition-colors">
+                                <span>❓</span> Preguntas Frecuentes
+                            </a>
+                        </nav>
+                    </div>
+
+                    <div class="mt-auto pt-8 border-t border-gray-100">
+                         <a href="https://wa.me/502XXXXXXXX" class="bg-black text-white py-4 rounded-xl flex justify-center items-center gap-2 font-bold text-sm hover:bg-gray-900 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            Hablar con Soporte
+                         </a>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="px-6 mb-8">
+                <div class="relative w-full h-[420px] rounded-[30px] overflow-hidden shadow-xl">
+                    <div id="hero-slider" class="relative w-full h-full">
+                        {banners.map((banner, index) => (
+                            <div class={`hero-slide absolute inset-0 transition-opacity duration-1000 ${index === 0 ? 'opacity-100' : 'opacity-0'}`} data-slide={index}>
+                                <img src={banner.imagen} class="w-full h-full object-cover" alt={banner.titulo.replace('<br>', ' ')} />
+                                <div class={`absolute inset-0 bg-gradient-to-t ${banner.gradient} flex flex-col justify-end p-6 pb-8`}>
+                                    <span class="text-yellow-400 font-bold tracking-widest text-xs uppercase mb-2 bg-black/20 backdrop-blur-sm px-3 py-1 rounded-full w-fit">{banner.categoria}</span>
+                                    <h2 class="text-white text-4xl font-black italic uppercase leading-none mb-3" set:html={banner.titulo}></h2>
+                                    <p class="text-white/90 text-sm mb-6 leading-relaxed">{banner.descripcion}</p>
+                                    <a href={banner.link} class="bg-white text-black font-black uppercase text-xs py-3 px-6 rounded-full w-fit hover:scale-105 hover:shadow-lg transition-all duration-300 active:scale-95">
+                                        {banner.boton}
+                                    </a>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div class="absolute bottom-20 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                        {banners.map((_, index) => (
+                            <button 
+                                class={`slider-indicator w-2 h-2 rounded-full transition-all duration-300 ${index === 0 ? 'bg-white w-8' : 'bg-white/50'}`}
+                                data-slide={index}
+                            ></button>
+                        ))}
+                    </div>
+
+                    <button id="next-slide" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors z-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                    </button>
+                </div>
+            </section>
+
+            <section class="px-6 py-2 mb-6">
+                <div class="flex gap-6 overflow-x-auto pb-4 no-scrollbar justify-center md:justify-start">
+                    {[
+                        { name: 'Clubes', icon: '🏟️', count: productos.filter(p => p.categoria === 'Clubes').length },
+                        { name: 'Selecciones', icon: '🌍', count: productos.filter(p => p.categoria === 'Selecciones').length },
+                        { name: 'Retro', icon: '⏳', count: productos.filter(p => p.categoria === 'Retro').length },
+                        { name: 'Especiales', icon: '✨', count: productos.filter(p => p.categoria === 'Especiales').length }
+                    ].map(cat => (
+                    <a href={`/catalogo?categoria=${cat.name}`} class="flex-shrink-0 flex flex-col items-center gap-3 group">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-black group-hover:shadow-lg transition-all duration-300">
+                            <span class="text-2xl">{cat.icon}</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-[10px] font-bold uppercase tracking-tighter block">{cat.name}</span>
+                            <span class="text-[8px] text-gray-400 font-medium">{cat.count} productos</span>
+                        </div>
+                    </a>
+                    ))}
+                </div>
+            </section>
+
+            <section class="px-6 pt-2 pb-6">
+                <div class="flex justify-between items-end mb-6">
+                    <div>
+                        <h2 class="font-black text-2xl uppercase italic tracking-tighter">Novedades</h2>
+                        <p class="text-xs text-gray-500 mt-1 font-medium">Lo más nuevo en camisetas oficiales</p>
+                    </div>
+                    <a href="/catalogo" class="text-xs font-bold text-gray-400 hover:text-black transition-colors flex items-center gap-1 group">
+                        <span>Ver todo</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="m9 18 6-6-6-6"/></svg>
+                    </a>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 md:gap-6">
+                    {novedades.map(prod => (
+                        <ProductCard 
+                            id={prod.id}
+                            name={prod.nombre}
+                            precioFan={prod.precioFan}
+                            imagen={prod.imagenesFan ? prod.imagenesFan[0] : prod.imagen} 
+                            categoria={prod.categoria}
+                        />
+                    ))}
+                </div>
+
+                <div class="mt-8 text-center">
+                    <a href="/catalogo" class="inline-flex items-center gap-2 bg-gray-50 hover:bg-gray-100 text-black font-bold text-sm py-4 px-8 rounded-2xl transition-all duration-300 border border-gray-200 hover:border-black group">
+                        <span>Explorar Catálogo Completo</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="m9 18 6-6-6-6"/></svg>
+                    </a>
+                </div>
+            </section>
+
+            <section class="px-6 py-8 bg-gray-50 mt-8">
+                <div class="max-w-4xl mx-auto">
+                    <h3 class="text-center font-black text-xl uppercase mb-8 tracking-tight">¿Por qué elegirnos?</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <div class="flex flex-col items-center text-center gap-3">
+                            <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-2xl shadow-sm">
+                                ✨
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm">Calidad Premium</p>
+                                <p class="text-xs text-gray-500 mt-1">Materiales de primera</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center text-center gap-3">
+                            <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-2xl shadow-sm">
+                                🚚
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm">Envío Rápido</p>
+                                <p class="text-xs text-gray-500 mt-1">En toda Guatemala</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center text-center gap-3">
+                            <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-2xl shadow-sm">
+                                🎨
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm">Personalización</p>
+                                <p class="text-xs text-gray-500 mt-1">100% gratis</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center text-center gap-3">
+                            <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-2xl shadow-sm">
+                                💬
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm">Atención 24/7</p>
+                                <p class="text-xs text-gray-500 mt-1">Via WhatsApp</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+    </div>
+</Layout>
+
+<script>
+    // MENÚ LATERAL
+    const toggleBtn = document.getElementById('menu-toggle');
+    const closeBtn = document.getElementById('menu-close');
+    const menu = document.getElementById('side-menu');
+    const overlay = document.getElementById('side-menu-overlay');
+
+    function openMenu() {
+        overlay?.classList.remove('hidden');
+        setTimeout(() => overlay?.classList.remove('opacity-0'), 10);
+        menu?.classList.remove('translate-x-full');
+    }
+
+    function closeMenuFn() {
+        overlay?.classList.add('opacity-0');
+        menu?.classList.add('translate-x-full');
+        setTimeout(() => overlay?.classList.add('hidden'), 300);
+    }
+
+    toggleBtn?.addEventListener('click', openMenu);
+    closeBtn?.addEventListener('click', closeMenuFn);
+    overlay?.addEventListener('click', closeMenuFn);
+
+    // SLIDER DEL HERO
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.hero-slide');
+    const indicators = document.querySelectorAll('.slider-indicator');
+    const totalSlides = slides.length;
+
+    function updateSlider() {
+        slides.forEach((slide, index) => {
+            slide.classList.toggle('opacity-100', index === currentSlide);
+            slide.classList.toggle('opacity-0', index !== currentSlide);
+        });
+
+        indicators.forEach((indicator, index) => {
+            if (index === currentSlide) {
+                indicator.classList.remove('bg-white/50', 'w-2');
+                indicator.classList.add('bg-white', 'w-8');
+            } else {
+                indicator.classList.remove('bg-white', 'w-8');
+                indicator.classList.add('bg-white/50', 'w-2');
+            }
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlider();
+    }
+
+    const autoPlayInterval = setInterval(nextSlide, 5000);
+
+    document.getElementById('next-slide')?.addEventListener('click', () => {
+        clearInterval(autoPlayInterval);
+        nextSlide();
+    });
+
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            clearInterval(autoPlayInterval);
+            currentSlide = index;
+            updateSlider();
+        });
+    });
+
+    // ✅ BÚSQUEDA FUNCIONAL - OPCIÓN A
+    const searchInput = document.getElementById('search-input');
+    searchInput?.addEventListener('input', (e) => {
+        const query = e.target.value.trim();
+        if (query.length >= 2) {
+            // Mostrar loading visual
+            searchInput.style.background = 'linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%)';
+            searchInput.style.backgroundSize = '200% 100%';
+            searchInput.style.animation = 'loading 1s infinite';
+        }
+    });
+
+    // Redirigir al catálogo cuando se presiona Enter o después de una pausa
+    let searchTimeout;
+    searchInput?.addEventListener('input', (e) => {
+        const query = e.target.value.trim();
+        
+        // Limpiar timeout anterior
+        clearTimeout(searchTimeout);
+        
+        if (query.length >= 2) {
+            // Esperar 800ms después de que el usuario deje de escribir
+            searchTimeout = setTimeout(() => {
+                window.location.href = `/catalogo?search=${encodeURIComponent(query)}`;
+            }, 800);
+        }
+    });
+
+    // Búsqueda inmediata con Enter
+    searchInput?.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            const query = e.target.value.trim();
+            if (query.length > 0) {
+                clearTimeout(searchTimeout);
+                window.location.href = `/catalogo?search=${encodeURIComponent(query)}`;
+            }
+        }
+    });
+</script>
+
+<style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+    /* Animación de loading para el input */
+    @keyframes loading {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+    }
+</style>

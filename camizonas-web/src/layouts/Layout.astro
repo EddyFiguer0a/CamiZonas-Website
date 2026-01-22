@@ -1,0 +1,138 @@
+---
+import '../styles/global.css';
+import BottomNav from '../components/bottomNav.astro';
+
+interface Props {
+    title: string;
+    description?: string;
+    image?: string;
+    url?: string;
+}
+
+const { 
+    title, 
+    description = "Las mejores camisetas de fútbol en Guatemala. Versión Fan y Jugador. Personalización gratis. Envío a toda Guatemala.",
+    image = "/img/og-image.jpg",
+    url = Astro.url.pathname
+} = Astro.props;
+
+const siteName = "CamiZonas";
+const siteUrl = "https://camizonas.com"; // Cambia por tu dominio real
+
+// Fix para canonical URL
+const canonicalURL = Astro.site ? new URL(url, Astro.site) : `${siteUrl}${url}`;
+
+// Fix para imagen completa
+const fullImageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Básico -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="camisetas fútbol Guatemala, camisetas deportivas, Real Madrid, Barcelona, PSG, Manchester United, personalización gratis, envío Guatemala" />
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={fullImageUrl} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:locale" content="es_GT" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@camizonas" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={fullImageUrl} />
+    
+    <!-- Preconnect para fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Preload fuentes críticas -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet"> 
+    
+    <!-- Prefetch para navegación -->
+    <link rel="prefetch" href="/catalogo" as="document">
+    <link rel="prefetch" href="/carrito" as="document">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- JSON-LD Schema - Organization -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CamiZonas",
+      "url": siteUrl,
+      "logo": `${siteUrl}/logo.png`,
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+502-XXXX-XXXX",
+        "contactType": "customer service",
+        "areaServed": "GT",
+        "availableLanguage": "Spanish"
+      },
+      "sameAs": [
+        "https://facebook.com/camizonas",
+        "https://instagram.com/camizonas"
+      ]
+    })} />
+    
+    <!-- JSON-LD Schema - WebSite -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "CamiZonas",
+      "url": siteUrl,
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": `${siteUrl}/catalogo?q={search_term_string}`,
+        "query-input": "required name=search_term_string"
+      }
+    })} />
+</head>
+<body class="bg-gray-50 font-sans antialiased text-gray-900 flex justify-center min-h-screen">
+    <div class="w-full bg-white shadow-2xl relative min-h-screen">
+        <slot />
+        <BottomNav />
+    </div>
+
+    <!-- Loading indicator global -->
+    <div id="page-loader" class="fixed inset-0 bg-white z-[9999] flex items-center justify-center hidden">
+      <div class="flex flex-col items-center gap-4">
+        <div class="w-16 h-16 border-4 border-gray-200 border-t-black rounded-full animate-spin"></div>
+        <p class="text-sm font-bold text-gray-600">Cargando...</p>
+      </div>
+    </div>
+</body>
+</html>
+
+<script>
+  // Mostrar loader en navegación
+  document.addEventListener('astro:before-preparation', () => {
+    document.getElementById('page-loader')?.classList.remove('hidden');
+  });
+
+  document.addEventListener('astro:page-load', () => {
+    document.getElementById('page-loader')?.classList.add('hidden');
+  });
+
+  // Lazy loading mejorado para imágenes
+  if ('loading' in HTMLImageElement.prototype) {
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    images.forEach(img => {
+      img.src = img.dataset.src || img.src;
+    });
+  }
+</script>

@@ -1,0 +1,35 @@
+---
+interface Props {
+    id: string;
+    name: string;
+    precioFan: number;
+    imagen: string;
+    categoria: string;
+}
+const { id, name, precioFan, imagen, categoria } = Astro.props;
+---
+
+<a href={`/producto/${id}`} class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex flex-col gap-3 hover:scale-[1.02] hover:shadow-md transition-all duration-300 group">
+    <div class="aspect-square bg-gray-100 rounded-xl overflow-hidden flex items-center justify-center relative">
+        <img 
+            src={imagen} 
+            alt={name}
+            class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+            loading="lazy"
+        />
+        <!-- Badge de categoría (para filtros) -->
+        <span class="categoria-badge absolute top-2 left-2 bg-black/80 text-white text-[9px] font-bold px-2 py-1 rounded-full uppercase tracking-wide backdrop-blur-sm">
+            {categoria}
+        </span>
+    </div>
+    
+    <div class="flex flex-col gap-1">
+        <h3 class="font-bold text-sm leading-tight line-clamp-2 group-hover:text-blue-600 transition-colors">
+            {name}
+        </h3>
+        <div class="flex items-center justify-between mt-1">
+            <p class="text-lg font-black">Q.{precioFan}</p>
+            <span class="text-[10px] text-gray-400 font-medium uppercase tracking-wide">Desde</span>
+        </div>
+    </div>
+</a>

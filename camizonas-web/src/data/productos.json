@@ -1,0 +1,142 @@
+[
+  {
+    "id": "madrid-local-24",
+    "nombre": "Real Madrid Local 24/25",
+    "precioFan": 375,
+    "precioJugador": 450,
+    "categoria": "Clubes",
+    "imagenesFan": [
+      "/img/RealMadrid_25-26_Frontal.jpeg",
+      "/img/RealMadrid_25-26_Espalda.jpeg"
+    ],
+    "imagenesJugador": [
+      "/img/madrid-local.jpeg",
+      "/img/25-26 madrid local.jpeg",
+      "/img/25-26 madrid local 3.jpeg",
+      "/img/25-26 madrid local 4.jpeg"
+      
+    ]
+  },
+  {
+    "id": "barca-local-26",
+    "nombre": "Barcelona Local 25/26",
+    "precioFan": 375,
+    "precioJugador": 450,
+    "categoria": "Retro",
+    "imagenesFan": [
+      "/img/Barcelona_25-26_Frontal.jpeg",
+      "/img/Barcelona_25-26_Espalda.jpeg"
+    ],
+    "imagenesJugador": [
+      "/img/25-26 barca local 1.jpeg",
+      "/img/25-26 barca local 2.jpeg",
+      "/img/25-26 barca local 3.jpeg",
+      "/img/25-26 barca local 4.jpeg"
+    ]
+  },
+  {
+    "id": "madrid-local-24",
+    "nombre": "Real Madrid Local 24/25",
+    "precioFan": 375,
+    "precioJugador": 450,
+    "categoria": "Clubes",
+    "imagenesFan": [
+      "/img/RealMadrid_25-26_Frontal.jpeg",
+      "/img/RealMadrid_25-26_Espalda.jpeg"
+    ],
+    "imagenesJugador": [
+      "/img/madrid-local.jpeg",
+      "/img/25-26 madrid local.jpeg",
+      "/img/25-26 madrid local 3.jpeg",
+      "/img/25-26 madrid local 4.jpeg"
+      
+    ]
+  },
+  {
+    "id": "barca-local-26",
+    "nombre": "Barcelona Local 25/26",
+    "precioFan": 375,
+    "precioJugador": 450,
+    "categoria": "Retro",
+    "imagenesFan": [
+      "/img/Barcelona_25-26_Frontal.jpeg",
+      "/img/Barcelona_25-26_Espalda.jpeg"
+    ],
+    "imagenesJugador": [
+      "/img/25-26 barca local 1.jpeg",
+      "/img/25-26 barca local 2.jpeg",
+      "/img/25-26 barca local 3.jpeg",
+      "/img/25-26 barca local 4.jpeg"
+    ]
+  },
+  {
+    "id": "madrid-local-24",
+    "nombre": "Real Madrid Local 24/25",
+    "precioFan": 375,
+    "precioJugador": 450,
+    "categoria": "Clubes",
+    "imagenesFan": [
+      "/img/RealMadrid_25-26_Frontal.jpeg",
+      "/img/RealMadrid_25-26_Espalda.jpeg"
+    ],
+    "imagenesJugador": [
+      "/img/madrid-local.jpeg",
+      "/img/25-26 madrid local.jpeg",
+      "/img/25-26 madrid local 3.jpeg",
+      "/img/25-26 madrid local 4.jpeg"
+      
+    ]
+  },
+  {
+    "id": "barca-local-26",
+    "nombre": "Barcelona Local 25/26",
+    "precioFan": 375,
+    "precioJugador": 450,
+    "categoria": "Retro",
+    "imagenesFan": [
+      "/img/Barcelona_25-26_Frontal.jpeg",
+      "/img/Barcelona_25-26_Espalda.jpeg"
+    ],
+    "imagenesJugador": [
+      "/img/25-26 barca local 1.jpeg",
+      "/img/25-26 barca local 2.jpeg",
+      "/img/25-26 barca local 3.jpeg",
+      "/img/25-26 barca local 4.jpeg"
+    ]
+  },
+  {
+    "id": "madrid-local-24",
+    "nombre": "Real Madrid Local 24/25",
+    "precioFan": 375,
+    "precioJugador": 450,
+    "categoria": "Clubes",
+    "imagenesFan": [
+      "/img/RealMadrid_25-26_Frontal.jpeg",
+      "/img/RealMadrid_25-26_Espalda.jpeg"
+    ],
+    "imagenesJugador": [
+      "/img/madrid-local.jpeg",
+      "/img/25-26 madrid local.jpeg",
+      "/img/25-26 madrid local 3.jpeg",
+      "/img/25-26 madrid local 4.jpeg"
+      
+    ]
+  },
+  {
+    "id": "barca-local-26",
+    "nombre": "Barcelona Local 25/26",
+    "precioFan": 375,
+    "precioJugador": 450,
+    "categoria": "Retro",
+    "imagenesFan": [
+      "/img/Barcelona_25-26_Frontal.jpeg",
+      "/img/Barcelona_25-26_Espalda.jpeg"
+    ],
+    "imagenesJugador": [
+      "/img/25-26 barca local 1.jpeg",
+      "/img/25-26 barca local 2.jpeg",
+      "/img/25-26 barca local 3.jpeg",
+      "/img/25-26 barca local 4.jpeg"
+    ]
+  }
+]
