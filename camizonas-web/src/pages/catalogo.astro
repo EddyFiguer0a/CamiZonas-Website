@@ -7,41 +7,33 @@ const categorias = ['Todas', 'Clubes', 'Selecciones', 'Retro', 'Especiales'];
 ---
 
 <Layout title="Catálogo Completo | CamiZonas">
-  <main class="bg-white min-h-screen pb-24">
-    
-    <!-- Header sticky con filtros -->
+  <main class="bg-white min-h-screen pb-24 md:pb-12">
+
+    <!-- ✅ HEADER RESPONSIVE -->
     <header class="sticky top-0 bg-white/95 backdrop-blur-md z-40 border-b border-gray-100">
-      <div class="p-4 flex justify-between items-center">
-        <a href="/" class="w-10 h-10 bg-gray-50 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      <div class="p-3 sm:p-4 md:p-6 lg:px-12 flex justify-between items-center">
+        <a href="/" class="w-9 h-9 sm:w-10 sm:h-10 bg-gray-50 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
         </a>
-        <h1 class="font-black text-lg uppercase italic tracking-tight">Catálogo</h1>
-        <button id="view-toggle" class="w-10 h-10 bg-gray-50 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
-          <svg id="grid-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/></svg>
-        </button>
+        <h1 class="font-black text-base sm:text-lg md:text-xl uppercase italic tracking-tight">Catálogo</h1>
+        <div class="w-9 sm:w-10"></div>
       </div>
 
-      <!-- ✅ BARRA DE BÚSQUEDA -->
-      <div class="px-4 pb-3">
-        <div class="relative">
-          <input 
-            type="text" 
-            id="search-catalog"
-            placeholder="Buscar camisetas..." 
-            class="w-full bg-gray-50 border border-gray-200 rounded-xl py-3 px-4 pl-10 text-sm outline-none focus:ring-2 ring-black/10 transition-all"
-          />
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
-            <circle cx="11" cy="11" r="8"/>
-            <path d="m21 21-4.3-4.3"/>
-          </svg>
-        </div>
+      <!-- SEARCH -->
+      <div class="px-3 sm:px-4 md:px-6 lg:px-12 pb-3">
+        <input
+          id="search-catalog"
+          type="text"
+          placeholder="Buscar camisetas..."
+          class="w-full max-w-xl bg-gray-50 border border-gray-200 rounded-xl py-2.5 sm:py-3 px-4 text-xs sm:text-sm outline-none focus:ring-2 ring-black/10"
+        />
       </div>
 
-      <!-- Tabs de categorías -->
-      <div class="px-4 pb-4 flex gap-2 overflow-x-auto no-scrollbar">
-        {categorias.map((cat, index) => (
-          <button 
-            class={`filter-tab px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap transition-all duration-300 ${index === 0 ? 'bg-black text-white' : 'border border-gray-200 text-gray-600 hover:border-black'}`}
+      <!-- TABS -->
+      <div class="px-3 sm:px-4 md:px-6 lg:px-12 pb-3 sm:pb-4 flex gap-2 overflow-x-auto no-scrollbar">
+        {categorias.map(cat => (
+          <button
+            class="filter-tab px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-[10px] sm:text-xs font-bold whitespace-nowrap border border-gray-200 text-gray-600 hover:border-black transition-colors"
             data-categoria={cat}
           >
             {cat}
@@ -50,72 +42,53 @@ const categorias = ['Todas', 'Clubes', 'Selecciones', 'Retro', 'Especiales'];
       </div>
     </header>
 
-    <!-- Contador de resultados y ordenamiento -->
-    <div class="px-4 py-4 flex justify-between items-center">
-      <p class="text-sm text-gray-500">
+    <!-- INFO -->
+    <div class="px-3 sm:px-4 md:px-6 lg:px-12 py-3 sm:py-4 flex justify-between items-center">
+      <p class="text-xs sm:text-sm text-gray-500">
         <span id="producto-count" class="font-bold text-black">{productos.length}</span> productos
         <span id="search-info" class="hidden ml-2 text-blue-600 font-medium"></span>
       </p>
-      
-      <!-- Menú de ordenamiento -->
-      <div class="relative">
-        <button id="sort-toggle" class="flex items-center gap-2 text-xs font-bold text-gray-600 hover:text-black transition-colors bg-gray-50 px-4 py-2 rounded-xl border border-gray-200">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 16 4 4 4-4"/><path d="M7 20V4"/><path d="m21 8-4-4-4 4"/><path d="M17 4v16"/></svg>
-          <span id="sort-label">Ordenar</span>
-        </button>
-
-        <!-- Dropdown de ordenamiento -->
-        <div id="sort-menu" class="absolute right-0 mt-2 w-56 bg-white rounded-2xl shadow-2xl border border-gray-100 hidden z-50 overflow-hidden">
-          <div class="p-2 space-y-1">
-            <button class="sort-option w-full text-left px-4 py-3 rounded-xl text-sm font-medium hover:bg-gray-50 transition-colors flex items-center justify-between" data-sort="default">
-              <span>Predeterminado</span>
-              <svg class="checkmark hidden" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </button>
-            <button class="sort-option w-full text-left px-4 py-3 rounded-xl text-sm font-medium hover:bg-gray-50 transition-colors flex items-center justify-between" data-sort="price-asc">
-              <span>Precio: Menor a Mayor</span>
-              <svg class="checkmark hidden" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </button>
-            <button class="sort-option w-full text-left px-4 py-3 rounded-xl text-sm font-medium hover:bg-gray-50 transition-colors flex items-center justify-between" data-sort="price-desc">
-              <span>Precio: Mayor a Menor</span>
-              <svg class="checkmark hidden" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </button>
-            <button class="sort-option w-full text-left px-4 py-3 rounded-xl text-sm font-medium hover:bg-gray-50 transition-colors flex items-center justify-between" data-sort="name-asc">
-              <span>Nombre: A-Z</span>
-              <svg class="checkmark hidden" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </button>
-            <button class="sort-option w-full text-left px-4 py-3 rounded-xl text-sm font-medium hover:bg-gray-50 transition-colors flex items-center justify-between" data-sort="name-desc">
-              <span>Nombre: Z-A</span>
-              <svg class="checkmark hidden" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </button>
-          </div>
-        </div>
-      </div>
     </div>
 
-    <!-- Grid de productos -->
-    <section class="px-4 pb-6">
-      <div id="productos-grid" class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 md:gap-6 transition-all duration-300">
-        {productos.map(prod => (
-          <div class="producto-item" data-categoria={prod.categoria} data-nombre={prod.nombre.toLowerCase()} data-precio={prod.precioFan}>
-            <ProductCard 
-              id={prod.id}
-              name={prod.nombre}
-              precioFan={prod.precioFan}
-              imagen={prod.imagenesFan ? prod.imagenesFan[0] : prod.imagen}
-              categoria={prod.categoria}
-            />
-          </div>
-        ))}
+    <!-- ✅ GRID RESPONSIVE CORREGIDO -->
+    <section class="px-3 sm:px-4 md:px-6 lg:px-12 pb-6">
+      <div id="productos-grid" class="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4 md:gap-5 lg:gap-6">
+        {productos.map(prod => {
+          // ✅ MISMA LÓGICA QUE EN INDEX.ASTRO - Detectar imagen disponible
+          const imagenDisponible = (prod.imagenesFan && prod.imagenesFan.length > 0) 
+            ? prod.imagenesFan[0] 
+            : (prod.imagenesJugador && prod.imagenesJugador.length > 0) 
+              ? prod.imagenesJugador[0] 
+              : '';
+          
+          return (
+            <div
+              class="producto-item"
+              data-categoria={prod.categoria}
+              data-nombre={prod.nombre.toLowerCase()}
+              data-precio={prod.precioFan ?? prod.precioJugador ?? 0}
+            >
+              <ProductCard
+                id={prod.id}
+                name={prod.nombre}
+                precioFan={prod.precioFan}
+                precioJugador={prod.precioJugador}
+                imagen={imagenDisponible}
+                categoria={prod.categoria}
+              />
+            </div>
+          );
+        })}
       </div>
 
-      <!-- Estado vacío -->
-      <div id="empty-state" class="hidden flex-col items-center justify-center py-16 text-center">
-        <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mb-4">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <!-- EMPTY -->
+      <div id="empty-state" class="hidden flex-col items-center justify-center py-12 sm:py-16 text-center">
+        <div class="w-16 h-16 sm:w-20 sm:h-20 bg-gray-100 rounded-full flex items-center justify-center mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
         </div>
-        <h3 class="font-bold text-lg mb-2">No se encontraron productos</h3>
-        <p class="text-sm text-gray-500 mb-4">Intenta con otros términos o categoría</p>
-        <button id="clear-search" class="bg-black text-white px-6 py-3 rounded-xl font-medium hover:scale-105 transition-transform">
+        <h3 class="font-bold text-base sm:text-lg mb-2">No se encontraron productos</h3>
+        <p class="text-xs sm:text-sm text-gray-500 mb-4">Intenta con otros términos</p>
+        <button id="clear-search" class="bg-black text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm font-bold hover:scale-105 transition-transform">
           Limpiar búsqueda
         </button>
       </div>
@@ -125,76 +98,39 @@ const categorias = ['Todas', 'Clubes', 'Selecciones', 'Retro', 'Especiales'];
 </Layout>
 
 <script>
-  // ✅ VARIABLES GLOBALES DECLARADAS PRIMERO
   let categoriaActual = 'Todas';
-  let vistaActual = 'grid';
-  let ordenActual = 'default';
   let terminoBusqueda = '';
 
-  // ✅ ELEMENTOS DEL DOM DECLARADOS DESPUÉS
+  const categorias = ['Todas', 'Clubes', 'Selecciones', 'Retro', 'Especiales'];
   const tabs = document.querySelectorAll('.filter-tab');
   const grid = document.getElementById('productos-grid');
-  const emptyState = document.getElementById('empty-state');
   const productoCount = document.getElementById('producto-count');
-  const searchInfo = document.getElementById('search-info');
-  const viewToggle = document.getElementById('view-toggle');
-  const sortToggle = document.getElementById('sort-toggle');
-  const sortMenu = document.getElementById('sort-menu');
-  const sortOptions = document.querySelectorAll('.sort-option');
-  const sortLabel = document.getElementById('sort-label');
+  const emptyState = document.getElementById('empty-state');
   const searchCatalog = document.getElementById('search-catalog');
+  const searchInfo = document.getElementById('search-info');
   const clearSearch = document.getElementById('clear-search');
 
-  // ✅ FUNCIÓN PRINCIPAL DE FILTRADO
-  function filtrarYOrdenar() {
-    const productos = Array.from(grid.querySelectorAll('.producto-item'));
-    let productosVisibles = [];
+  function filtrar() {
+    const items = Array.from(grid.querySelectorAll('.producto-item'));
+    let visibles = [];
 
-    // 1. FILTRAR POR CATEGORÍA Y BÚSQUEDA
-    productos.forEach(producto => {
-      const categoria = producto.getAttribute('data-categoria');
-      const nombre = producto.getAttribute('data-nombre');
-      
-      const coincideCategoria = categoriaActual === 'Todas' || categoria === categoriaActual;
-      const coincideBusqueda = terminoBusqueda === '' || nombre.includes(terminoBusqueda.toLowerCase());
-      
-      if (coincideCategoria && coincideBusqueda) {
-        producto.style.display = 'block';
-        productosVisibles.push(producto);
+    items.forEach(item => {
+      const cat = item.dataset.categoria;
+      const name = item.dataset.nombre;
+
+      const okCat = categoriaActual === 'Todas' || cat === categoriaActual;
+      const okSearch = !terminoBusqueda || name.includes(terminoBusqueda.toLowerCase());
+
+      if (okCat && okSearch) {
+        item.style.display = 'block';
+        visibles.push(item);
       } else {
-        producto.style.display = 'none';
+        item.style.display = 'none';
       }
     });
 
-    // 2. ORDENAR PRODUCTOS VISIBLES
-    if (ordenActual !== 'default') {
-      productosVisibles.sort((a, b) => {
-        const priceA = parseInt(a.getAttribute('data-precio'));
-        const priceB = parseInt(b.getAttribute('data-precio'));
-        const nameA = a.getAttribute('data-nombre');
-        const nameB = b.getAttribute('data-nombre');
+    productoCount.textContent = visibles.length;
 
-        switch(ordenActual) {
-          case 'price-asc':
-            return priceA - priceB;
-          case 'price-desc':
-            return priceB - priceA;
-          case 'name-asc':
-            return nameA.localeCompare(nameB);
-          case 'name-desc':
-            return nameB.localeCompare(nameA);
-          default:
-            return 0;
-        }
-      });
-
-      productosVisibles.forEach(producto => grid.appendChild(producto));
-    }
-
-    // 3. ACTUALIZAR INTERFAZ
-    productoCount.textContent = productosVisibles.length;
-    
-    // Mostrar info de búsqueda
     if (terminoBusqueda) {
       searchInfo.textContent = `para "${terminoBusqueda}"`;
       searchInfo.classList.remove('hidden');
@@ -202,181 +138,73 @@ const categorias = ['Todas', 'Clubes', 'Selecciones', 'Retro', 'Especiales'];
       searchInfo.classList.add('hidden');
     }
 
-    // 4. ESTADO VACÍO
-    if (productosVisibles.length === 0) {
-      grid.classList.add('hidden');
-      emptyState.classList.remove('hidden');
-      emptyState.classList.add('flex');
-    } else {
-      grid.classList.remove('hidden');
-      emptyState.classList.add('hidden');
-      emptyState.classList.remove('flex');
-    }
+    emptyState.classList.toggle('hidden', visibles.length > 0);
+    emptyState.classList.toggle('flex', visibles.length === 0);
+    grid.classList.toggle('hidden', visibles.length === 0);
+  }
 
-    // 5. ANIMACIÓN
-    productosVisibles.forEach((producto, index) => {
-      producto.style.animation = 'none';
-      setTimeout(() => {
-        producto.style.animation = `fadeIn 0.3s ease-out ${index * 0.05}s both`;
-      }, 10);
+  function actualizarTabs() {
+    tabs.forEach(tab => {
+      const cat = tab.dataset.categoria;
+      if (cat === categoriaActual) {
+        tab.classList.add('bg-black', 'text-white', 'border-black');
+        tab.classList.remove('border-gray-200', 'text-gray-600');
+      } else {
+        tab.classList.remove('bg-black', 'text-white', 'border-black');
+        tab.classList.add('border-gray-200', 'text-gray-600');
+      }
     });
   }
 
-  // ✅ LEER PARÁMETROS URL AL CARGAR (AHORA FUNCIONA)
   document.addEventListener('DOMContentLoaded', () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const categoriaFromURL = urlParams.get('categoria');
-    const searchFromURL = urlParams.get('search');
-    
-    // Aplicar filtro de categoría
-    if (categoriaFromURL) {
-      const tabToActivate = document.querySelector(`[data-categoria="${categoriaFromURL}"]`);
-      if (tabToActivate) {
-        // Resetear todos los tabs
-        tabs.forEach(t => {
-          t.classList.remove('bg-black', 'text-white');
-          t.classList.add('border', 'border-gray-200', 'text-gray-600');
-        });
-        
-        // Activar el correcto
-        tabToActivate.classList.remove('border', 'border-gray-200', 'text-gray-600');
-        tabToActivate.classList.add('bg-black', 'text-white');
-        categoriaActual = categoriaFromURL;
-      }
+    const params = new URLSearchParams(window.location.search);
+    const catURL = params.get('categoria');
+    const searchURL = params.get('search');
+
+    if (catURL && categorias.includes(catURL)) {
+      categoriaActual = catURL;
     }
-    
-    // Aplicar búsqueda
-    if (searchFromURL) {
-      terminoBusqueda = searchFromURL;
-      searchCatalog.value = searchFromURL;
+
+    if (searchURL) {
+      terminoBusqueda = searchURL;
+      searchCatalog.value = searchURL;
     }
-    
-    // Aplicar filtros
-    filtrarYOrdenar();
+
+    actualizarTabs();
+    filtrar();
   });
 
-  // FILTRADO POR CATEGORÍA
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      tabs.forEach(t => {
-        t.classList.remove('bg-black', 'text-white');
-        t.classList.add('border', 'border-gray-200', 'text-gray-600');
-      });
-      tab.classList.remove('border', 'border-gray-200', 'text-gray-600');
-      tab.classList.add('bg-black', 'text-white');
-      
-      categoriaActual = tab.getAttribute('data-categoria');
-      
-      // Actualizar URL
+      categoriaActual = tab.dataset.categoria;
+      actualizarTabs();
+
       const params = new URLSearchParams();
       if (categoriaActual !== 'Todas') params.set('categoria', categoriaActual);
       if (terminoBusqueda) params.set('search', terminoBusqueda);
-      
-      const newURL = params.toString() ? `/catalogo?${params.toString()}` : '/catalogo';
-      window.history.pushState({}, '', newURL);
-      
-      filtrarYOrdenar();
+
+      history.pushState({}, '', params.toString() ? `/catalogo?${params}` : '/catalogo');
+      filtrar();
     });
   });
 
-  // BÚSQUEDA EN TIEMPO REAL
-  searchCatalog?.addEventListener('input', (e) => {
+  searchCatalog?.addEventListener('input', e => {
     terminoBusqueda = e.target.value.trim();
-    
-    // Actualizar URL
+
     const params = new URLSearchParams();
     if (categoriaActual !== 'Todas') params.set('categoria', categoriaActual);
     if (terminoBusqueda) params.set('search', terminoBusqueda);
-    
-    const newURL = params.toString() ? `/catalogo?${params.toString()}` : '/catalogo';
-    window.history.pushState({}, '', newURL);
-    
-    filtrarYOrdenar();
+
+    history.pushState({}, '', params.toString() ? `/catalogo?${params}` : '/catalogo');
+    filtrar();
   });
 
-  // LIMPIAR BÚSQUEDA
   clearSearch?.addEventListener('click', () => {
     terminoBusqueda = '';
     categoriaActual = 'Todas';
     searchCatalog.value = '';
-    
-    // Resetear tabs
-    tabs.forEach(t => {
-      t.classList.remove('bg-black', 'text-white');
-      t.classList.add('border', 'border-gray-200', 'text-gray-600');
-    });
-    
-    const todoTab = document.querySelector('[data-categoria="Todas"]');
-    if (todoTab) {
-      todoTab.classList.remove('border', 'border-gray-200', 'text-gray-600');
-      todoTab.classList.add('bg-black', 'text-white');
-    }
-    
-    window.history.pushState({}, '', '/catalogo');
-    filtrarYOrdenar();
+    actualizarTabs();
+    history.pushState({}, '', '/catalogo');
+    filtrar();
   });
-
-  // MENÚ DE ORDENAMIENTO
-  sortToggle?.addEventListener('click', (e) => {
-    e.stopPropagation();
-    sortMenu.classList.toggle('hidden');
-  });
-
-  document.addEventListener('click', () => {
-    sortMenu?.classList.add('hidden');
-  });
-
-  sortMenu?.addEventListener('click', (e) => {
-    e.stopPropagation();
-  });
-
-  sortOptions.forEach(option => {
-    option.addEventListener('click', () => {
-      const sortType = option.getAttribute('data-sort');
-      ordenActual = sortType;
-
-      sortOptions.forEach(opt => {
-        opt.querySelector('.checkmark')?.classList.add('hidden');
-        opt.classList.remove('bg-blue-50', 'text-blue-600');
-      });
-      option.querySelector('.checkmark')?.classList.remove('hidden');
-      option.classList.add('bg-blue-50', 'text-blue-600');
-
-      sortLabel.textContent = option.querySelector('span').textContent;
-      sortMenu.classList.add('hidden');
-      filtrarYOrdenar();
-    });
-  });
-
-  // CAMBIAR VISTA
-  viewToggle?.addEventListener('click', () => {
-    if (vistaActual === 'grid') {
-      grid.classList.remove('grid-cols-2', 'md:grid-cols-3', 'lg:grid-cols-4');
-      grid.classList.add('grid-cols-1');
-      vistaActual = 'list';
-    } else {
-      grid.classList.remove('grid-cols-1');
-      grid.classList.add('grid-cols-2', 'md:grid-cols-3', 'lg:grid-cols-4');
-      vistaActual = 'grid';
-    }
-  });
-
-  // Marcar opción predeterminada
-  document.querySelector('[data-sort="default"]')?.querySelector('.checkmark')?.classList.remove('hidden');
 </script>
-
-<style>
-  .no-scrollbar::-webkit-scrollbar { display: none; }
-  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-</style>

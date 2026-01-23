@@ -12,7 +12,8 @@ function isActive(path: string, current: string) {
 }
 ---
 
-<div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[375px] h-20 bg-white/90 backdrop-blur-lg border-t border-gray-100 flex justify-around items-center z-50 md:max-w-6xl md:rounded-t-3xl md:hidden">
+<!-- ✅ CAMBIO: Removido max-w-[375px] para que ocupe todo el ancho -->
+<div class="fixed bottom-0 left-0 w-full h-20 bg-white/95 backdrop-blur-lg border-t border-gray-100 flex justify-around items-center z-[60] md:hidden shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
   
   <!-- INICIO -->
   <a 
@@ -69,7 +70,6 @@ function isActive(path: string, current: string) {
         <circle cx="19" cy="21" r="1"/>
         <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
       </svg>
-      <!-- Badge del carrito -->
       <span id="cart-badge" class="hidden absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center shadow-lg animate-bounce">0</span>
     </div>
     <span class="text-[11px] font-bold uppercase tracking-wide">Carrito</span>
@@ -81,7 +81,6 @@ function isActive(path: string, current: string) {
 </div>
 
 <script>
-  // ACTUALIZAR BADGE DEL CARRITO
   function updateCartBadge() {
     const carrito = JSON.parse(localStorage.getItem('carrito') || '[]');
     const badge = document.getElementById('cart-badge');
@@ -90,8 +89,6 @@ function isActive(path: string, current: string) {
       if (carrito.length > 0) {
         badge.textContent = carrito.length;
         badge.classList.remove('hidden');
-        
-        // Animación de actualización
         badge.classList.add('animate-pulse');
         setTimeout(() => badge.classList.remove('animate-pulse'), 1000);
       } else {
@@ -100,13 +97,8 @@ function isActive(path: string, current: string) {
     }
   }
 
-  // EJECUTAR AL CARGAR LA PÁGINA
   document.addEventListener('DOMContentLoaded', updateCartBadge);
-
-  // ESCUCHAR CAMBIOS EN EL CARRITO
   window.addEventListener('storage', updateCartBadge);
   window.addEventListener('cartUpdated', updateCartBadge);
-
-  // VERIFICAR CAMBIOS PERIÓDICAMENTE
   setInterval(updateCartBadge, 2000);
 </script>
