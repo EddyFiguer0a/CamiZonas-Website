@@ -1,5 +1,17 @@
 {
+  "framework": "astro",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "framework": "astro"
+  "installCommand": "npm install --legacy-peer-deps",
+  "functions": {
+    "src/pages/api/*.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "routes": [
+    {
+      "src": "/.*",
+      "dest": "/index.html"
+    }
+  ]
 }

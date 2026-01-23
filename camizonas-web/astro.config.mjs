@@ -3,5 +3,13 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   integrations: [tailwind()],
-  output: 'static'
+  output: 'static',
+  build: {
+    assets: 'assets'
+  },
+  vite: {
+    ssr: {
+      external: ['@astrojs/tailwind']
+    }
+  }
 });
