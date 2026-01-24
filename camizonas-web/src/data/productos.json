@@ -37,79 +37,79 @@
     "id": "argentina-local-26",
     "nombre": "Argentina Local 26/27",
     "precioFan": 375,
-    "precioJugador": 450,
+    "precioJugador": 400,
     "categoria": "Selecciones",
     "imagenesFan": [
-      "/img/SELECCIONES/AMERICA/ARGENTINA/Versión FAN/Argentina_Frontal.jpeg",
-      "/img/SELECCIONES/AMERICA/ARGENTINA/Versión FAN/Argentina_Espalda.jpeg"
+      "/img/SELECCIONES/AMERICA/ARGENTINA/Versión FAN/Argentina_Frontal.webp",
+      "/img/SELECCIONES/AMERICA/ARGENTINA/Versión FAN/Argentina_Espalda.webp"
     ],
     "imagenesJugador": [
-      "/img/SELECCIONES/AMERICA/ARGENTINA/Versión JUGADOR/Argentina_Local_26-27_Jugador_Frontal.jpg",
-      "/img/SELECCIONES/AMERICA/ARGENTINA/Versión JUGADOR/Argentina_Local_26-27_Jugador_Espalda.jpg",
-      "/img/SELECCIONES/AMERICA/ARGENTINA/Versión JUGADOR/Argentina_Local_26-27_Jugador_DetalleEscudo.jpg",
-      "/img/SELECCIONES/AMERICA/ARGENTINA/Versión JUGADOR/Argentina_Local_26-27_Jugador_DetalleTela.jpg"
+      "/img/SELECCIONES/AMERICA/ARGENTINA/Versión JUGADOR/Argentina_Local_26-27_Jugador_Frontal.webp",
+      "/img/SELECCIONES/AMERICA/ARGENTINA/Versión JUGADOR/Argentina_Local_26-27_Jugador_Espalda.webp",
+      "/img/SELECCIONES/AMERICA/ARGENTINA/Versión JUGADOR/Argentina_Local_26-27_Jugador_DetalleEscudo.webp",
+      "/img/SELECCIONES/AMERICA/ARGENTINA/Versión JUGADOR/Argentina_Local_26-27_Jugador_DetalleTela.webp"
     ]
   },
   {
     "id": "brasil-local-26",
     "nombre": "Brasil Local 26/27",
     "precioFan": 375,
-    "precioJugador": 450,
+    "precioJugador": 400,
     "categoria": "Selecciones",
     "imagenesFan": [
-      "/img/SELECCIONES/AMERICA/BRASIL/Versión FAN/Brasil_Frontal.jpeg",
-      "/img/SELECCIONES/AMERICA/BRASIL/Versión FAN/Brasil_Espalda.jpeg"
+      "/img/SELECCIONES/AMERICA/BRASIL/Versión FAN/Brasil_Frontal.webp",
+      "/img/SELECCIONES/AMERICA/BRASIL/Versión FAN/Brasil_Espalda.webp"
     ],
     "imagenesJugador": [
-      "/img/SELECCIONES/AMERICA/BRASIL/Versión JUGADOR/Brasil_Local_26-27_Jugador_Frontal.jpg",
-      "/img/SELECCIONES/AMERICA/BRASIL/Versión JUGADOR/Brasil_Local_26-27_Jugador_Espalda.jpg",
-      "/img/SELECCIONES/AMERICA/BRASIL/Versión JUGADOR/Brasil_Local_26-27_Jugador_DetalleEscudo.jpg",
-      "/img/SELECCIONES/AMERICA/BRASIL/Versión JUGADOR/Brasil_Local_26-27_Jugador_DetalleTela.jpg"
+      "/img/SELECCIONES/AMERICA/BRASIL/Versión JUGADOR/Brasil_Local_26-27_Jugador_Frontal.webp",
+      "/img/SELECCIONES/AMERICA/BRASIL/Versión JUGADOR/Brasil_Local_26-27_Jugador_Espalda.webp",
+      "/img/SELECCIONES/AMERICA/BRASIL/Versión JUGADOR/Brasil_Local_26-27_Jugador_DetalleEscudo.webp",
+      "/img/SELECCIONES/AMERICA/BRASIL/Versión JUGADOR/Brasil_Local_26-27_Jugador_DetalleTela.webp"
     ]
   },
   {
     "id": "canada-local-26",
     "nombre": "Canadá Local 26/27",
     "precioFan": null,
-    "precioJugador": 450,
+    "precioJugador": 400,
     "categoria": "Selecciones",
     "imagenesFan": [],
     "imagenesJugador": [
-      "/img/SELECCIONES/AMERICA/CANADA/Versión JUGADOR/Canada_Local_26-27_Jugador_Frontal.jpg",
-      "/img/SELECCIONES/AMERICA/CANADA/Versión JUGADOR/Canada_Local_26-27_Jugador_Espalda.jpg",
-      "/img/SELECCIONES/AMERICA/CANADA/Versión JUGADOR/Canada_Local_26-27_Jugador_DetalleEscudo.jpg",
-      "/img/SELECCIONES/AMERICA/CANADA/Versión JUGADOR/Canada_Local_26-27_Jugador_DetalleTela.jpg"
+      "/img/SELECCIONES/AMERICA/CANADA/Versión JUGADOR/Canada_Local_26-27_Jugador_Frontal.webp",
+      "/img/SELECCIONES/AMERICA/CANADA/Versión JUGADOR/Canada_Local_26-27_Jugador_Espalda.webp",
+      "/img/SELECCIONES/AMERICA/CANADA/Versión JUGADOR/Canada_Local_26-27_Jugador_DetalleEscudo.webp",
+      "/img/SELECCIONES/AMERICA/CANADA/Versión JUGADOR/Canada_Local_26-27_Jugador_DetalleTela.webp"
     ]
   },
   {
     "id": "chile-local-26",
     "nombre": "Chile Local 26/27",
     "precioFan": null,
-    "precioJugador": 450,
+    "precioJugador": 400,
     "categoria": "Selecciones",
     "imagenesFan": [],
     "imagenesJugador": [
-      "/img/SELECCIONES/AMERICA/CHILE/Versión JUGADOR/Chile_Local_26-27_Jugador_Frontal 2.jpg",
-      "/img/SELECCIONES/AMERICA/CHILE/Versión JUGADOR/Chile_Local_26-27_Jugador_Espalda.jpg",
-      "/img/SELECCIONES/AMERICA/CHILE/Versión JUGADOR/Chile_Local_26-27_Jugador_DetalleFrontal.jpg",
-      "/img/SELECCIONES/AMERICA/CHILE/Versión JUGADOR/Chile_Local_26-27_Jugador_DetalleTela.jpg"
+      "/img/SELECCIONES/AMERICA/CHILE/Versión JUGADOR/Chile_Local_26-27_Jugador_Frontal 2.webp",
+      "/img/SELECCIONES/AMERICA/CHILE/Versión JUGADOR/Chile_Local_26-27_Jugador_Espalda.webp",
+      "/img/SELECCIONES/AMERICA/CHILE/Versión JUGADOR/Chile_Local_26-27_Jugador_DetalleFrontal.webp",
+      "/img/SELECCIONES/AMERICA/CHILE/Versión JUGADOR/Chile_Local_26-27_Jugador_DetalleTela.webp"
     ]
   },
   {
     "id": "colombia-local-26",
     "nombre": "Colombia Local 26/27",
     "precioFan": 375,
-    "precioJugador": 450,
+    "precioJugador": 400,
     "categoria": "Selecciones",
     "imagenesFan": [
-      "/img/SELECCIONES/AMERICA/COLOMBIA/Versión FAN/Colombia_Frontal.jpeg",
-      "/img/SELECCIONES/AMERICA/COLOMBIA/Versión FAN/Colombia_Espalda.jpeg"
+      "/img/SELECCIONES/AMERICA/COLOMBIA/Versión FAN/Colombia_Frontal.webp",
+      "/img/SELECCIONES/AMERICA/COLOMBIA/Versión FAN/Colombia_Espalda.webp"
     ],
     "imagenesJugador": [
-      "/img/SELECCIONES/AMERICA/COLOMBIA/Versión JUGADOR/Colombia_Local_26-27_Jugador_Frontal.jpg",
-      "/img/SELECCIONES/AMERICA/COLOMBIA/Versión JUGADOR/Colombia_Local_26-27_Jugador_Espalda.jpg",
-      "/img/SELECCIONES/AMERICA/COLOMBIA/Versión JUGADOR/Colombia_Local_26-27_Jugador_DetalleEscudo.jpg",
-      "/img/SELECCIONES/AMERICA/COLOMBIA/Versión JUGADOR/Colombia_Local_26-27_Jugador_DetalleTela.jpg"
+      "/img/SELECCIONES/AMERICA/COLOMBIA/Versión JUGADOR/Colombia_Local_26-27_Jugador_Frontal.webp",
+      "/img/SELECCIONES/AMERICA/COLOMBIA/Versión JUGADOR/Colombia_Local_26-27_Jugador_Espalda.webp",
+      "/img/SELECCIONES/AMERICA/COLOMBIA/Versión JUGADOR/Colombia_Local_26-27_Jugador_DetalleEscudo.webp",
+      "/img/SELECCIONES/AMERICA/COLOMBIA/Versión JUGADOR/Colombia_Local_26-27_Jugador_DetalleTela.webp"
     ]
   },
   {
@@ -119,8 +119,8 @@
     "precioJugador": null,
     "categoria": "Selecciones",
     "imagenesFan": [
-      "/img/SELECCIONES/AMERICA/ESTADOS UNIDOS/Versión FAN/Estados Unidos_Frontal.jpeg",
-      "/img/SELECCIONES/AMERICA/ESTADOS UNIDOS/Versión FAN/Estados Unidos_Espalda.jpeg"
+      "/img/SELECCIONES/AMERICA/ESTADOS UNIDOS/Versión FAN/Estados Unidos_Frontal.webp",
+      "/img/SELECCIONES/AMERICA/ESTADOS UNIDOS/Versión FAN/Estados Unidos_Espalda.webp"
     ],
     "imagenesJugador": []
   },
@@ -131,13 +131,13 @@
     "precioJugador": null,
     "categoria": "Selecciones",
     "imagenesFan": [
-      "/img/SELECCIONES/AMERICA/GUATEMALA/Versión FAN/15371d06.jpeg",
-      "/img/SELECCIONES/AMERICA/GUATEMALA/Versión FAN/3461fdbd.jpeg",
-      "/img/SELECCIONES/AMERICA/GUATEMALA/Versión FAN/5bed4d0f.jpeg",
-      "/img/SELECCIONES/AMERICA/GUATEMALA/Versión FAN/1079366f.jpeg",
-      "/img/SELECCIONES/AMERICA/GUATEMALA/Versión FAN/a39773e3.jpeg",
-      "/img/SELECCIONES/AMERICA/GUATEMALA/Versión FAN/d83663d3.jpeg",
-      "/img/SELECCIONES/AMERICA/GUATEMALA/Versión FAN/fc2fcbde.jpeg"
+      "/img/SELECCIONES/AMERICA/GUATEMALA/Versión FAN/15371d06.webp",
+      "/img/SELECCIONES/AMERICA/GUATEMALA/Versión FAN/3461fdbd.webp",
+      "/img/SELECCIONES/AMERICA/GUATEMALA/Versión FAN/5bed4d0f.webp",
+      "/img/SELECCIONES/AMERICA/GUATEMALA/Versión FAN/1079366f.webp",
+      "/img/SELECCIONES/AMERICA/GUATEMALA/Versión FAN/a39773e3.webp",
+      "/img/SELECCIONES/AMERICA/GUATEMALA/Versión FAN/d83663d3.webp",
+      "/img/SELECCIONES/AMERICA/GUATEMALA/Versión FAN/fc2fcbde.webp"
     ],
     "imagenesJugador": []
   },
@@ -145,174 +145,174 @@
     "id": "mexico-local-26",
     "nombre": "México Local 26/27",
     "precioFan": 375,
-    "precioJugador": 450,
+    "precioJugador": 400,
     "categoria": "Selecciones",
     "imagenesFan": [
-      "/img/SELECCIONES/AMERICA/MEXICO/Versión FAN/México_Frontal.jpeg",
-      "/img/SELECCIONES/AMERICA/MEXICO/Versión FAN/México_Espalda.jpeg"
+      "/img/SELECCIONES/AMERICA/MEXICO/Versión FAN/México_Frontal.webp",
+      "/img/SELECCIONES/AMERICA/MEXICO/Versión FAN/México_Espalda.webp"
     ],
     "imagenesJugador": [
-      "/img/SELECCIONES/AMERICA/MEXICO/Versión JUGADOR/Mexico_Local_26-27_Jugador_Frontal.jpg",
-      "/img/SELECCIONES/AMERICA/MEXICO/Versión JUGADOR/Mexico_Local_26-27_Jugador_Espalda.jpg",
-      "/img/SELECCIONES/AMERICA/MEXICO/Versión JUGADOR/Mexico_Local_26-27_Jugador_DetalleEscudo.jpg",
-      "/img/SELECCIONES/AMERICA/MEXICO/Versión JUGADOR/Mexico_Local_26-27_Jugador_DetalleTela.jpg"
+      "/img/SELECCIONES/AMERICA/MEXICO/Versión JUGADOR/Mexico_Local_26-27_Jugador_Frontal.webp",
+      "/img/SELECCIONES/AMERICA/MEXICO/Versión JUGADOR/Mexico_Local_26-27_Jugador_Espalda.webp",
+      "/img/SELECCIONES/AMERICA/MEXICO/Versión JUGADOR/Mexico_Local_26-27_Jugador_DetalleEscudo.webp",
+      "/img/SELECCIONES/AMERICA/MEXICO/Versión JUGADOR/Mexico_Local_26-27_Jugador_DetalleTela.webp"
     ]
   },
   {
     "id": "alemania-local-26",
     "nombre": "Alemania Local 26/27",
     "precioFan": 375,
-    "precioJugador": 450,
+    "precioJugador": 400,
     "categoria": "Selecciones",
     "imagenesFan": [
-      "/img/SELECCIONES/EUROPA/ALEMANIA/Versión FAN/Alemania_Frontal.jpeg",
-      "/img/SELECCIONES/EUROPA/ALEMANIA/Versión FAN/Alemania_Espalda.jpeg"
+      "/img/SELECCIONES/EUROPA/ALEMANIA/Versión FAN/Alemania_Frontal.webp",
+      "/img/SELECCIONES/EUROPA/ALEMANIA/Versión FAN/Alemania_Espalda.webp"
     ],
     "imagenesJugador": [
-      "/img/SELECCIONES/EUROPA/ALEMANIA/Versión JUGADOR/Alemania_Local_26-27_Jugador_Frontal.jpeg",
-      "/img/SELECCIONES/EUROPA/ALEMANIA/Versión JUGADOR/Alemania_Local_26-27_Jugador_Espalda.jpeg",
-      "/img/SELECCIONES/EUROPA/ALEMANIA/Versión JUGADOR/Alemania_Local_26-27_Jugador_DetalleEscudo.jpeg",
-      "/img/SELECCIONES/EUROPA/ALEMANIA/Versión JUGADOR/Alemania_Local_26-27_Jugador_DetalleParche.jpeg",
-      "/img/SELECCIONES/EUROPA/ALEMANIA/Versión JUGADOR/Alemania_Local_26-27_Jugador_DetalleTela.jpeg"
+      "/img/SELECCIONES/EUROPA/ALEMANIA/Versión JUGADOR/Alemania_Local_26-27_Jugador_Frontal.webp",
+      "/img/SELECCIONES/EUROPA/ALEMANIA/Versión JUGADOR/Alemania_Local_26-27_Jugador_Espalda.webp",
+      "/img/SELECCIONES/EUROPA/ALEMANIA/Versión JUGADOR/Alemania_Local_26-27_Jugador_DetalleEscudo.webp",
+      "/img/SELECCIONES/EUROPA/ALEMANIA/Versión JUGADOR/Alemania_Local_26-27_Jugador_DetalleParche.webp",
+      "/img/SELECCIONES/EUROPA/ALEMANIA/Versión JUGADOR/Alemania_Local_26-27_Jugador_DetalleTela.webp"
     ]
   },
   {
     "id": "espana-local-26",
     "nombre": "España Local 26/27",
     "precioFan": 375,
-    "precioJugador": 450,
+    "precioJugador": 400,
     "categoria": "Selecciones",
     "imagenesFan": [
-      "/img/SELECCIONES/EUROPA/ESPAÑA/Versión FAN/España_Frontal.jpeg",
-      "/img/SELECCIONES/EUROPA/ESPAÑA/Versión FAN/España_Espalda.jpeg"
+      "/img/SELECCIONES/EUROPA/ESPAÑA/Versión FAN/España_Frontal.webp",
+      "/img/SELECCIONES/EUROPA/ESPAÑA/Versión FAN/España_Espalda.webp"
     ],
     "imagenesJugador": [
-      "/img/SELECCIONES/EUROPA/ESPAÑA/Versión JUGADOR/España_Local_26-27_Jugador_Frontal.jpg",
-      "/img/SELECCIONES/EUROPA/ESPAÑA/Versión JUGADOR/España_Local_26-27_Jugador_Frontal 2.jpg",
-      "/img/SELECCIONES/EUROPA/ESPAÑA/Versión JUGADOR/España_Local_26-27_Jugador_Espalda.jpg",
-      "/img/SELECCIONES/EUROPA/ESPAÑA/Versión JUGADOR/España_Local_26-27_Jugador_DetalleEscudo.jpg",
-      "/img/SELECCIONES/EUROPA/ESPAÑA/Versión JUGADOR/España_Local_26-27_Jugador_DetalleTela.jpg"
+      "/img/SELECCIONES/EUROPA/ESPAÑA/Versión JUGADOR/España_Local_26-27_Jugador_Frontal.webp",
+      "/img/SELECCIONES/EUROPA/ESPAÑA/Versión JUGADOR/España_Local_26-27_Jugador_Frontal 2.webp",
+      "/img/SELECCIONES/EUROPA/ESPAÑA/Versión JUGADOR/España_Local_26-27_Jugador_Espalda.webp",
+      "/img/SELECCIONES/EUROPA/ESPAÑA/Versión JUGADOR/España_Local_26-27_Jugador_DetalleEscudo.webp",
+      "/img/SELECCIONES/EUROPA/ESPAÑA/Versión JUGADOR/España_Local_26-27_Jugador_DetalleTela.webp"
     ]
   },
   {
     "id": "francia-local-26",
     "nombre": "Francia Local 26/27",
     "precioFan": 375,
-    "precioJugador": 450,
+    "precioJugador": 400,
     "categoria": "Selecciones",
     "imagenesFan": [
-      "/img/SELECCIONES/EUROPA/FRANCIA/Versión FAN/Francia_Frontal.jpeg",
-      "/img/SELECCIONES/EUROPA/FRANCIA/Versión FAN/Francia_Espalda.jpeg"
+      "/img/SELECCIONES/EUROPA/FRANCIA/Versión FAN/Francia_Frontal.webp",
+      "/img/SELECCIONES/EUROPA/FRANCIA/Versión FAN/Francia_Espalda.webp"
     ],
     "imagenesJugador": [
-      "/img/SELECCIONES/EUROPA/FRANCIA/Versión JUGADOR/Francia_Local_26-27_Jugador_Frontal.jpg",
-      "/img/SELECCIONES/EUROPA/FRANCIA/Versión JUGADOR/Francia_Local_26-27_Jugador_Espalda.jpg",
-      "/img/SELECCIONES/EUROPA/FRANCIA/Versión JUGADOR/Francia_Local_26-27_Jugador_DetalleFrontal.jpg",
-      "/img/SELECCIONES/EUROPA/FRANCIA/Versión JUGADOR/Francia_Local_26-27_Jugador_DetalleTela.jpg"
+      "/img/SELECCIONES/EUROPA/FRANCIA/Versión JUGADOR/Francia_Local_26-27_Jugador_Frontal.webp",
+      "/img/SELECCIONES/EUROPA/FRANCIA/Versión JUGADOR/Francia_Local_26-27_Jugador_Espalda.webp",
+      "/img/SELECCIONES/EUROPA/FRANCIA/Versión JUGADOR/Francia_Local_26-27_Jugador_DetalleFrontal.webp",
+      "/img/SELECCIONES/EUROPA/FRANCIA/Versión JUGADOR/Francia_Local_26-27_Jugador_DetalleTela.webp"
     ]
   },
   {
     "id": "inglaterra-local-26",
     "nombre": "Inglaterra Local 26/27",
     "precioFan": 375,
-    "precioJugador": 450,
+    "precioJugador": 400,
     "categoria": "Selecciones",
     "imagenesFan": [
-      "/img/SELECCIONES/EUROPA/INGLATERRA/Versión FAN/Inglaterra_Frontal.jpeg",
-      "/img/SELECCIONES/EUROPA/INGLATERRA/Versión FAN/Inglaterra_Espalda.jpeg"
+      "/img/SELECCIONES/EUROPA/INGLATERRA/Versión FAN/Inglaterra_Frontal.webp",
+      "/img/SELECCIONES/EUROPA/INGLATERRA/Versión FAN/Inglaterra_Espalda.webp"
     ],
     "imagenesJugador": [
-      "/img/SELECCIONES/EUROPA/INGLATERRA/Versión JUGADOR/Inglaterra_Local_26-27_Jugador_Frontal.jpg",
-      "/img/SELECCIONES/EUROPA/INGLATERRA/Versión JUGADOR/Inglaterra_Local_26-27_Jugador_Espalda.jpg",
-      "/img/SELECCIONES/EUROPA/INGLATERRA/Versión JUGADOR/Inglaterra_Local_26-27_Jugador_DetalleEscudo.jpg",
-      "/img/SELECCIONES/EUROPA/INGLATERRA/Versión JUGADOR/Inglaterra_Local_26-27_Jugador_DetalleTela.jpg"
+      "/img/SELECCIONES/EUROPA/INGLATERRA/Versión JUGADOR/Inglaterra_Local_26-27_Jugador_Frontal.webp",
+      "/img/SELECCIONES/EUROPA/INGLATERRA/Versión JUGADOR/Inglaterra_Local_26-27_Jugador_Espalda.webp",
+      "/img/SELECCIONES/EUROPA/INGLATERRA/Versión JUGADOR/Inglaterra_Local_26-27_Jugador_DetalleEscudo.webp",
+      "/img/SELECCIONES/EUROPA/INGLATERRA/Versión JUGADOR/Inglaterra_Local_26-27_Jugador_DetalleTela.webp"
     ]
   },
   {
     "id": "italia-local-26",
     "nombre": "Italia Local 26/27",
     "precioFan": 375,
-    "precioJugador": 450,
+    "precioJugador": 400,
     "categoria": "Selecciones",
     "imagenesFan": [
-      "/img/SELECCIONES/EUROPA/ITALIA/Versión FAN/Italia_Frontal.jpeg",
-      "/img/SELECCIONES/EUROPA/ITALIA/Versión FAN/Italia_Espalda.jpeg"
+      "/img/SELECCIONES/EUROPA/ITALIA/Versión FAN/Italia_Frontal.webp",
+      "/img/SELECCIONES/EUROPA/ITALIA/Versión FAN/Italia_Espalda.webp"
     ],
     "imagenesJugador": [
-      "/img/SELECCIONES/EUROPA/ITALIA/Versión JUGADOR/Italia_Local_26-27_Jugador_Frontal.jpg",
-      "/img/SELECCIONES/EUROPA/ITALIA/Versión JUGADOR/Italia_Local_26-27_Jugador_Espalda.jpg",
-      "/img/SELECCIONES/EUROPA/ITALIA/Versión JUGADOR/Italia_Local_26-27_Jugador_DetalleEscudo.jpg",
-      "/img/SELECCIONES/EUROPA/ITALIA/Versión JUGADOR/Italia_Local_26-27_Jugador_DetalleTela.jpg"
+      "/img/SELECCIONES/EUROPA/ITALIA/Versión JUGADOR/Italia_Local_26-27_Jugador_Frontal.webp",
+      "/img/SELECCIONES/EUROPA/ITALIA/Versión JUGADOR/Italia_Local_26-27_Jugador_Espalda.webp",
+      "/img/SELECCIONES/EUROPA/ITALIA/Versión JUGADOR/Italia_Local_26-27_Jugador_DetalleEscudo.webp",
+      "/img/SELECCIONES/EUROPA/ITALIA/Versión JUGADOR/Italia_Local_26-27_Jugador_DetalleTela.webp"
     ]
   },
   {
     "id": "japon-local-26",
     "nombre": "Japón Local 26/27",
     "precioFan": 375,
-    "precioJugador": 450,
+    "precioJugador": 400,
     "categoria": "Selecciones",
     "imagenesFan": [
-      "/img/SELECCIONES/EUROPA/JAPON/Versión FAN/Japon_Frontal.jpeg",
-      "/img/SELECCIONES/EUROPA/JAPON/Versión FAN/Japon_Espalda.jpeg"
+      "/img/SELECCIONES/EUROPA/JAPON/Versión FAN/Japon_Frontal.webp",
+      "/img/SELECCIONES/EUROPA/JAPON/Versión FAN/Japon_Espalda.webp"
     ],
     "imagenesJugador": [
-      "/img/SELECCIONES/EUROPA/JAPON/Versión JUGADOR/Japon_Local_26-27_Jugador_Frontal.jpg",
-      "/img/SELECCIONES/EUROPA/JAPON/Versión JUGADOR/Japon_Local_26-27_Jugador_Espalda.jpeg",
-      "/img/SELECCIONES/EUROPA/JAPON/Versión JUGADOR/Japon_Local_26-27_Jugador_DetalleEscudo.jpg",
-      "/img/SELECCIONES/EUROPA/JAPON/Versión JUGADOR/Japon_Local_26-27_Jugador_DetalleTela.jpg"
+      "/img/SELECCIONES/EUROPA/JAPON/Versión JUGADOR/Japon_Local_26-27_Jugador_Frontal.webp",
+      "/img/SELECCIONES/EUROPA/JAPON/Versión JUGADOR/Japon_Local_26-27_Jugador_Espalda.webp",
+      "/img/SELECCIONES/EUROPA/JAPON/Versión JUGADOR/Japon_Local_26-27_Jugador_DetalleEscudo.webp",
+      "/img/SELECCIONES/EUROPA/JAPON/Versión JUGADOR/Japon_Local_26-27_Jugador_DetalleTela.webp"
     ]
   },
   {
     "id": "portugal-local-26",
     "nombre": "Portugal Local 26/27",
     "precioFan": 375,
-    "precioJugador": 450,
+    "precioJugador": 400,
     "categoria": "Selecciones",
     "imagenesFan": [
-      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión FAN/Portugal_Frontal.jpeg",
-      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión FAN/Portugal_Espalda.jpeg"
+      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión FAN/Portugal_Frontal.webp",
+      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión FAN/Portugal_Espalda.webp"
     ],
     "imagenesJugador": [
-      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Portugal_Local_26-27_Jugador_Frontal.jpg",
-      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Portugal_Local_26-27_Jugador_Espalda.jpg",
-      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Portugal_Local_26-27_Jugador_DetalleEscudo.jpg",
-      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Portugal_Local_26-27_Jugador_DetallePArche.jpg",
-      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Portugal_Local_26-27_Jugador_DetalleTela.jpg"
+      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Portugal_Local_26-27_Jugador_Frontal.webp",
+      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Portugal_Local_26-27_Jugador_Espalda.webp",
+      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Portugal_Local_26-27_Jugador_DetalleEscudo.webp",
+      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Portugal_Local_26-27_Jugador_DetallePArche.webp",
+      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Portugal_Local_26-27_Jugador_DetalleTela.webp"
     ]
   },
   {
     "id": "portugal-especial-negra-26",
     "nombre": "Portugal Edición Especial Negra 26/27",
     "precioFan": 375,
-    "precioJugador": 450,
+    "precioJugador": 400,
     "categoria": "Especiales",
     "imagenesFan": [
-      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión FAN/Portugal_Frontal_Negra.jpeg",
-      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión FAN/Portugal_Espalda_Negra.jpeg"
+      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión FAN/Portugal_Frontal_Negra.webp",
+      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión FAN/Portugal_Espalda_Negra.webp"
     ],
     "imagenesJugador": [
-      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Edicion Especial (Negra)/Portugal_Ed Espl_26-27_Jugador_Frontal.jpg",
-      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Edicion Especial (Negra)/Portugal_Ed Esp_26-27_Jugador_Espalda.jpg",
-      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Edicion Especial (Negra)/Portugal_Ed Espl_26-27_Jugador_DetalleEscudo.jpg",
-      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Edicion Especial (Negra)/Portugal_edespl_26-27_Jugador_DetallePArche.jpg",
-      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Edicion Especial (Negra)/Portugal_Ed Esp_26-27_Jugador_DetalleTela.jpg"
+      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Edicion Especial (Negra)/Portugal_Ed Espl_26-27_Jugador_Frontal.webp",
+      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Edicion Especial (Negra)/Portugal_Ed Esp_26-27_Jugador_Espalda.webp",
+      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Edicion Especial (Negra)/Portugal_Ed Espl_26-27_Jugador_DetalleEscudo.webp",
+      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Edicion Especial (Negra)/Portugal_edespl_26-27_Jugador_DetallePArche.webp",
+      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Edicion Especial (Negra)/Portugal_Ed Esp_26-27_Jugador_DetalleTela.webp"
     ]
   },
   {
     "id": "suiza-local-26",
     "nombre": "Suiza Local 26/27",
     "precioFan": 375,
-    "precioJugador": 450,
+    "precioJugador": 400,
     "categoria": "Selecciones",
     "imagenesFan": [
-      "/img/SELECCIONES/EUROPA/SUIZA/Versión FAN/SUIZA_25-26_Frontal.jpg",
-      "/img/SELECCIONES/EUROPA/SUIZA/Versión FAN/SUIZA_25-26_Espalda.jpg"
+      "/img/SELECCIONES/EUROPA/SUIZA/Versión FAN/SUIZA_25-26_Frontal.webp",
+      "/img/SELECCIONES/EUROPA/SUIZA/Versión FAN/SUIZA_25-26_Espalda.webp"
     ],
     "imagenesJugador": [
-      "/img/SELECCIONES/EUROPA/SUIZA/Versión JUGADOR/Suiza_Local_26-27_Jugador_Frontal.jpg",
-      "/img/SELECCIONES/EUROPA/SUIZA/Versión JUGADOR/Suiza_Local_26-27_Jugador_Espalda.jpg",
-      "/img/SELECCIONES/EUROPA/SUIZA/Versión JUGADOR/Suiza_Local_26-27_Jugador_DetalleEscudo.jpg",
-      "/img/SELECCIONES/EUROPA/SUIZA/Versión JUGADOR/Suiza_Local_26-27_Jugador_DetalleTela.jpg"
+      "/img/SELECCIONES/EUROPA/SUIZA/Versión JUGADOR/Suiza_Local_26-27_Jugador_Frontal.webp",
+      "/img/SELECCIONES/EUROPA/SUIZA/Versión JUGADOR/Suiza_Local_26-27_Jugador_Espalda.webp",
+      "/img/SELECCIONES/EUROPA/SUIZA/Versión JUGADOR/Suiza_Local_26-27_Jugador_DetalleEscudo.webp",
+      "/img/SELECCIONES/EUROPA/SUIZA/Versión JUGADOR/Suiza_Local_26-27_Jugador_DetalleTela.webp"
     ]
   }
 ]
