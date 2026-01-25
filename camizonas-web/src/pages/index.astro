@@ -1,9 +1,19 @@
 ---
+// filepath: c:\Users\EddyA\Escritorio\camiZona\camizonas-web\src\pages\index.astro
 import Layout from '../layouts/Layout.astro';
 import ProductCard from '../components/ProductCard.astro';
 import productos from '../data/productos.json';
 
+// Novedades: últimos 8 productos
 const novedades = productos.slice(0, 8);
+
+// Configuración de Categorías
+const categorias = [
+    { name: 'Clubes', image: '/img/categories/bg-clubes.jpg', count: productos.filter(p => p.categoria === 'Clubes').length },
+    { name: 'Selecciones', image: '/img/categories/bg-selecciones.jpg', count: productos.filter(p => p.categoria === 'Selecciones').length },
+    { name: 'Retro', image: '/img/categories/bg-retro.jpg', count: productos.filter(p => p.categoria === 'Retro').length },
+    { name: 'Especiales', image: '/img/categories/bg-especiales.jpg', count: productos.filter(p => p.categoria === 'Especiales').length }
+];
 
 const banners = [
     {
@@ -37,334 +47,261 @@ const banners = [
 ---
 
 <Layout title="CamiZonas | Catálogo Oficial">
-    <main class="bg-white pb-24 md:pb-12 min-h-full">
-        
-        <!-- ✅ HEADER RESPONSIVE -->
-        <header class="p-4 pt-8 sm:p-6 sm:pt-10 md:p-8 md:pt-12 lg:px-12 flex flex-col gap-4 sm:gap-6 relative z-30">
-            <div class="flex justify-between items-center">
-                <h1 class="text-xl sm:text-2xl md:text-3xl font-black italic tracking-tighter">CAMIZONAS.</h1>
-                
-                <!-- Desktop Navigation -->
-                <nav class="hidden md:flex items-center gap-6 lg:gap-8">
-                    <a href="/" class="text-sm font-bold text-black hover:text-blue-600 transition-colors">Inicio</a>
-                    <a href="/catalogo" class="text-sm font-bold text-gray-500 hover:text-black transition-colors">Catálogo</a>
-                    <a href="/catalogo?categoria=Clubes" class="text-sm font-bold text-gray-500 hover:text-black transition-colors">Clubes</a>
-                    <a href="/catalogo?categoria=Selecciones" class="text-sm font-bold text-gray-500 hover:text-black transition-colors">Selecciones</a>
-                    <a href="/carrito" class="relative flex items-center gap-2 bg-black text-white px-4 py-2 rounded-full font-bold text-sm hover:bg-gray-800 transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-                        Carrito
-                        <span id="cart-count-desktop" class="hidden bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center absolute -top-1 -right-1">0</span>
-                    </a>
-                </nav>
-                
-                <!-- Mobile Menu Button -->
-                <button id="menu-toggle" class="md:hidden w-10 h-10 bg-white border border-gray-100 shadow-sm rounded-full flex flex-col items-center justify-center gap-[5px] hover:bg-black group transition-all duration-300">
-                    <span class="w-5 h-0.5 bg-black group-hover:bg-white transition-colors rounded-full"></span>
-                    <span class="w-5 h-0.5 bg-black group-hover:bg-white transition-colors rounded-full"></span>
-                    <span class="w-5 h-0.5 bg-black group-hover:bg-white transition-colors rounded-full"></span>
-                </button>
+  <main class="bg-white pb-24 md:pb-12 min-h-full">
+    
+    <!-- 🔍 BARRA DE BÚSQUEDA -->
+        <div class="w-full px-4 sm:px-6 md:px-8 py-4">
+        <div class="relative group w-full md:max-w-2xl md:mx-auto">
+            <input 
+            type="text" 
+            id="search-input"
+            placeholder="Buscar tu equipo (ej: Real Madrid)..." 
+            class="w-full bg-gray-50 border border-gray-200 rounded-2xl 
+                    py-3.5 pl-12 pr-4 
+                    text-sm font-medium placeholder:text-gray-400 
+                    outline-none transition-all
+                    focus:bg-white focus:border-gray-300 focus:ring-2 ring-black/5
+                    shadow-sm"
+            />
+            <span class="absolute left-4 top-1/2 -translate-y-1/2 
+                        text-gray-400 group-focus-within:text-black 
+                        transition-colors pointer-events-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="m21 21-4.3-4.3"/>
+            </svg>
+            </span>
+        </div>
+        </div>
+
+    <!-- HERO BANNER -->
+    <section class="px-4 sm:px-6 md:px-8 lg:px-12 mb-6">
+      <div class="relative w-full h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px] xl:h-[550px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl">
+        <div id="hero-slider" class="relative w-full h-full">
+          {banners.map((banner, index) => (
+            <div 
+              class={`hero-slide absolute inset-0 transition-opacity duration-1000 ${
+                index === 0 ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+              }`} 
+              data-slide={index}
+            >
+              <img src={banner.imagen} class="w-full h-full object-cover" alt={banner.titulo.replace('<br>', ' ')} />
+              <div class={`absolute inset-0 bg-gradient-to-t ${banner.gradient} flex flex-col justify-end p-6 sm:p-10 pb-16 sm:pb-14`}>
+                <span class="text-yellow-400 font-bold tracking-widest text-xs uppercase mb-3 bg-black/30 backdrop-blur-md px-3 py-1 rounded-full w-fit border border-white/10">{banner.categoria}</span>
+                <h2 class="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black italic uppercase leading-none mb-4" set:html={banner.titulo}></h2>
+                <p class="text-white/90 text-sm sm:text-base md:text-lg mb-6 leading-relaxed max-w-lg font-medium">{banner.descripcion}</p>
+                <a href={banner.link} class="bg-white text-black font-black uppercase text-xs sm:text-sm py-3 px-8 rounded-full w-fit hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-all duration-300 active:scale-95">
+                  {banner.boton}
+                </a>
+              </div>
             </div>
-            
-            <!-- ✅ BÚSQUEDA RESPONSIVE -->
-            <div class="relative group max-w-2xl">
-                <input 
-                    type="text" 
-                    id="search-input"
-                    placeholder="Buscar tu equipo..." 
-                    class="w-full bg-gray-50 border border-gray-100 rounded-2xl py-3 sm:py-4 px-10 sm:px-12 outline-none focus:ring-2 ring-black/5 transition-all text-sm sm:text-base" 
+          ))}
+        </div>
+
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+          {banners.map((_, index) => (
+            <button 
+              class={`slider-indicator h-2 rounded-full transition-all duration-300 ${index === 0 ? 'bg-white w-8' : 'bg-white/50 w-2'}`}
+              data-slide={index}
+            ></button>
+          ))}
+        </div>
+
+        <button id="next-slide" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-all z-10 group">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" class="group-hover:translate-x-0.5 transition-transform"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+      </div>
+    </section>
+
+            <!-- CATEGORÍAS -->
+        <section class="px-4 sm:px-6 md:px-8 lg:px-12 mb-10">
+        <h3 class="sr-only">Categorías</h3>
+
+        <div class="grid grid-cols-4 gap-2 sm:gap-4 md:gap-5">
+            {categorias.map(cat => (
+            <a
+                href={`/catalogo?categoria=${cat.name}`}
+                class="group relative w-full aspect-square rounded-xl sm:rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300"
+            >
+
+                <!-- Fallback gradient (DEBAJO) -->
+                <div class="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-900 z-0"></div>
+
+                <!-- Imagen -->
+                <img 
+                src={cat.image}
+                alt={`Camisetas de ${cat.name}`}
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-10"
+                onerror="this.style.display='none'"
                 />
-                <span class="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-black transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+
+                <!-- Overlay oscuro -->
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300 z-20"></div>
+
+                <!-- Texto -->
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-white z-30 p-1 sm:p-4 text-center">
+                <h3 class="text-[10px] sm:text-xl md:text-2xl font-black italic uppercase tracking-tighter leading-none mb-0.5 sm:mb-2 drop-shadow-md">
+                    {cat.name}
+                </h3>
+                <span class="hidden sm:block text-[8px] sm:text-[10px] md:text-xs font-bold uppercase tracking-widest bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded-full border border-white/30">
+                    Ver
                 </span>
-            </div>
-        </header>
-
-        <!-- Mobile Menu Overlay -->
-        <div id="side-menu-overlay" class="fixed inset-0 bg-black/20 z-50 hidden backdrop-blur-sm transition-opacity opacity-0 md:hidden"></div>
-
-        <!-- Mobile Side Menu -->
-        <aside id="side-menu" class="fixed top-0 right-0 h-full w-3/4 max-w-xs bg-white z-[60] shadow-2xl transform translate-x-full transition-transform duration-300 ease-out flex flex-col p-6 sm:p-8 md:hidden">
-            <div class="flex justify-end mb-6 sm:mb-8">
-                <button id="menu-close" class="text-2xl sm:text-3xl font-light hover:rotate-90 transition-transform">✕</button>
-            </div>
-            
-            <div class="flex flex-col gap-6 sm:gap-8">
-                <nav class="flex flex-col gap-4 sm:gap-5 text-base sm:text-lg font-bold">
-                    <a href="/" class="flex items-center gap-3 hover:text-blue-600 transition-colors">
-                        <span>🏠</span> Inicio
-                    </a>
-                    <a href="/catalogo" class="flex items-center gap-3 hover:text-blue-600 transition-colors">
-                        <span>📦</span> Catálogo
-                    </a>
-                    <a href="/carrito" class="flex items-center gap-3 hover:text-blue-600 transition-colors">
-                        <span>🛒</span> Carrito
-                    </a>
-                </nav>
-
-                <div class="border-t border-gray-100 pt-6">
-                    <h3 class="text-xs font-black text-gray-400 uppercase tracking-widest mb-4">Ayuda</h3>
-                    <nav class="flex flex-col gap-3 sm:gap-4 text-sm sm:text-base font-medium text-gray-600">
-                        <a href="#" class="hover:text-black transition-colors">📏 Guía de Tallas</a>
-                        <a href="#" class="hover:text-black transition-colors">🚚 Envíos</a>
-                        <a href="#" class="hover:text-black transition-colors">❓ FAQ</a>
-                    </nav>
                 </div>
 
-                <div class="mt-auto pt-6 border-t border-gray-100">
-                    <a href="https://wa.me/50232650539" class="bg-black text-white py-3 sm:py-4 rounded-xl flex justify-center items-center gap-2 font-bold text-sm hover:bg-gray-900 transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                        WhatsApp
-                    </a>
-                </div>
-            </div>
-        </aside>
-
-        <!-- ✅ HERO SLIDER RESPONSIVE CON POINTER-EVENTS FIX -->
-        <section class="px-4 sm:px-6 md:px-8 lg:px-12 mb-6 sm:mb-8">
-            <div class="relative w-full h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px] xl:h-[550px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl">
-                <div id="hero-slider" class="relative w-full h-full">
-                    {banners.map((banner, index) => (
-                        <div 
-                            class={`hero-slide absolute inset-0 transition-opacity duration-1000 ${
-                                index === 0 ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-                            }`} 
-                            data-slide={index}
-                        >
-                            <img src={banner.imagen} class="w-full h-full object-cover" alt={banner.titulo.replace('<br>', ' ')} />
-                            <div class={`absolute inset-0 bg-gradient-to-t ${banner.gradient} flex flex-col justify-end p-4 sm:p-6 md:p-8 lg:p-10 pb-16 sm:pb-12`}>
-                                <span class="text-yellow-400 font-bold tracking-widest text-[10px] sm:text-xs uppercase mb-2 bg-black/20 backdrop-blur-sm px-2 sm:px-3 py-1 rounded-full w-fit">{banner.categoria}</span>
-                                <h2 class="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black italic uppercase leading-none mb-2 sm:mb-3" set:html={banner.titulo}></h2>
-                                <p class="text-white/90 text-xs sm:text-sm md:text-base mb-4 sm:mb-6 leading-relaxed max-w-md">{banner.descripcion}</p>
-                                <a href={banner.link} class="bg-white text-black font-black uppercase text-xs sm:text-sm py-2.5 sm:py-3 px-5 sm:px-6 rounded-full w-fit hover:scale-105 hover:shadow-lg transition-all duration-300 active:scale-95">
-                                    {banner.boton}
-                                </a>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-                <!-- Indicators -->
-                <div class="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                    {banners.map((_, index) => (
-                        <button 
-                            class={`slider-indicator h-2 rounded-full transition-all duration-300 ${index === 0 ? 'bg-white w-6 sm:w-8' : 'bg-white/50 w-2'}`}
-                            data-slide={index}
-                        ></button>
-                    ))}
-                </div>
-
-                <!-- Next Button -->
-                <button id="next-slide" class="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors z-10">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
-                </button>
-            </div>
+            </a>
+            ))}
+        </div>
         </section>
 
-        <!-- ✅ CATEGORÍAS RESPONSIVE -->
-        <section class="px-4 sm:px-6 md:px-8 lg:px-12 py-2 mb-4 sm:mb-6">
-            <div class="flex gap-4 sm:gap-6 md:gap-8 overflow-x-auto pb-4 no-scrollbar justify-start md:justify-center">
-                {[
-                    { name: 'Clubes', icon: '🏟️', count: productos.filter(p => p.categoria === 'Clubes').length },
-                    { name: 'Selecciones', icon: '🌍', count: productos.filter(p => p.categoria === 'Selecciones').length },
-                    { name: 'Retro', icon: '⏳', count: productos.filter(p => p.categoria === 'Retro').length },
-                    { name: 'Especiales', icon: '✨', count: productos.filter(p => p.categoria === 'Especiales').length }
-                ].map(cat => (
-                <a href={`/catalogo?categoria=${cat.name}`} class="flex-shrink-0 flex flex-col items-center gap-2 sm:gap-3 group">
-                    <div class="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gray-100 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-black group-hover:shadow-lg transition-all duration-300">
-                        <span class="text-xl sm:text-2xl md:text-3xl">{cat.icon}</span>
-                    </div>
-                    <div class="text-center">
-                        <span class="text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-tighter block">{cat.name}</span>
-                        <span class="text-[8px] sm:text-[9px] text-gray-400 font-medium">{cat.count} productos</span>
-                    </div>
-                </a>
-                ))}
-            </div>
-        </section>
+    <!-- NOVEDADES -->
+    <section class="px-4 sm:px-6 md:px-8 lg:px-12 pb-6">
+      <div class="flex justify-between items-end mb-6 border-b border-gray-100 pb-4">
+        <div>
+          <h2 class="font-black text-2xl sm:text-3xl md:text-4xl uppercase italic tracking-tighter">Novedades</h2>
+          <p class="text-xs sm:text-sm text-gray-500 mt-1 font-medium">Lo más nuevo en camisetas
 
-        <!-- ✅ NOVEDADES RESPONSIVE - CORREGIDO -->
-        <section class="px-4 sm:px-6 md:px-8 lg:px-12 pt-2 pb-6">
-            <div class="flex justify-between items-end mb-4 sm:mb-6">
-                <div>
-                    <h2 class="font-black text-xl sm:text-2xl md:text-3xl uppercase italic tracking-tighter">Novedades</h2>
-                    <p class="text-[10px] sm:text-xs md:text-sm text-gray-500 mt-1 font-medium">Lo más nuevo en camisetas oficiales</p>
-                </div>
-                <a href="/catalogo" class="text-[10px] sm:text-xs font-bold text-gray-400 hover:text-black transition-colors flex items-center gap-1 group">
-                    <span>Ver todo</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-hover:translate-x-1 transition-transform"><path d="m9 18 6-6-6-6"/></svg>
-                </a>
-            </div>
-            
-            <!-- ✅ GRID RESPONSIVE -->
-            <div class="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4 md:gap-5 lg:gap-6">
-                {novedades.map(prod => {
-                    // ✅ Detectar imagen disponible
-                    const imagenDisponible = (prod.imagenesFan && prod.imagenesFan.length > 0) 
-                        ? prod.imagenesFan[0] 
-                        : (prod.imagenesJugador && prod.imagenesJugador.length > 0) 
-                            ? prod.imagenesJugador[0] 
-                            : '';
-                    
-                    return (
-                        <ProductCard 
-                            id={prod.id}
-                            name={prod.nombre}
-                            precioFan={prod.precioFan}
-                            precioJugador={prod.precioJugador}
-                            imagen={imagenDisponible} 
-                            categoria={prod.categoria}
-                        />
-                    );
-                })}
-            </div>
+</p>
+        </div>
+        <a href="/catalogo" class="text-xs sm:text-sm font-bold text-gray-400 hover:text-black transition-colors flex items-center gap-1 group">
+          <span>Ver todo</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-hover:translate-x-1 transition-transform"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+      </div>
+      
+      <div class="grid grid-cols-2 gap-x-3 gap-y-8 sm:gap-x-4 sm:gap-y-10 md:grid-cols-3 lg:grid-cols-4 lg:gap-8">
+        {novedades.map((prod, index) => (
+          <ProductCard 
+            id={prod.id}
+            nombre={prod.nombre}
+            precioFan={prod.precioFan}
+            precioJugador={prod.precioJugador}
+            imagenesFan={prod.imagenesFan}
+            imagenesJugador={prod.imagenesJugador}
+            categoria={prod.categoria}
+            isNew={index < 2}
+            isPopular={index === 2 || index === 3}
+          />
+        ))}
+      </div>
 
-            <div class="mt-6 sm:mt-8 text-center">
-                <a href="/catalogo" class="inline-flex items-center gap-2 bg-gray-50 hover:bg-gray-100 text-black font-bold text-xs sm:text-sm py-3 sm:py-4 px-6 sm:px-8 rounded-xl sm:rounded-2xl transition-all duration-300 border border-gray-200 hover:border-black group">
-                    <span>Explorar Catálogo Completo</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-hover:translate-x-1 transition-transform"><path d="m9 18 6-6-6-6"/></svg>
-                </a>
-            </div>
-        </section>
+      <div class="mt-10 text-center">
+        <a href="/catalogo" class="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-black font-bold text-sm py-3.5 px-8 rounded-full transition-all duration-300 border border-gray-200 hover:border-black hover:shadow-lg group">
+          <span>Explorar Catálogo</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-hover:translate-x-1 transition-transform"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+      </div>
+    </section>
 
-        <!-- ✅ BENEFICIOS RESPONSIVE -->
-        <section class="px-4 sm:px-6 md:px-8 lg:px-12 py-6 sm:py-8 bg-gray-50 mt-6 sm:mt-8">
-            <div class="max-w-5xl mx-auto">
-                <h3 class="text-center font-black text-lg sm:text-xl md:text-2xl uppercase mb-6 sm:mb-8 tracking-tight">¿Por qué elegirnos?</h3>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-                    {[
-                        { icon: '✨', title: 'Calidad Premium', desc: 'Materiales de primera' },
-                        { icon: '🚚', title: 'Envío Rápido', desc: 'En toda Guatemala' },
-                        { icon: '🎨', title: 'Personalización', desc: '100% gratis' },
-                        { icon: '💬', title: 'Atención 24/7', desc: 'Via WhatsApp' }
-                    ].map(benefit => (
-                    <div class="flex flex-col items-center text-center gap-2 sm:gap-3">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-xl sm:rounded-2xl flex items-center justify-center text-xl sm:text-2xl shadow-sm">
-                            {benefit.icon}
-                        </div>
-                        <div>
-                            <p class="font-bold text-xs sm:text-sm">{benefit.title}</p>
-                            <p class="text-[10px] sm:text-xs text-gray-500 mt-0.5 sm:mt-1">{benefit.desc}</p>
-                        </div>
-                    </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-        
-    </main>
+    <!-- CARACTERÍSTICAS -->
+    <section class="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 py-12 md:py-16 bg-gray-50 mt-12 rounded-t-3xl">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        <div class="text-center group">
+          <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-sm group-hover:scale-110 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+          </div>
+          <h4 class="font-bold text-sm">Personalización Gratis</h4>
+          <p class="text-xs text-gray-400 mt-1">Nombre y número incluido</p>
+        </div>
+        <div class="text-center group">
+          <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-sm group-hover:scale-110 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h4 class="font-bold text-sm">Calidad Premium</h4>
+          <p class="text-xs text-gray-400 mt-1">Materiales de alta gama</p>
+        </div>
+        <div class="text-center group">
+          <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-sm group-hover:scale-110 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <h4 class="font-bold text-sm">Envío Nacional</h4>
+          <p class="text-xs text-gray-400 mt-1">A toda Guatemala</p>
+        </div>
+        <div class="text-center group">
+          <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-sm group-hover:scale-110 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <h4 class="font-bold text-sm">Atención WhatsApp</h4>
+          <p class="text-xs text-gray-400 mt-1">Respuesta inmediata</p>
+        </div>
+      </div>
+    </section>
+    
+  </main>
 </Layout>
 
 <script>
-    // MENÚ LATERAL
-    const toggleBtn = document.getElementById('menu-toggle');
-    const closeBtn = document.getElementById('menu-close');
-    const menu = document.getElementById('side-menu');
-    const overlay = document.getElementById('side-menu-overlay');
+  // SLIDER DEL HERO
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.hero-slide');
+  const indicators = document.querySelectorAll('.slider-indicator');
+  const totalSlides = slides.length;
 
-    function openMenu() {
-        overlay?.classList.remove('hidden');
-        setTimeout(() => overlay?.classList.remove('opacity-0'), 10);
-        menu?.classList.remove('translate-x-full');
-    }
-
-    function closeMenuFn() {
-        overlay?.classList.add('opacity-0');
-        menu?.classList.add('translate-x-full');
-        setTimeout(() => overlay?.classList.add('hidden'), 300);
-    }
-
-    toggleBtn?.addEventListener('click', openMenu);
-    closeBtn?.addEventListener('click', closeMenuFn);
-    overlay?.addEventListener('click', closeMenuFn);
-
-    // ✅ SLIDER DEL HERO
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.hero-slide');
-    const indicators = document.querySelectorAll('.slider-indicator');
-    const totalSlides = slides.length;
-
-    function updateSlider() {
-        slides.forEach((slide, index) => {
-            if (index === currentSlide) {
-                slide.classList.add('opacity-100', 'pointer-events-auto');
-                slide.classList.remove('opacity-0', 'pointer-events-none');
-            } else {
-                slide.classList.add('opacity-0', 'pointer-events-none');
-                slide.classList.remove('opacity-100', 'pointer-events-auto');
-            }
-        });
-
-        indicators.forEach((indicator, index) => {
-            if (index === currentSlide) {
-                indicator.classList.remove('bg-white/50', 'w-2');
-                indicator.classList.add('bg-white', 'w-6', 'sm:w-8');
-            } else {
-                indicator.classList.remove('bg-white', 'w-6', 'sm:w-8');
-                indicator.classList.add('bg-white/50', 'w-2');
-            }
-        });
-    }
-
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        updateSlider();
-    }
-
-    let autoPlayInterval = setInterval(nextSlide, 5000);
-
-    document.getElementById('next-slide')?.addEventListener('click', () => {
-        clearInterval(autoPlayInterval);
-        nextSlide();
-        autoPlayInterval = setInterval(nextSlide, 5000);
+  function updateSlider() {
+    slides.forEach((slide, index) => {
+      if (index === currentSlide) {
+        slide.classList.add('opacity-100', 'pointer-events-auto');
+        slide.classList.remove('opacity-0', 'pointer-events-none');
+      } else {
+        slide.classList.add('opacity-0', 'pointer-events-none');
+        slide.classList.remove('opacity-100', 'pointer-events-auto');
+      }
     });
 
     indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-            clearInterval(autoPlayInterval);
-            currentSlide = index;
-            updateSlider();
-            autoPlayInterval = setInterval(nextSlide, 5000);
-        });
+      if (index === currentSlide) {
+        indicator.classList.remove('bg-white/50', 'w-2');
+        indicator.classList.add('bg-white', 'w-8');
+      } else {
+        indicator.classList.remove('bg-white', 'w-8');
+        indicator.classList.add('bg-white/50', 'w-2');
+      }
     });
+  }
 
-    // BÚSQUEDA
-    const searchInput = document.getElementById('search-input');
-    let searchTimeout;
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateSlider();
+  }
 
-    searchInput?.addEventListener('input', (e) => {
-        const query = e.target.value.trim();
-        clearTimeout(searchTimeout);
-        
-        if (query.length >= 2) {
-            searchTimeout = setTimeout(() => {
-                window.location.href = `/catalogo?search=${encodeURIComponent(query)}`;
-            }, 800);
-        }
+  let autoPlayInterval = setInterval(nextSlide, 5000);
+
+  document.getElementById('next-slide')?.addEventListener('click', () => {
+    clearInterval(autoPlayInterval);
+    nextSlide();
+    autoPlayInterval = setInterval(nextSlide, 5000);
+  });
+
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+      clearInterval(autoPlayInterval);
+      currentSlide = index;
+      updateSlider();
+      autoPlayInterval = setInterval(nextSlide, 5000);
     });
+  });
 
-    searchInput?.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            const query = e.target.value.trim();
-            if (query.length > 0) {
-                clearTimeout(searchTimeout);
-                window.location.href = `/catalogo?search=${encodeURIComponent(query)}`;
-            }
-        }
-    });
+  // BÚSQUEDA
+  const searchInput = document.getElementById('search-input');
+  let searchTimeout: ReturnType<typeof setTimeout>;
 
-    // Cart count desktop
-    function updateDesktopCartCount() {
-        const carrito = JSON.parse(localStorage.getItem('carrito') || '[]');
-        const countEl = document.getElementById('cart-count-desktop');
-        if (countEl) {
-            if (carrito.length > 0) {
-                countEl.textContent = carrito.length;
-                countEl.classList.remove('hidden');
-            } else {
-                countEl.classList.add('hidden');
-            }
-        }
+  searchInput?.addEventListener('input', (e) => {
+    const query = (e.target as HTMLInputElement).value.trim();
+    clearTimeout(searchTimeout);
+    
+    if (query.length >= 2) {
+      searchTimeout = setTimeout(() => {
+        window.location.href = `/catalogo?search=${encodeURIComponent(query)}`;
+      }, 800);
     }
-    updateDesktopCartCount();
-    window.addEventListener('cartUpdated', updateDesktopCartCount);
+  });
+
+  searchInput?.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      const query = (e.target as HTMLInputElement).value.trim();
+      if (query.length > 0) {
+        clearTimeout(searchTimeout);
+        window.location.href = `/catalogo?search=${encodeURIComponent(query)}`;
+      }
+    }
+  });
 </script>

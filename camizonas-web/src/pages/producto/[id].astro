@@ -1,6 +1,7 @@
 ---
 // filepath: c:\Users\EddyA\Escritorio\camiZona\camizonas-web\src\pages\producto\[id].astro
 import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
 import productos from '../../data/productos.json';
 
 export async function getStaticPaths() {
@@ -12,22 +13,33 @@ export async function getStaticPaths() {
 
 const { prod } = Astro.props;
 
-// ✅ DETECTAR VERSIONES DISPONIBLES AUTOMÁTICAMENTE
+// ✅ DETECTAR VERSIONES DISPONIBLES
 const tieneFan = prod.imagenesFan && prod.imagenesFan.length > 0;
 const tieneJugador = prod.imagenesJugador && prod.imagenesJugador.length > 0;
 const tieneAmbas = tieneFan && tieneJugador;
 const soloFan = tieneFan && !tieneJugador;
 const soloJugador = tieneJugador && !tieneFan;
 
-// Determinar versión inicial y precios
 const versionInicial = tieneFan ? 'Fan' : 'Jugador';
 const precioInicial = tieneFan ? prod.precioFan : prod.precioJugador;
 const imagenesIniciales = tieneFan ? prod.imagenesFan : prod.imagenesJugador;
 
+// ✅ SEO
 const productTitle = `${prod.nombre} | CamiZonas`;
 const productDescription = `${prod.nombre} - Desde Q.${precioInicial}. Personalización gratis. Envío a toda Guatemala.`;
 const productImage = imagenesIniciales[0];
 const productUrl = `https://camizonas.com/producto/${prod.id}`;
+
+// ✅ BREADCRUMBS
+const breadcrumbs = [
+  { label: prod.categoria || 'Productos', href: `/catalogo?categoria=${prod.categoria?.toLowerCase()}` },
+  { label: prod.nombre, href: '#' }
+];
+
+// ✅ PRODUCTOS RELACIONADOS (misma categoría, excluyendo el actual)
+const productosRelacionados = productos
+  .filter(p => p.categoria === prod.categoria && p.id !== prod.id)
+  .slice(0, 4);
 ---
 
 <Layout 
@@ -35,25 +47,15 @@ const productUrl = `https://camizonas.com/producto/${prod.id}`;
   description={productDescription}
   image={productImage}
   url={productUrl}
+  breadcrumbs={breadcrumbs}
 >
   <main class="bg-white min-h-screen pb-40 md:pb-12">
-    
-    <!-- HEADER -->
-<nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 p-4 md:px-8 lg:px-12">
-  <div class="max-w-7xl mx-auto flex justify-between items-center">
-    <a href="/" class="w-10 h-10 bg-gray-50 hover:bg-gray-100 rounded-full flex items-center justify-center transition-colors border border-gray-200">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
-    </a>
-    <a href="/" class="text-lg font-black italic tracking-tighter">CAMIZONAS.</a>
-    <div class="w-10 h-10"></div>
-  </div>
-</nav>
 
-    <!-- CONTENEDOR PRINCIPAL -->
+    <!-- ✅ CONTENEDOR PRINCIPAL CENTRADO -->
     <div class="max-w-7xl mx-auto md:grid md:grid-cols-2 md:gap-8 lg:gap-12 md:p-6 lg:p-8 md:items-start">
       
       <!-- GALERÍA DE IMÁGENES -->
-      <div class="relative w-full bg-[#F4F4F4] overflow-hidden md:rounded-3xl md:sticky md:top-24 md:h-[calc(100vh-120px)] md:max-h-[600px]">
+      <div class="relative w-full bg-gradient-to-b from-gray-50 to-white overflow-hidden md:rounded-3xl md:sticky md:top-28 md:h-[calc(100vh-140px)] md:max-h-[600px]">
           
           <!-- Contador -->
           <div class="absolute top-4 right-4 md:top-6 md:right-6 pointer-events-none z-30">
@@ -63,7 +65,7 @@ const productUrl = `https://camizonas.com/producto/${prod.id}`;
               </span>
           </div>
 
-          <!-- ✅ SLIDER FAN (solo si hay imágenes fan) -->
+          <!-- ✅ SLIDER FAN -->
           {tieneFan && (
             <section id="slider-fan" class={`slider-container relative w-full h-[420px] sm:h-[480px] md:h-full transition-opacity duration-300 ease-out ${versionInicial === 'Fan' ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none absolute inset-0'}`}>
                 <div class="snap-container-fan flex overflow-x-auto snap-x snap-mandatory no-scrollbar h-full w-full">
@@ -87,7 +89,7 @@ const productUrl = `https://camizonas.com/producto/${prod.id}`;
             </section>
           )}
 
-          <!-- ✅ SLIDER JUGADOR (solo si hay imágenes jugador) -->
+          <!-- ✅ SLIDER JUGADOR -->
           {tieneJugador && (
             <section id="slider-jugador" class={`slider-container ${tieneFan ? 'absolute inset-0' : 'relative'} w-full h-[420px] sm:h-[480px] md:h-full transition-opacity duration-300 ease-out ${versionInicial === 'Jugador' ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}>
                 <div class="snap-container-jugador flex overflow-x-auto snap-x snap-mandatory no-scrollbar h-full w-full">
@@ -124,7 +126,7 @@ const productUrl = `https://camizonas.com/producto/${prod.id}`;
           </div>
         </div>
 
-        <!-- ✅ Toggle Versión - SOLO SI HAY AMBAS VERSIONES -->
+        <!-- ✅ Toggle Versión - SOLO SI HAY AMBAS -->
         {tieneAmbas && (
           <div class="bg-gray-50 p-1 sm:p-1.5 rounded-xl sm:rounded-2xl flex relative border border-gray-100">
               <button 
@@ -172,7 +174,7 @@ const productUrl = `https://camizonas.com/producto/${prod.id}`;
            </div>
         </div>
 
-        <!-- ✅ Parche - DROPDOWN MEJORADO -->
+        <!-- ✅ Parche - DROPDOWN -->
         <div class="space-y-2 sm:space-y-3">
             <label class="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-gray-400 block">Parche Oficial (+Q.25)</label>
             
@@ -276,6 +278,21 @@ const productUrl = `https://camizonas.com/producto/${prod.id}`;
           </div>
         </div>
 
+        <!-- ✅ DISCLAIMER FAN VS JUGADOR -->
+        <div class="bg-gray-50 rounded-xl p-4 border border-gray-100">
+          <p class="text-[10px] sm:text-xs text-gray-500 leading-relaxed">
+            <span class="block sm:inline">
+              <span class="font-bold text-gray-700">📦 Versión Fan:</span>
+              Ideal para uso diario, tela cómoda y liviana. Corte recto y relajado.
+            </span>
+
+            <span class="block sm:inline sm:ml-2">
+              <span class="font-bold text-gray-700">⭐ Versión Jugador:</span>
+              Tecnología profesional para secado rápido, misma que usan los jugadores en cancha. Corte ajustado.
+            </span>
+          </p>
+        </div>
+
         <!-- Botones Desktop -->
         <div class="hidden md:flex gap-3 mt-2">
           <button id="whatsapp-btn-desktop" class="flex-1 bg-[#121212] text-white h-14 rounded-2xl font-bold flex items-center justify-center gap-3 shadow-lg hover:shadow-xl hover:scale-[1.01] active:scale-95 transition-all duration-200">
@@ -296,8 +313,38 @@ const productUrl = `https://camizonas.com/producto/${prod.id}`;
         </div>
       </div>
     </div>
+
+    <!-- ✅ SECCIÓN "TE PODRÍA INTERESAR" -->
+    {productosRelacionados.length > 0 && (
+      <section class="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 py-12 md:py-16 border-t border-gray-100 mt-8">
+        <div class="flex items-center justify-between mb-6 md:mb-8">
+          <div>
+            <h2 class="text-xl md:text-2xl font-black italic tracking-tight">Te podría interesar</h2>
+            <p class="text-gray-400 text-sm mt-1">Otros productos de {prod.categoria}</p>
+          </div>
+          <a href={`/catalogo?categoria=${prod.categoria?.toLowerCase()}`} class="text-sm font-bold text-gray-500 hover:text-black transition-colors flex items-center gap-1">
+            Ver más
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+          </a>
+        </div>
         
-    <!-- ✅ Botón Sticky Mobile - POSICIÓN CORREGIDA -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          {productosRelacionados.map((producto) => (
+            <ProductCard
+              id={producto.id}
+              nombre={producto.nombre}
+              precioFan={producto.precioFan}
+              precioJugador={producto.precioJugador}
+              imagenesFan={producto.imagenesFan}
+              imagenesJugador={producto.imagenesJugador}
+              categoria={producto.categoria}
+            />
+          ))}
+        </div>
+      </section>
+    )}
+        
+    <!-- ✅ Botón Sticky Mobile -->
     <div id="sticky-whatsapp" class="fixed bottom-[88px] left-0 w-full px-4 sm:px-6 z-[55] md:hidden transition-transform duration-300">
       <div class="max-w-md mx-auto flex gap-2 sm:gap-3">
         <button id="whatsapp-btn" class="flex-1 bg-[#121212] text-white h-12 sm:h-14 rounded-xl sm:rounded-2xl font-bold flex items-center justify-center gap-2 sm:gap-3 shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:shadow-2xl active:scale-95 transition-all duration-200">
@@ -514,7 +561,6 @@ const productUrl = `https://camizonas.com/producto/${prod.id}`;
 
   // ✅ FUNCIÓN WHATSAPP CON VALIDACIÓN DE TALLA
   function enviarWhatsApp() {
-    // ✅ VALIDAR TALLA IGUAL QUE EN AGREGAR AL CARRITO
     if (!tallaActual) {
       window.showToast('Selecciona una talla primero', 'warning');
       
@@ -619,4 +665,3 @@ const productUrl = `https://camizonas.com/producto/${prod.id}`;
     scrollbar-width: none;
   }
 </style>
----
