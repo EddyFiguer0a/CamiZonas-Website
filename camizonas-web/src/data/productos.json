@@ -1,318 +1,679 @@
 [
   {
-    "id": "madrid-local-24",
-    "nombre": "Real Madrid Local 24/25",
+    "id": "ac-milan-local-2526",
+    "nombre": "AC Milan Local 25/26",
     "precioFan": 375,
-    "precioJugador": 450,
+    "precioJugador": 400,
     "categoria": "Clubes",
     "imagenesFan": [
-      "/img/RealMadrid_25-26_Frontal.jpeg",
-      "/img/RealMadrid_25-26_Espalda.jpeg"
+      "/img/CAMISOLAS/CLUBES/EUROPA/AC MILAN/25-26/LOCAL/Versión Fan/frontal_milan_f_bbsenk.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/AC MILAN/25-26/LOCAL/Versión Fan/espalda_milan_f_si9nml.jpg"
     ],
     "imagenesJugador": [
-      "/img/madrid-local.jpeg",
-      "/img/25-26 madrid local.jpeg",
-      "/img/25-26 madrid local 3.jpeg",
-      "/img/25-26 madrid local 4.jpeg"
+      "/img/CAMISOLAS/CLUBES/EUROPA/AC MILAN/25-26/LOCAL/Versión Jugador/frontal_milan_zrikl9.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/AC MILAN/25-26/LOCAL/Versión Jugador/espalda_milan_sxoxlc.jpg"
     ]
   },
   {
-    "id": "barca-local-26",
+    "id": "ac-milan-visitante-2526",
+    "nombre": "AC Milan Visitante 25/26",
+    "precioFan": 375,
+    "precioJugador": 400,
+    "categoria": "Clubes",
+    "imagenesFan": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/AC MILAN/25-26/VISITANTE/Versión Fan/frontal_milan_f_sxxawr.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/AC MILAN/25-26/VISITANTE/Versión Fan/espalda_milan_f_vxbepa.jpg"
+    ],
+    "imagenesJugador": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/AC MILAN/25-26/VISITANTE/Versión Jugador/frontal_milan_f2miqd.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/AC MILAN/25-26/VISITANTE/Versión Jugador/espalda_milan_yebzvr.jpg"
+    ]
+  },
+  {
+    "id": "arsenal-3ra-2526",
+    "nombre": "Arsenal Tercera 25/26",
+    "precioFan": 375,
+    "precioJugador": 400,
+    "categoria": "Clubes",
+    "imagenesFan": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/ARSENAL/25-26/3RA/Versión Fan/frontal_ars_f_ffwq86.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/ARSENAL/25-26/3RA/Versión Fan/espalda_ars_f_gkwzgu.jpg"
+    ],
+    "imagenesJugador": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/ARSENAL/25-26/3RA/Versión Jugador/frontal_ars_vfslbk.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/ARSENAL/25-26/3RA/Versión Jugador/espalda_Ars_quf7ku.jpg"
+    ]
+  },
+  {
+    "id": "arsenal-local-2526",
+    "nombre": "Arsenal Local 25/26",
+    "precioFan": 375,
+    "precioJugador": 400,
+    "categoria": "Clubes",
+    "imagenesFan": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/ARSENAL/25-26/LOCAL/Versión Fan/frontal_ars_f_sc9weq.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/ARSENAL/25-26/LOCAL/Versión Fan/espalda_ars_f_fzrdyk.jpg"
+    ],
+    "imagenesJugador": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/ARSENAL/25-26/LOCAL/Versión Jugador/frontal_ars_aey5ai.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/ARSENAL/25-26/LOCAL/Versión Jugador/espalda_ars_o7xvoj.jpg"
+    ]
+  },
+  {
+    "id": "arsenal-visitante-2526",
+    "nombre": "Arsenal Visitante 25/26",
+    "precioFan": 375,
+    "precioJugador": 400,
+    "categoria": "Clubes",
+    "imagenesFan": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/ARSENAL/25-26/VISITANTE/Versión Fan/frontal_ars_f_wrs3pa.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/ARSENAL/25-26/VISITANTE/Versión Fan/espalda_ars_f_u5raqh.jpg"
+    ],
+    "imagenesJugador": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/ARSENAL/25-26/VISITANTE/Versión Jugador/frontal_ars_nsu0dc.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/ARSENAL/25-26/VISITANTE/Versión Jugador/espalda_ars_d27tcn.jpg"
+    ]
+  },
+  {
+    "id": "barcelona-3ra-2526",
+    "nombre": "Barcelona Tercera 25/26",
+    "precioFan": 375,
+    "precioJugador": 400,
+    "categoria": "Clubes",
+    "imagenesFan": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/BARCELONA/25-26/3RA/frontal.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/BARCELONA/25-26/3RA/Versión Fan/Barcelona_3ra_25-26_Frontal_z7vtwc.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/BARCELONA/25-26/3RA/espalda.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/BARCELONA/25-26/3RA/Versión Fan/Barcelona_3ra_25-26_Espalda_ctnapv.jpg"
+    ],
+    "imagenesJugador": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/BARCELONA/25-26/3RA/Versión Jugador/frontal.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/BARCELONA/25-26/3RA/Versión Jugador/espalda.jpg"
+    ]
+  },
+  {
+    "id": "barcelona-4ta-2526",
+    "nombre": "Barcelona Cuarta 25/26",
+    "precioFan": 375,
+    "precioJugador": 400,
+    "categoria": "Clubes",
+    "imagenesFan": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/BARCELONA/25-26/4TA/Versión Fan/frontal.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/BARCELONA/25-26/4TA/Versión Fan/espalda.jpg"
+    ],
+    "imagenesJugador": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/BARCELONA/25-26/4TA/Versión Jugador/frontal.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/BARCELONA/25-26/4TA/Versión Jugador/25-26_FUERA_DE_CASA_espalda.jpg"
+    ]
+  },
+  {
+    "id": "barcelona-local-2526",
     "nombre": "Barcelona Local 25/26",
     "precioFan": 375,
-    "precioJugador": 450,
+    "precioJugador": 400,
     "categoria": "Clubes",
     "imagenesFan": [
-      "/img/Barcelona_25-26_Frontal.jpeg",
-      "/img/Barcelona_25-26_Espalda.jpeg"
+      "/img/CAMISOLAS/CLUBES/EUROPA/BARCELONA/25-26/LOCAL/Versión Fan/frontal.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/BARCELONA/25-26/LOCAL/Versión Fan/espalda.jpg"
     ],
     "imagenesJugador": [
-      "/img/25-26 barca local 1.jpeg",
-      "/img/25-26 barca local 2.jpeg",
-      "/img/25-26 barca local 3.jpeg",
-      "/img/25-26 barca local 4.jpeg"
+      "/img/CAMISOLAS/CLUBES/EUROPA/BARCELONA/25-26/LOCAL/Versión Jugador/frontal.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/BARCELONA/25-26/LOCAL/Versión Jugador/espalda.jpg"
     ]
   },
   {
-    "id": "argentina-local-26",
+    "id": "barcelona-visitante-2526",
+    "nombre": "Barcelona Visitante 25/26",
+    "precioFan": 375,
+    "precioJugador": null,
+    "categoria": "Clubes",
+    "imagenesFan": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/BARCELONA/25-26/VISITANTE/Versión Fan/Barcelona_Visitante_25-26_Frontal_txbyqf.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/BARCELONA/25-26/VISITANTE/Versión Fan/Barcelona_Visitante_25-26_Espalda_sd4jpq.jpg"
+    ],
+    "imagenesJugador": []
+  },
+  {
+    "id": "bayern-munchen-local-2526",
+    "nombre": "Bayern Munich Local 25/26",
+    "precioFan": 375,
+    "precioJugador": 400,
+    "categoria": "Clubes",
+    "imagenesFan": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/BAYERN MUNCHEN/25-26/LOCAL/Versión Fan/frontal_bm_f.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/BAYERN MUNCHEN/25-26/LOCAL/Versión Fan/espalda_bm_f_qa8leu.jpg"
+    ],
+    "imagenesJugador": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/BAYERN MUNCHEN/25-26/LOCAL/Versión Jugador/frontal_bm_teo7dt.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/BAYERN MUNCHEN/25-26/LOCAL/Versión Jugador/espalda_bm_tdbchf.jpg"
+    ]
+  },
+  {
+    "id": "bayern-munchen-visitante-2526",
+    "nombre": "Bayern Munich Visitante 25/26",
+    "precioFan": 375,
+    "precioJugador": 400,
+    "categoria": "Clubes",
+    "imagenesFan": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/BAYERN MUNCHEN/25-26/VISITANTE/Versión Fan/frontal_bm_f_yzsade.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/BAYERN MUNCHEN/25-26/VISITANTE/Versión Fan/espalda_bm_f.jpg"
+    ],
+    "imagenesJugador": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/BAYERN MUNCHEN/25-26/VISITANTE/Versión Jugador/frontal_bm_x4cjaf.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/BAYERN MUNCHEN/25-26/VISITANTE/Versión Jugador/espalda_bm_rljx4i.jpg"
+    ]
+  },
+  {
+    "id": "chelsea-local-2526",
+    "nombre": "Chelsea Local 25/26",
+    "precioFan": 375,
+    "precioJugador": 400,
+    "categoria": "Clubes",
+    "imagenesFan": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/CHELSEA/25-26/LOCAL/Versión Fan/frontal_ch_f_dlcljs.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/CHELSEA/25-26/LOCAL/Versión Fan/espalda_ch_f_k188re.jpg"
+    ],
+    "imagenesJugador": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/CHELSEA/25-26/LOCAL/Versión Jugador/frontal_ch_azbtag.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/CHELSEA/25-26/LOCAL/Versión Jugador/espalda_ch_pqmlpo.jpg"
+    ]
+  },
+  {
+    "id": "chelsea-visitante-2526",
+    "nombre": "Chelsea Visitante 25/26",
+    "precioFan": 375,
+    "precioJugador": 400,
+    "categoria": "Clubes",
+    "imagenesFan": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/CHELSEA/25-26/VISITANTE/Versión Fan/frontal_ch_v_pl3nls.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/CHELSEA/25-26/VISITANTE/Versión Fan/espalda_ch_v_efutqw.jpg"
+    ],
+    "imagenesJugador": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/CHELSEA/25-26/VISITANTE/Versión Jugador/frontal_ch_v_hjzsx3.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/CHELSEA/25-26/VISITANTE/Versión Jugador/espalda_ch_v_xixee5.jpg"
+    ]
+  },
+  {
+    "id": "manchester-city-local-2526",
+    "nombre": "Manchester City Local 25/26",
+    "precioFan": 375,
+    "precioJugador": 400,
+    "categoria": "Clubes",
+    "imagenesFan": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/MANCHESTER CITY/25-26/LOCAL/Versión Fan/frontal_f_naqg0m.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/MANCHESTER CITY/25-26/LOCAL/Versión Fan/espalda_f_f6hiz5.jpg"
+    ],
+    "imagenesJugador": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/MANCHESTER CITY/25-26/LOCAL/Versión Jugador/frontal_mgurc4.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/MANCHESTER CITY/25-26/LOCAL/Versión Jugador/espalda_zdczmj.jpg"
+    ]
+  },
+  {
+    "id": "manchester-city-visitante-2526",
+    "nombre": "Manchester City Visitante 25/26",
+    "precioFan": 375,
+    "precioJugador": 400,
+    "categoria": "Clubes",
+    "imagenesFan": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/MANCHESTER CITY/25-26/VISITANTE/Versión Fan/frontal_mc_f_o4wkp1.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/MANCHESTER CITY/25-26/VISITANTE/Versión Fan/espalda_mc_f_le10cq.jpg"
+    ],
+    "imagenesJugador": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/MANCHESTER CITY/25-26/VISITANTE/Versión Jugador/frontal_miyxmv.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/MANCHESTER CITY/25-26/VISITANTE/Versión Jugador/espalda_mc_nirjgd.jpg"
+    ]
+  },
+  {
+    "id": "psg-local-2526",
+    "nombre": "Psg Local 25/26",
+    "precioFan": 375,
+    "precioJugador": 400,
+    "categoria": "Clubes",
+    "imagenesFan": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/PSG/25-26/LOCAL/Versión Fan/frontal_bryr1n.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/PSG/25-26/LOCAL/Versión Fan/frontal_wdyat3.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/PSG/25-26/LOCAL/Versión Fan/espalda_j71ssv.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/PSG/25-26/LOCAL/Versión Fan/espalda_v1ksyj.jpg"
+    ],
+    "imagenesJugador": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/PSG/25-26/LOCAL/Versión Jugador/frontal_ljqh27.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/PSG/25-26/LOCAL/Versión Jugador/frontal_uo83re.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/PSG/25-26/LOCAL/Versión Jugador/espalda_az5utc.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/PSG/25-26/LOCAL/Versión Jugador/espalda_ivd8oa.jpg"
+    ]
+  },
+  {
+    "id": "psg-visitante-2526",
+    "nombre": "Psg Visitante 25/26",
+    "precioFan": 375,
+    "precioJugador": 400,
+    "categoria": "Clubes",
+    "imagenesFan": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/PSG/25-26/VISITANTE/Versión Fan/PSG_Vist_25-26_Frontal_ktfrvw.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/PSG/25-26/VISITANTE/Versión Fan/PSG_Vist_25-26_Frontal_qadn8b.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/PSG/25-26/VISITANTE/Versión Fan/PSG_Vist_25-26_Espalda_bt6ae7.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/PSG/25-26/VISITANTE/Versión Fan/PSG_Vist_25-26_Espalda_l148wm.jpg"
+    ],
+    "imagenesJugador": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/PSG/25-26/VISITANTE/Versión Jugador/frontal_gq9njg.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/PSG/25-26/VISITANTE/Versión Jugador/frontal_r3sa7g.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/PSG/25-26/VISITANTE/Versión Jugador/espalda_ivlsdv.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/PSG/25-26/VISITANTE/Versión Jugador/espalda_rurv1m.jpg"
+    ]
+  },
+  {
+    "id": "real-madrid-3ra-2526",
+    "nombre": "Real Madrid Tercera 25/26",
+    "precioFan": 375,
+    "precioJugador": 400,
+    "categoria": "Clubes",
+    "imagenesFan": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/REAL MADRID/25-26/3RA/Versión Fan/frontal_tfezcz.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/REAL MADRID/25-26/3RA/Versión Fan/espalda_ydqvre.jpg"
+    ],
+    "imagenesJugador": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/REAL MADRID/25-26/3RA/Versión Jugador/frontal_c0izwk.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/REAL MADRID/25-26/3RA/Versión Jugador/espalda_mzgcad.jpg"
+    ]
+  },
+  {
+    "id": "real-madrid-local-2526",
+    "nombre": "Real Madrid Local 25/26",
+    "precioFan": 375,
+    "precioJugador": 400,
+    "categoria": "Clubes",
+    "imagenesFan": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/REAL MADRID/25-26/LOCAL/Versión Fan/RealMadrid_25-26_Frontal_vmrala.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/REAL MADRID/25-26/LOCAL/Versión Fan/RealMadrid_25-26_Espalda_hl9d15.jpg"
+    ],
+    "imagenesJugador": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/REAL MADRID/25-26/LOCAL/Versión Jugador/frontal.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/REAL MADRID/25-26/LOCAL/Versión Jugador/espalda_guahll.jpg"
+    ]
+  },
+  {
+    "id": "real-madrid-portero-2526",
+    "nombre": "Real Madrid Portero 25/26",
+    "precioFan": 375,
+    "precioJugador": 400,
+    "categoria": "Clubes",
+    "imagenesFan": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/REAL MADRID/25-26/PORTERO/Versión Fan/RealMadrid_25-26_Frontal2_sxsw1w.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/REAL MADRID/25-26/PORTERO/Versión Fan/RealMadrid_25-26_espalda.jpg"
+    ],
+    "imagenesJugador": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/REAL MADRID/25-26/PORTERO/Versión Jugador/frontal_vtq2ku.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/REAL MADRID/25-26/PORTERO/Versión Jugador/espalda_hwfcay.jpg"
+    ]
+  },
+  {
+    "id": "real-madrid-visitante-2526",
+    "nombre": "Real Madrid Visitante 25/26",
+    "precioFan": 375,
+    "precioJugador": 400,
+    "categoria": "Clubes",
+    "imagenesFan": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/REAL MADRID/25-26/VISITANTE/Versión Fan/frontal_vist_vixdng.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/REAL MADRID/25-26/VISITANTE/Versión Fan/espalda_vist_dcxje5.jpg"
+    ],
+    "imagenesJugador": [
+      "/img/CAMISOLAS/CLUBES/EUROPA/REAL MADRID/25-26/VISITANTE/Versión Jugador/frontal_ee7b3b.jpg",
+      "/img/CAMISOLAS/CLUBES/EUROPA/REAL MADRID/25-26/VISITANTE/Versión Jugador/espalda_oh5lud.jpg"
+    ]
+  },
+  {
+    "id": "argentina-local-2526",
+    "nombre": "Argentina Local 25/26",
+    "precioFan": 375,
+    "precioJugador": null,
+    "categoria": "Selecciones",
+    "imagenesFan": [
+      "/img/CAMISOLAS/SELECCIONES/AMERICA/ARGENTINA/Versión FAN/Argentina_Frontal_zc02sa.webp",
+      "/img/CAMISOLAS/SELECCIONES/AMERICA/ARGENTINA/Versión FAN/Argentina_Espalda_jjkiuq.webp"
+    ],
+    "imagenesJugador": []
+  },
+  {
+    "id": "argentina-local-2627",
     "nombre": "Argentina Local 26/27",
-    "precioFan": 375,
-    "precioJugador": 400,
-    "categoria": "Selecciones",
-    "imagenesFan": [
-      "/img/SELECCIONES/AMERICA/ARGENTINA/Versión FAN/Argentina_Frontal.webp",
-      "/img/SELECCIONES/AMERICA/ARGENTINA/Versión FAN/Argentina_Espalda.webp"
-    ],
-    "imagenesJugador": [
-      "/img/SELECCIONES/AMERICA/ARGENTINA/Versión JUGADOR/Argentina_Local_26-27_Jugador_Frontal.webp",
-      "/img/SELECCIONES/AMERICA/ARGENTINA/Versión JUGADOR/Argentina_Local_26-27_Jugador_Espalda.webp",
-      "/img/SELECCIONES/AMERICA/ARGENTINA/Versión JUGADOR/Argentina_Local_26-27_Jugador_DetalleEscudo.webp",
-      "/img/SELECCIONES/AMERICA/ARGENTINA/Versión JUGADOR/Argentina_Local_26-27_Jugador_DetalleTela.webp"
-    ]
-  },
-  {
-    "id": "brasil-local-26",
-    "nombre": "Brasil Local 26/27",
-    "precioFan": 375,
-    "precioJugador": 400,
-    "categoria": "Selecciones",
-    "imagenesFan": [
-      "/img/SELECCIONES/AMERICA/BRASIL/Versión FAN/Brasil_Frontal.webp",
-      "/img/SELECCIONES/AMERICA/BRASIL/Versión FAN/Brasil_Espalda.webp"
-    ],
-    "imagenesJugador": [
-      "/img/SELECCIONES/AMERICA/BRASIL/Versión JUGADOR/Brasil_Local_26-27_Jugador_Frontal.webp",
-      "/img/SELECCIONES/AMERICA/BRASIL/Versión JUGADOR/Brasil_Local_26-27_Jugador_Espalda.webp",
-      "/img/SELECCIONES/AMERICA/BRASIL/Versión JUGADOR/Brasil_Local_26-27_Jugador_DetalleEscudo.webp",
-      "/img/SELECCIONES/AMERICA/BRASIL/Versión JUGADOR/Brasil_Local_26-27_Jugador_DetalleTela.webp"
-    ]
-  },
-  {
-    "id": "canada-local-26",
-    "nombre": "Canadá Local 26/27",
     "precioFan": null,
     "precioJugador": 400,
     "categoria": "Selecciones",
     "imagenesFan": [],
     "imagenesJugador": [
-      "/img/SELECCIONES/AMERICA/CANADA/Versión JUGADOR/Canada_Local_26-27_Jugador_Frontal.webp",
-      "/img/SELECCIONES/AMERICA/CANADA/Versión JUGADOR/Canada_Local_26-27_Jugador_Espalda.webp",
-      "/img/SELECCIONES/AMERICA/CANADA/Versión JUGADOR/Canada_Local_26-27_Jugador_DetalleEscudo.webp",
-      "/img/SELECCIONES/AMERICA/CANADA/Versión JUGADOR/Canada_Local_26-27_Jugador_DetalleTela.webp"
+      "/img/CAMISOLAS/SELECCIONES/AMERICA/ARGENTINA/Versión JUGADOR/Argentina_Local_26-27_Jugador_Frontal_uf7b3w.webp",
+      "/img/CAMISOLAS/SELECCIONES/AMERICA/ARGENTINA/Versión JUGADOR/Argentina_Local_26-27_Jugador_Espalda_qtyqo0.webp"
     ]
   },
   {
-    "id": "chile-local-26",
+    "id": "brasil-local-2526",
+    "nombre": "Brasil Local 25/26",
+    "precioFan": 375,
+    "precioJugador": null,
+    "categoria": "Selecciones",
+    "imagenesFan": [
+      "/img/CAMISOLAS/SELECCIONES/AMERICA/BRASIL/Versión FAN/Brasil_Frontal_a1hmvs.webp",
+      "/img/CAMISOLAS/SELECCIONES/AMERICA/BRASIL/Versión FAN/Brasil_Espalda_oompme.webp"
+    ],
+    "imagenesJugador": []
+  },
+  {
+    "id": "brasil-local-2627",
+    "nombre": "Brasil Local 26/27",
+    "precioFan": null,
+    "precioJugador": 400,
+    "categoria": "Selecciones",
+    "imagenesFan": [],
+    "imagenesJugador": [
+      "/img/CAMISOLAS/SELECCIONES/AMERICA/BRASIL/Versión JUGADOR/Brasil_Local_26-27_Jugador_Frontal_vjabms.webp",
+      "/img/CAMISOLAS/SELECCIONES/AMERICA/BRASIL/Versión JUGADOR/Brasil_Local_26-27_Jugador_Espalda_aoohp1.webp"
+    ]
+  },
+  {
+    "id": "canada-local-2627",
+    "nombre": "Canada Local 26/27",
+    "precioFan": null,
+    "precioJugador": 400,
+    "categoria": "Selecciones",
+    "imagenesFan": [],
+    "imagenesJugador": [
+      "/img/CAMISOLAS/SELECCIONES/AMERICA/CANADA/Versión JUGADOR/Canada_Local_26-27_Jugador_Frontal_mo8xp9.webp",
+      "/img/CAMISOLAS/SELECCIONES/AMERICA/CANADA/Versión JUGADOR/Canada_Local_26-27_Jugador_Espalda_yencyg.webp"
+    ]
+  },
+  {
+    "id": "chile-local-2627",
     "nombre": "Chile Local 26/27",
     "precioFan": null,
     "precioJugador": 400,
     "categoria": "Selecciones",
     "imagenesFan": [],
     "imagenesJugador": [
-      "/img/SELECCIONES/AMERICA/CHILE/Versión JUGADOR/Chile_Local_26-27_Jugador_Frontal 2.webp",
-      "/img/SELECCIONES/AMERICA/CHILE/Versión JUGADOR/Chile_Local_26-27_Jugador_Espalda.webp",
-      "/img/SELECCIONES/AMERICA/CHILE/Versión JUGADOR/Chile_Local_26-27_Jugador_DetalleFrontal.webp",
-      "/img/SELECCIONES/AMERICA/CHILE/Versión JUGADOR/Chile_Local_26-27_Jugador_DetalleTela.webp"
+      "/img/CAMISOLAS/SELECCIONES/AMERICA/CHILE/Versión JUGADOR/Chile_Local_26-27_Jugador_Frontal_2_tfjr94.webp",
+      "/img/CAMISOLAS/SELECCIONES/AMERICA/CHILE/Versión JUGADOR/Chile_Local_26-27_Jugador_Espalda_plcqph.webp"
     ]
   },
   {
-    "id": "colombia-local-26",
+    "id": "colombia-local-2526",
+    "nombre": "Colombia Local 25/26",
+    "precioFan": 375,
+    "precioJugador": null,
+    "categoria": "Selecciones",
+    "imagenesFan": [
+      "/img/CAMISOLAS/SELECCIONES/AMERICA/COLOMBIA/Versión FAN/Colombia_Frontal_vsxr3y.webp",
+      "/img/CAMISOLAS/SELECCIONES/AMERICA/COLOMBIA/Versión FAN/Colombia_Espalda_awowqu.webp"
+    ],
+    "imagenesJugador": []
+  },
+  {
+    "id": "colombia-local-2627",
     "nombre": "Colombia Local 26/27",
-    "precioFan": 375,
+    "precioFan": null,
     "precioJugador": 400,
     "categoria": "Selecciones",
-    "imagenesFan": [
-      "/img/SELECCIONES/AMERICA/COLOMBIA/Versión FAN/Colombia_Frontal.webp",
-      "/img/SELECCIONES/AMERICA/COLOMBIA/Versión FAN/Colombia_Espalda.webp"
-    ],
+    "imagenesFan": [],
     "imagenesJugador": [
-      "/img/SELECCIONES/AMERICA/COLOMBIA/Versión JUGADOR/Colombia_Local_26-27_Jugador_Frontal.webp",
-      "/img/SELECCIONES/AMERICA/COLOMBIA/Versión JUGADOR/Colombia_Local_26-27_Jugador_Espalda.webp",
-      "/img/SELECCIONES/AMERICA/COLOMBIA/Versión JUGADOR/Colombia_Local_26-27_Jugador_DetalleEscudo.webp",
-      "/img/SELECCIONES/AMERICA/COLOMBIA/Versión JUGADOR/Colombia_Local_26-27_Jugador_DetalleTela.webp"
+      "/img/CAMISOLAS/SELECCIONES/AMERICA/COLOMBIA/Versión JUGADOR/Colombia_Local_26-27_Jugador_Frontal_x0o5pj.webp",
+      "/img/CAMISOLAS/SELECCIONES/AMERICA/COLOMBIA/Versión JUGADOR/Colombia_Local_26-27_Jugador_Espalda_zuf7rf.webp"
     ]
   },
   {
-    "id": "estados-unidos-local-26",
-    "nombre": "Estados Unidos Local 26/27",
+    "id": "estados-unidos-local-2526",
+    "nombre": "Estados Unidos Local 25/26",
     "precioFan": 375,
     "precioJugador": null,
     "categoria": "Selecciones",
     "imagenesFan": [
-      "/img/SELECCIONES/AMERICA/ESTADOS UNIDOS/Versión FAN/Estados Unidos_Frontal.webp",
-      "/img/SELECCIONES/AMERICA/ESTADOS UNIDOS/Versión FAN/Estados Unidos_Espalda.webp"
+      "/img/CAMISOLAS/SELECCIONES/AMERICA/ESTADOS UNIDOS/Versión FAN/Estados_Unidos_Frontal_dkskvv.webp",
+      "/img/CAMISOLAS/SELECCIONES/AMERICA/ESTADOS UNIDOS/Versión FAN/Estados_Unidos_Espalda_mkn7zq.webp"
     ],
     "imagenesJugador": []
   },
   {
-    "id": "guatemala-local-26",
-    "nombre": "Guatemala Local 26/27",
+    "id": "guatemala-local-2526",
+    "nombre": "Guatemala Local 25/26",
     "precioFan": 375,
     "precioJugador": null,
     "categoria": "Selecciones",
     "imagenesFan": [
-      "/img/SELECCIONES/AMERICA/GUATEMALA/Versión FAN/15371d06.webp",
-      "/img/SELECCIONES/AMERICA/GUATEMALA/Versión FAN/3461fdbd.webp",
-      "/img/SELECCIONES/AMERICA/GUATEMALA/Versión FAN/5bed4d0f.webp",
-      "/img/SELECCIONES/AMERICA/GUATEMALA/Versión FAN/1079366f.webp",
-      "/img/SELECCIONES/AMERICA/GUATEMALA/Versión FAN/a39773e3.webp",
-      "/img/SELECCIONES/AMERICA/GUATEMALA/Versión FAN/d83663d3.webp",
-      "/img/SELECCIONES/AMERICA/GUATEMALA/Versión FAN/fc2fcbde.webp"
+      "/img/CAMISOLAS/SELECCIONES/AMERICA/GUATEMALA/Versión FAN/frontal_1.webp",
+      "/img/CAMISOLAS/SELECCIONES/AMERICA/GUATEMALA/Versión FAN/frontal_2.webp",
+      "/img/CAMISOLAS/SELECCIONES/AMERICA/GUATEMALA/Versión FAN/frontal_3.webp",
+      "/img/CAMISOLAS/SELECCIONES/AMERICA/GUATEMALA/Versión FAN/espalda_1.webp",
+      "/img/CAMISOLAS/SELECCIONES/AMERICA/GUATEMALA/Versión FAN/espalda_2.webp",
+      "/img/CAMISOLAS/SELECCIONES/AMERICA/GUATEMALA/Versión FAN/espalda_3.webp"
     ],
     "imagenesJugador": []
   },
   {
-    "id": "mexico-local-26",
-    "nombre": "México Local 26/27",
+    "id": "mexico-local-2526",
+    "nombre": "Mexico Local 25/26",
     "precioFan": 375,
-    "precioJugador": 400,
+    "precioJugador": null,
     "categoria": "Selecciones",
     "imagenesFan": [
-      "/img/SELECCIONES/AMERICA/MEXICO/Versión FAN/México_Frontal.webp",
-      "/img/SELECCIONES/AMERICA/MEXICO/Versión FAN/México_Espalda.webp"
+      "/img/CAMISOLAS/SELECCIONES/AMERICA/MEXICO/Versión FAN/México_Frontal_ijrxl1.webp",
+      "/img/CAMISOLAS/SELECCIONES/AMERICA/MEXICO/Versión FAN/México_Espalda_g844q0.webp"
     ],
+    "imagenesJugador": []
+  },
+  {
+    "id": "mexico-local-2627",
+    "nombre": "Mexico Local 26/27",
+    "precioFan": null,
+    "precioJugador": 400,
+    "categoria": "Selecciones",
+    "imagenesFan": [],
     "imagenesJugador": [
-      "/img/SELECCIONES/AMERICA/MEXICO/Versión JUGADOR/Mexico_Local_26-27_Jugador_Frontal.webp",
-      "/img/SELECCIONES/AMERICA/MEXICO/Versión JUGADOR/Mexico_Local_26-27_Jugador_Espalda.webp",
-      "/img/SELECCIONES/AMERICA/MEXICO/Versión JUGADOR/Mexico_Local_26-27_Jugador_DetalleEscudo.webp",
-      "/img/SELECCIONES/AMERICA/MEXICO/Versión JUGADOR/Mexico_Local_26-27_Jugador_DetalleTela.webp"
+      "/img/CAMISOLAS/SELECCIONES/AMERICA/MEXICO/Versión JUGADOR/Mexico_Local_26-27_Jugador_Frontal_frpnus.webp",
+      "/img/CAMISOLAS/SELECCIONES/AMERICA/MEXICO/Versión JUGADOR/Mexico_Local_26-27_Jugador_Espalda_oo08rl.webp"
     ]
   },
   {
-    "id": "alemania-local-26",
+    "id": "alemania-local-2526",
+    "nombre": "Alemania Local 25/26",
+    "precioFan": 375,
+    "precioJugador": null,
+    "categoria": "Selecciones",
+    "imagenesFan": [
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/ALEMANIA/Versión FAN/Alemania_Frontal_bblcdg.webp",
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/ALEMANIA/Versión FAN/Alemania_Espalda_k6f79w.webp"
+    ],
+    "imagenesJugador": []
+  },
+  {
+    "id": "alemania-local-2627",
     "nombre": "Alemania Local 26/27",
-    "precioFan": 375,
+    "precioFan": null,
     "precioJugador": 400,
     "categoria": "Selecciones",
-    "imagenesFan": [
-      "/img/SELECCIONES/EUROPA/ALEMANIA/Versión FAN/Alemania_Frontal.webp",
-      "/img/SELECCIONES/EUROPA/ALEMANIA/Versión FAN/Alemania_Espalda.webp"
-    ],
+    "imagenesFan": [],
     "imagenesJugador": [
-      "/img/SELECCIONES/EUROPA/ALEMANIA/Versión JUGADOR/Alemania_Local_26-27_Jugador_Frontal.webp",
-      "/img/SELECCIONES/EUROPA/ALEMANIA/Versión JUGADOR/Alemania_Local_26-27_Jugador_Espalda.webp",
-      "/img/SELECCIONES/EUROPA/ALEMANIA/Versión JUGADOR/Alemania_Local_26-27_Jugador_DetalleEscudo.webp",
-      "/img/SELECCIONES/EUROPA/ALEMANIA/Versión JUGADOR/Alemania_Local_26-27_Jugador_DetalleParche.webp",
-      "/img/SELECCIONES/EUROPA/ALEMANIA/Versión JUGADOR/Alemania_Local_26-27_Jugador_DetalleTela.webp"
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/ALEMANIA/Versión JUGADOR/Alemania_Local_26-27_Jugador_Frontal_tso0yp.webp",
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/ALEMANIA/Versión JUGADOR/Alemania_Local_26-27_Jugador_Espalda_sgd0ci.webp"
     ]
   },
   {
-    "id": "espana-local-26",
+    "id": "espana-local-2526",
+    "nombre": "España Local 25/26",
+    "precioFan": 375,
+    "precioJugador": null,
+    "categoria": "Selecciones",
+    "imagenesFan": [
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/ESPAÑA/Versión FAN/España_Frontal_ipxndy.webp",
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/ESPAÑA/Versión FAN/España_Espalda_isamt9.webp"
+    ],
+    "imagenesJugador": []
+  },
+  {
+    "id": "espana-local-2627",
     "nombre": "España Local 26/27",
-    "precioFan": 375,
+    "precioFan": null,
     "precioJugador": 400,
     "categoria": "Selecciones",
-    "imagenesFan": [
-      "/img/SELECCIONES/EUROPA/ESPAÑA/Versión FAN/España_Frontal.webp",
-      "/img/SELECCIONES/EUROPA/ESPAÑA/Versión FAN/España_Espalda.webp"
-    ],
+    "imagenesFan": [],
     "imagenesJugador": [
-      "/img/SELECCIONES/EUROPA/ESPAÑA/Versión JUGADOR/España_Local_26-27_Jugador_Frontal.webp",
-      "/img/SELECCIONES/EUROPA/ESPAÑA/Versión JUGADOR/España_Local_26-27_Jugador_Frontal 2.webp",
-      "/img/SELECCIONES/EUROPA/ESPAÑA/Versión JUGADOR/España_Local_26-27_Jugador_Espalda.webp",
-      "/img/SELECCIONES/EUROPA/ESPAÑA/Versión JUGADOR/España_Local_26-27_Jugador_DetalleEscudo.webp",
-      "/img/SELECCIONES/EUROPA/ESPAÑA/Versión JUGADOR/España_Local_26-27_Jugador_DetalleTela.webp"
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/ESPAÑA/Versión JUGADOR/España_Local_26-27_Jugador_Frontal_2_ke90je.webp",
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/ESPAÑA/Versión JUGADOR/España_Local_26-27_Jugador_Frontal_qlnrty.webp",
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/ESPAÑA/Versión JUGADOR/España_Local_26-27_Jugador_Espalda_bvq9tm.webp"
     ]
   },
   {
-    "id": "francia-local-26",
+    "id": "francia-local-2526",
+    "nombre": "Francia Local 25/26",
+    "precioFan": 375,
+    "precioJugador": null,
+    "categoria": "Selecciones",
+    "imagenesFan": [
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/FRANCIA/Versión FAN/Francia_Frontal_l2zabs.webp",
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/FRANCIA/Versión FAN/Francia_Espalda_ol83on.webp"
+    ],
+    "imagenesJugador": []
+  },
+  {
+    "id": "francia-local-2627",
     "nombre": "Francia Local 26/27",
-    "precioFan": 375,
+    "precioFan": null,
     "precioJugador": 400,
     "categoria": "Selecciones",
-    "imagenesFan": [
-      "/img/SELECCIONES/EUROPA/FRANCIA/Versión FAN/Francia_Frontal.webp",
-      "/img/SELECCIONES/EUROPA/FRANCIA/Versión FAN/Francia_Espalda.webp"
-    ],
+    "imagenesFan": [],
     "imagenesJugador": [
-      "/img/SELECCIONES/EUROPA/FRANCIA/Versión JUGADOR/Francia_Local_26-27_Jugador_Frontal.webp",
-      "/img/SELECCIONES/EUROPA/FRANCIA/Versión JUGADOR/Francia_Local_26-27_Jugador_Espalda.webp",
-      "/img/SELECCIONES/EUROPA/FRANCIA/Versión JUGADOR/Francia_Local_26-27_Jugador_DetalleFrontal.webp",
-      "/img/SELECCIONES/EUROPA/FRANCIA/Versión JUGADOR/Francia_Local_26-27_Jugador_DetalleTela.webp"
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/FRANCIA/Versión JUGADOR/Francia_Local_26-27_Jugador_Frontal_pcgcz9.webp",
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/FRANCIA/Versión JUGADOR/Francia_Local_26-27_Jugador_Espalda_s7fded.webp"
     ]
   },
   {
-    "id": "inglaterra-local-26",
+    "id": "inglaterra-local-2526",
+    "nombre": "Inglaterra Local 25/26",
+    "precioFan": 375,
+    "precioJugador": null,
+    "categoria": "Selecciones",
+    "imagenesFan": [
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/INGLATERRA/Versión FAN/Inglaterra_Frontal_bkjsmu.webp",
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/INGLATERRA/Versión FAN/Inglaterra_Espalda_jnolqd.webp"
+    ],
+    "imagenesJugador": []
+  },
+  {
+    "id": "inglaterra-local-2627",
     "nombre": "Inglaterra Local 26/27",
-    "precioFan": 375,
+    "precioFan": null,
     "precioJugador": 400,
     "categoria": "Selecciones",
-    "imagenesFan": [
-      "/img/SELECCIONES/EUROPA/INGLATERRA/Versión FAN/Inglaterra_Frontal.webp",
-      "/img/SELECCIONES/EUROPA/INGLATERRA/Versión FAN/Inglaterra_Espalda.webp"
-    ],
+    "imagenesFan": [],
     "imagenesJugador": [
-      "/img/SELECCIONES/EUROPA/INGLATERRA/Versión JUGADOR/Inglaterra_Local_26-27_Jugador_Frontal.webp",
-      "/img/SELECCIONES/EUROPA/INGLATERRA/Versión JUGADOR/Inglaterra_Local_26-27_Jugador_Espalda.webp",
-      "/img/SELECCIONES/EUROPA/INGLATERRA/Versión JUGADOR/Inglaterra_Local_26-27_Jugador_DetalleEscudo.webp",
-      "/img/SELECCIONES/EUROPA/INGLATERRA/Versión JUGADOR/Inglaterra_Local_26-27_Jugador_DetalleTela.webp"
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/INGLATERRA/Versión JUGADOR/Inglaterra_Local_26-27_Jugador_Frontal_yyr8qf.webp",
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/INGLATERRA/Versión JUGADOR/Inglaterra_Local_26-27_Jugador_Espalda_ikwjnt.webp"
     ]
   },
   {
-    "id": "italia-local-26",
+    "id": "italia-local-2526",
+    "nombre": "Italia Local 25/26",
+    "precioFan": 375,
+    "precioJugador": null,
+    "categoria": "Selecciones",
+    "imagenesFan": [
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/ITALIA/Versión FAN/Italia_Frontal_n1vnrq.webp",
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/ITALIA/Versión FAN/Italia_Espalda_xphjmd.webp"
+    ],
+    "imagenesJugador": []
+  },
+  {
+    "id": "italia-local-2627",
     "nombre": "Italia Local 26/27",
-    "precioFan": 375,
+    "precioFan": null,
     "precioJugador": 400,
     "categoria": "Selecciones",
-    "imagenesFan": [
-      "/img/SELECCIONES/EUROPA/ITALIA/Versión FAN/Italia_Frontal.webp",
-      "/img/SELECCIONES/EUROPA/ITALIA/Versión FAN/Italia_Espalda.webp"
-    ],
+    "imagenesFan": [],
     "imagenesJugador": [
-      "/img/SELECCIONES/EUROPA/ITALIA/Versión JUGADOR/Italia_Local_26-27_Jugador_Frontal.webp",
-      "/img/SELECCIONES/EUROPA/ITALIA/Versión JUGADOR/Italia_Local_26-27_Jugador_Espalda.webp",
-      "/img/SELECCIONES/EUROPA/ITALIA/Versión JUGADOR/Italia_Local_26-27_Jugador_DetalleEscudo.webp",
-      "/img/SELECCIONES/EUROPA/ITALIA/Versión JUGADOR/Italia_Local_26-27_Jugador_DetalleTela.webp"
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/ITALIA/Versión JUGADOR/Italia_Local_26-27_Jugador_Frontal_thb3vn.webp",
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/ITALIA/Versión JUGADOR/Italia_Local_26-27_Jugador_Espalda_f7yetl.webp"
     ]
   },
   {
-    "id": "japon-local-26",
-    "nombre": "Japón Local 26/27",
+    "id": "japon-local-2526",
+    "nombre": "Japon Local 25/26",
     "precioFan": 375,
-    "precioJugador": 400,
+    "precioJugador": null,
     "categoria": "Selecciones",
     "imagenesFan": [
-      "/img/SELECCIONES/EUROPA/JAPON/Versión FAN/Japon_Frontal.webp",
-      "/img/SELECCIONES/EUROPA/JAPON/Versión FAN/Japon_Espalda.webp"
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/JAPON/Versión FAN/Japon_Frontal_qv5auv.webp",
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/JAPON/Versión FAN/Japon_Espalda_cbg5tr.webp"
     ],
+    "imagenesJugador": []
+  },
+  {
+    "id": "japon-local-2627",
+    "nombre": "Japon Local 26/27",
+    "precioFan": null,
+    "precioJugador": 400,
+    "categoria": "Selecciones",
+    "imagenesFan": [],
     "imagenesJugador": [
-      "/img/SELECCIONES/EUROPA/JAPON/Versión JUGADOR/Japon_Local_26-27_Jugador_Frontal.webp",
-      "/img/SELECCIONES/EUROPA/JAPON/Versión JUGADOR/Japon_Local_26-27_Jugador_Espalda.webp",
-      "/img/SELECCIONES/EUROPA/JAPON/Versión JUGADOR/Japon_Local_26-27_Jugador_DetalleEscudo.webp",
-      "/img/SELECCIONES/EUROPA/JAPON/Versión JUGADOR/Japon_Local_26-27_Jugador_DetalleTela.webp"
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/JAPON/Versión JUGADOR/Japon_Local_26-27_Jugador_Frontal_knafs3.webp",
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/JAPON/Versión JUGADOR/Japon_Local_26-27_Jugador_Espalda_xrtctj.webp"
     ]
   },
   {
-    "id": "portugal-local-26",
+    "id": "portugal-local-2526",
+    "nombre": "Portugal Local 25/26",
+    "precioFan": 375,
+    "precioJugador": null,
+    "categoria": "Selecciones",
+    "imagenesFan": [
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/PORTUGAL/Versión FAN/Portugal_Frontal_Negra_ah9kyy.webp",
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/PORTUGAL/Versión FAN/Portugal_Frontal_ohftil.webp",
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/PORTUGAL/Versión FAN/Portugal_Espalda_Negra_icavff.webp",
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/PORTUGAL/Versión FAN/Portugal_Espalda_ugnujd.webp"
+    ],
+    "imagenesJugador": []
+  },
+  {
+    "id": "portugal-local-2627",
     "nombre": "Portugal Local 26/27",
-    "precioFan": 375,
+    "precioFan": null,
     "precioJugador": 400,
     "categoria": "Selecciones",
-    "imagenesFan": [
-      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión FAN/Portugal_Frontal.webp",
-      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión FAN/Portugal_Espalda.webp"
-    ],
+    "imagenesFan": [],
     "imagenesJugador": [
-      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Portugal_Local_26-27_Jugador_Frontal.webp",
-      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Portugal_Local_26-27_Jugador_Espalda.webp",
-      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Portugal_Local_26-27_Jugador_DetalleEscudo.webp",
-      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Portugal_Local_26-27_Jugador_DetallePArche.webp",
-      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Portugal_Local_26-27_Jugador_DetalleTela.webp"
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Portugal_Local_26-27_Jugador_Frontal_vzy5pp.webp",
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Portugal_Local_26-27_Jugador_Espalda_qpqwdp.webp"
     ]
   },
   {
-    "id": "portugal-especial-negra-26",
-    "nombre": "Portugal Edición Especial Negra 26/27",
-    "precioFan": 375,
+    "id": "portugal-local-2627-especial",
+    "nombre": "Portugal Local Especial 26/27",
+    "precioFan": null,
     "precioJugador": 400,
     "categoria": "Especiales",
-    "imagenesFan": [
-      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión FAN/Portugal_Frontal_Negra.webp",
-      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión FAN/Portugal_Espalda_Negra.webp"
-    ],
+    "imagenesFan": [],
     "imagenesJugador": [
-      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Edicion Especial (Negra)/Portugal_Ed Espl_26-27_Jugador_Frontal.webp",
-      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Edicion Especial (Negra)/Portugal_Ed Esp_26-27_Jugador_Espalda.webp",
-      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Edicion Especial (Negra)/Portugal_Ed Espl_26-27_Jugador_DetalleEscudo.webp",
-      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Edicion Especial (Negra)/Portugal_edespl_26-27_Jugador_DetallePArche.webp",
-      "/img/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Edicion Especial (Negra)/Portugal_Ed Esp_26-27_Jugador_DetalleTela.webp"
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Edicion Especial (Negra)/Portugal_Ed_Espl_26-27_Jugador_Frontal_wilhsp.webp",
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/PORTUGAL/Versión JUGADOR/Edicion Especial (Negra)/Portugal_Ed_Esp_26-27_Jugador_Espalda_hzu5ii.webp"
     ]
   },
   {
-    "id": "suiza-local-26",
-    "nombre": "Suiza Local 26/27",
+    "id": "suiza-local-2526",
+    "nombre": "Suiza Local 25/26",
     "precioFan": 375,
-    "precioJugador": 400,
+    "precioJugador": null,
     "categoria": "Selecciones",
     "imagenesFan": [
-      "/img/SELECCIONES/EUROPA/SUIZA/Versión FAN/SUIZA_25-26_Frontal.webp",
-      "/img/SELECCIONES/EUROPA/SUIZA/Versión FAN/SUIZA_25-26_Espalda.webp"
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/SUIZA/Versión FAN/SUIZA_25-26_Frontal_dvwyrc.webp",
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/SUIZA/Versión FAN/SUIZA_25-26_Espalda_g4zpom.webp"
     ],
+    "imagenesJugador": []
+  },
+  {
+    "id": "suiza-local-2627",
+    "nombre": "Suiza Local 26/27",
+    "precioFan": null,
+    "precioJugador": 400,
+    "categoria": "Selecciones",
+    "imagenesFan": [],
     "imagenesJugador": [
-      "/img/SELECCIONES/EUROPA/SUIZA/Versión JUGADOR/Suiza_Local_26-27_Jugador_Frontal.webp",
-      "/img/SELECCIONES/EUROPA/SUIZA/Versión JUGADOR/Suiza_Local_26-27_Jugador_Espalda.webp",
-      "/img/SELECCIONES/EUROPA/SUIZA/Versión JUGADOR/Suiza_Local_26-27_Jugador_DetalleEscudo.webp",
-      "/img/SELECCIONES/EUROPA/SUIZA/Versión JUGADOR/Suiza_Local_26-27_Jugador_DetalleTela.webp"
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/SUIZA/Versión JUGADOR/Suiza_Local_26-27_Jugador_Frontal_ox5ump.webp",
+      "/img/CAMISOLAS/SELECCIONES/EUROPA/SUIZA/Versión JUGADOR/Suiza_Local_26-27_Jugador_Espalda_pbjvrn.webp"
     ]
   }
 ]
