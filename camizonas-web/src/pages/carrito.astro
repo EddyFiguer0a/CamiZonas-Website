@@ -1,8 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ConfirmModal from '../components/ConfirmModal.astro';
 ---
 
 <Layout title="Carrito de Compras | CamiZonas">
+  <!-- ✅ Modal de Confirmación -->
+  <ConfirmModal />
+  
   <main class="bg-gray-50 min-h-screen pb-32">
     
     <!-- Header -->
@@ -172,19 +176,38 @@ import Layout from '../layouts/Layout.astro';
     window.dispatchEvent(new Event('cartUpdated'));
   };
 
-  // Vaciar carrito
+  // ✅ VACIAR CARRITO CON MODAL FANCY
   document.getElementById('clear-cart')?.addEventListener('click', () => {
-    if (confirm('¿Seguro que quieres vaciar el carrito?')) {
-      localStorage.removeItem('carrito');
-      carrito = [];
-      renderizarCarrito();
-      window.dispatchEvent(new Event('cartUpdated'));
+    if (carrito.length === 0) {
+      if (window.showToast) {
+        window.showToast('El carrito ya está vacío', 'info');
+      }
+      return;
+    }
+
+    if (window.showConfirm) {
+      window.showConfirm({
+        title: '¿Vaciar carrito?',
+        message: `Tienes ${carrito.length} producto(s) en tu carrito. Esta acción no se puede deshacer.`,
+        confirmText: 'Sí, vaciar',
+        cancelText: 'Cancelar',
+        icon: 'danger',
+        onConfirm: () => {
+          localStorage.removeItem('carrito');
+          carrito = [];
+          renderizarCarrito();
+          window.dispatchEvent(new Event('cartUpdated'));
+          if (window.showToast) {
+            window.showToast('Carrito vaciado correctamente', 'success');
+          }
+        }
+      });
     }
   });
 
   // WhatsApp checkout
   document.getElementById('checkout-btn')?.addEventListener('click', () => {
-    const telefono = "50232650539"; // Cambia por tu número
+    const telefono = "50232650539";
     
     let mensaje = `Hola 👋, quiero hacer el siguiente pedido:\n\n`;
     

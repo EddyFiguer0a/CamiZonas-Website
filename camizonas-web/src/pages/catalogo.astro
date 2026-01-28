@@ -4,6 +4,15 @@ import ProductCard from '../components/ProductCard.astro';
 import productos from '../data/productos.json';
 
 const categorias = ['Todas', 'Clubes', 'Selecciones', 'Retro', 'Especiales'];
+
+// ✅ Conteo por categoría
+const conteos = {
+  Todas: productos.length,
+  Clubes: productos.filter(p => p.categoria === 'Clubes').length,
+  Selecciones: productos.filter(p => p.categoria === 'Selecciones').length,
+  Retro: productos.filter(p => p.categoria === 'Retro').length,
+  Especiales: productos.filter(p => p.categoria === 'Especiales').length,
+};
 ---
 
 <Layout title="Catálogo Completo | CamiZonas">
@@ -19,24 +28,40 @@ const categorias = ['Todas', 'Clubes', 'Selecciones', 'Retro', 'Especiales'];
         <div class="w-9 sm:w-10"></div>
       </div>
 
-      <!-- SEARCH -->
+      <!-- 🔍 BARRA DE BÚSQUEDA (ESTILO INDEX) -->
       <div class="px-3 sm:px-4 md:px-6 lg:px-12 pb-3">
-        <input
-          id="search-catalog"
-          type="text"
-          placeholder="Buscar camisetas..."
-          class="w-full max-w-xl bg-gray-50 border border-gray-200 rounded-xl py-2.5 sm:py-3 px-4 text-xs sm:text-sm outline-none focus:ring-2 ring-black/10"
-        />
+        <div class="relative group w-full md:max-w-2xl md:mx-auto">
+          <input 
+            type="text" 
+            id="search-catalog"
+            placeholder="Buscar tu equipo (ej: Real Madrid)..." 
+            class="w-full bg-gray-50 border border-gray-200 rounded-2xl 
+                    py-3.5 pl-12 pr-4 
+                    text-sm font-medium placeholder:text-gray-400 
+                    outline-none transition-all
+                    focus:bg-white focus:border-gray-300 focus:ring-2 ring-black/5
+                    shadow-sm"
+          />
+          <span class="absolute left-4 top-1/2 -translate-y-1/2 
+                      text-gray-400 group-focus-within:text-black 
+                      transition-colors pointer-events-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="m21 21-4.3-4.3"/>
+            </svg>
+          </span>
+        </div>
       </div>
 
-      <!-- TABS -->
+      <!-- TABS CON CONTEO -->
       <div class="px-3 sm:px-4 md:px-6 lg:px-12 pb-3 sm:pb-4 flex gap-2 overflow-x-auto no-scrollbar">
         {categorias.map(cat => (
           <button
-            class="filter-tab px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-[10px] sm:text-xs font-bold whitespace-nowrap border border-gray-200 text-gray-600 hover:border-black transition-colors"
+            class="filter-tab px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-[10px] sm:text-xs font-bold whitespace-nowrap border border-gray-200 text-gray-600 hover:border-black transition-all duration-200"
             data-categoria={cat}
           >
             {cat}
+            <span class="ml-1 opacity-60">({conteos[cat]})</span>
           </button>
         ))}
       </div>
@@ -50,11 +75,10 @@ const categorias = ['Todas', 'Clubes', 'Selecciones', 'Retro', 'Especiales'];
       </p>
     </div>
 
-    <!-- ✅ GRID RESPONSIVE CORREGIDO -->
+    <!-- ✅ GRID RESPONSIVE -->
     <section class="px-3 sm:px-4 md:px-6 lg:px-12 pb-6">
       <div id="productos-grid" class="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4 md:gap-5 lg:gap-6">
         {productos.map(prod => {
-          // ✅ MISMA LÓGICA QUE EN INDEX.ASTRO - Detectar imagen disponible
           const imagenDisponible = (prod.imagenesFan && prod.imagenesFan.length > 0) 
             ? prod.imagenesFan[0] 
             : (prod.imagenesJugador && prod.imagenesJugador.length > 0) 
@@ -106,46 +130,52 @@ const categorias = ['Todas', 'Clubes', 'Selecciones', 'Retro', 'Especiales'];
   const grid = document.getElementById('productos-grid');
   const productoCount = document.getElementById('producto-count');
   const emptyState = document.getElementById('empty-state');
-  const searchCatalog = document.getElementById('search-catalog');
+  const searchCatalog = document.getElementById('search-catalog') as HTMLInputElement;
   const searchInfo = document.getElementById('search-info');
   const clearSearch = document.getElementById('clear-search');
 
   function filtrar() {
-    const items = Array.from(grid.querySelectorAll('.producto-item'));
-    let visibles = [];
+    const items = Array.from(grid?.querySelectorAll('.producto-item') || []);
+    let visibles: Element[] = [];
 
     items.forEach(item => {
-      const cat = item.dataset.categoria;
-      const name = item.dataset.nombre;
+      const el = item as HTMLElement;
+      const cat = el.dataset.categoria || '';
+      const name = el.dataset.nombre || '';
 
       const okCat = categoriaActual === 'Todas' || cat === categoriaActual;
       const okSearch = !terminoBusqueda || name.includes(terminoBusqueda.toLowerCase());
 
       if (okCat && okSearch) {
-        item.style.display = 'block';
+        el.style.display = '';
+        el.style.animation = 'fadeIn 0.3s ease-out';
         visibles.push(item);
       } else {
-        item.style.display = 'none';
+        el.style.display = 'none';
       }
     });
 
-    productoCount.textContent = visibles.length;
+    if (productoCount) productoCount.textContent = String(visibles.length);
 
-    if (terminoBusqueda) {
-      searchInfo.textContent = `para "${terminoBusqueda}"`;
-      searchInfo.classList.remove('hidden');
-    } else {
-      searchInfo.classList.add('hidden');
+    if (searchInfo) {
+      if (terminoBusqueda) {
+        searchInfo.textContent = `para "${terminoBusqueda}"`;
+        searchInfo.classList.remove('hidden');
+      } else {
+        searchInfo.classList.add('hidden');
+      }
     }
 
-    emptyState.classList.toggle('hidden', visibles.length > 0);
-    emptyState.classList.toggle('flex', visibles.length === 0);
-    grid.classList.toggle('hidden', visibles.length === 0);
+    if (emptyState && grid) {
+      emptyState.classList.toggle('hidden', visibles.length > 0);
+      emptyState.classList.toggle('flex', visibles.length === 0);
+      grid.classList.toggle('hidden', visibles.length === 0);
+    }
   }
 
   function actualizarTabs() {
     tabs.forEach(tab => {
-      const cat = tab.dataset.categoria;
+      const cat = (tab as HTMLElement).dataset.categoria;
       if (cat === categoriaActual) {
         tab.classList.add('bg-black', 'text-white', 'border-black');
         tab.classList.remove('border-gray-200', 'text-gray-600');
@@ -165,7 +195,7 @@ const categorias = ['Todas', 'Clubes', 'Selecciones', 'Retro', 'Especiales'];
       categoriaActual = catURL;
     }
 
-    if (searchURL) {
+    if (searchURL && searchCatalog) {
       terminoBusqueda = searchURL;
       searchCatalog.value = searchURL;
     }
@@ -176,7 +206,7 @@ const categorias = ['Todas', 'Clubes', 'Selecciones', 'Retro', 'Especiales'];
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      categoriaActual = tab.dataset.categoria;
+      categoriaActual = (tab as HTMLElement).dataset.categoria || 'Todas';
       actualizarTabs();
 
       const params = new URLSearchParams();
@@ -188,23 +218,74 @@ const categorias = ['Todas', 'Clubes', 'Selecciones', 'Retro', 'Especiales'];
     });
   });
 
-  searchCatalog?.addEventListener('input', e => {
-    terminoBusqueda = e.target.value.trim();
+  // ✅ BÚSQUEDA ESTILO INDEX (con timeout)
+  let searchTimeout: ReturnType<typeof setTimeout>;
 
-    const params = new URLSearchParams();
-    if (categoriaActual !== 'Todas') params.set('categoria', categoriaActual);
-    if (terminoBusqueda) params.set('search', terminoBusqueda);
-
-    history.pushState({}, '', params.toString() ? `/catalogo?${params}` : '/catalogo');
+  searchCatalog?.addEventListener('input', (e) => {
+    const query = (e.target as HTMLInputElement).value.trim();
+    terminoBusqueda = query;
+    
+    clearTimeout(searchTimeout);
+    
+    // Filtrar inmediatamente para feedback visual
     filtrar();
+    
+    // Actualizar URL después de 800ms
+    if (query.length >= 0) {
+      searchTimeout = setTimeout(() => {
+        const params = new URLSearchParams();
+        if (categoriaActual !== 'Todas') params.set('categoria', categoriaActual);
+        if (query) params.set('search', query);
+        
+        history.pushState({}, '', params.toString() ? `/catalogo?${params}` : '/catalogo');
+      }, 800);
+    }
+  });
+
+  searchCatalog?.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      clearTimeout(searchTimeout);
+      
+      const params = new URLSearchParams();
+      if (categoriaActual !== 'Todas') params.set('categoria', categoriaActual);
+      if (terminoBusqueda) params.set('search', terminoBusqueda);
+      
+      history.pushState({}, '', params.toString() ? `/catalogo?${params}` : '/catalogo');
+    }
   });
 
   clearSearch?.addEventListener('click', () => {
     terminoBusqueda = '';
     categoriaActual = 'Todas';
-    searchCatalog.value = '';
+    if (searchCatalog) searchCatalog.value = '';
     actualizarTabs();
     history.pushState({}, '', '/catalogo');
     filtrar();
   });
 </script>
+
+<style>
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  /* ✅ Animación suave para productos */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .producto-item {
+    animation: fadeIn 0.3s ease-out;
+  }
+</style>

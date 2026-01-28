@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Imágenes de productos (están en Cloudinary)
+public/img/CAMISOLAS/

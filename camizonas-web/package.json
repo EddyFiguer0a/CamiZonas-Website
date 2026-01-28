@@ -5,11 +5,14 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "update-products": "tsx scripts/generateFromCloudinaryStructure.ts"
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.16.0",
+    "cloudinary": "^2.9.0",
+    "dotenv": "^17.2.3",
     "tailwindcss": "^3.4.0"
   },
   "devDependencies": {
