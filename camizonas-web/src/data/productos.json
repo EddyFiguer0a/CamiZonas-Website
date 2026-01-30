@@ -1,5 +1,35 @@
 [
   {
+    "id": "inter-miami-visitante-2526",
+    "nombre": "Inter Miami Visitante 25/26",
+    "precioFan": 375,
+    "precioJugador": 400,
+    "categoria": "Clubes",
+    "imagenesFan": [
+      "https://res.cloudinary.com/dbydbxlbw/image/upload/v1769755468/CAMISOLAS/CLUBES/AMERICA/INTER%20MIAMI/25-26/VISITANTE/Versi%C3%B3n%20Fan/miami_frontal_vis_f.jpg",
+      "https://res.cloudinary.com/dbydbxlbw/image/upload/v1769755467/CAMISOLAS/CLUBES/AMERICA/INTER%20MIAMI/25-26/VISITANTE/Versi%C3%B3n%20Fan/miami_espalda_vis_f.jpg"
+    ],
+    "imagenesJugador": [
+      "https://res.cloudinary.com/dbydbxlbw/image/upload/v1769755469/CAMISOLAS/CLUBES/AMERICA/INTER%20MIAMI/25-26/VISITANTE/Versi%C3%B3n%20Jugador/miami_espalda_vis_ju.jpg",
+      "https://res.cloudinary.com/dbydbxlbw/image/upload/v1769755469/CAMISOLAS/CLUBES/AMERICA/INTER%20MIAMI/25-26/VISITANTE/Versi%C3%B3n%20Jugador/miami_espalda_vis_j.jpg"
+    ]
+  },
+  {
+    "id": "inter-miami-local-2526",
+    "nombre": "Inter Miami Local 25/26",
+    "precioFan": 375,
+    "precioJugador": 400,
+    "categoria": "Clubes",
+    "imagenesFan": [
+      "https://res.cloudinary.com/dbydbxlbw/image/upload/v1769755465/CAMISOLAS/CLUBES/AMERICA/INTER%20MIAMI/25-26/LOCAL/Versi%C3%B3n%20Fan/miami_frontal_f.jpg",
+      "https://res.cloudinary.com/dbydbxlbw/image/upload/v1769755464/CAMISOLAS/CLUBES/AMERICA/INTER%20MIAMI/25-26/LOCAL/Versi%C3%B3n%20Fan/miami_Espalda_f.jpg"
+    ],
+    "imagenesJugador": [
+      "https://res.cloudinary.com/dbydbxlbw/image/upload/v1769755466/CAMISOLAS/CLUBES/AMERICA/INTER%20MIAMI/25-26/LOCAL/Versi%C3%B3n%20Jugador/miami_frontal.jpg",
+      "https://res.cloudinary.com/dbydbxlbw/image/upload/v1769755466/CAMISOLAS/CLUBES/AMERICA/INTER%20MIAMI/25-26/LOCAL/Versi%C3%B3n%20Jugador/miami_Espalda.jpg"
+    ]
+  },
+  {
     "id": "portugal-local-2627",
     "nombre": "Portugal Local 26/27",
     "precioFan": 375,
