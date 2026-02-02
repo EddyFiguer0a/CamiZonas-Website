@@ -84,7 +84,7 @@
   {
     "id": "retro-real-madrid-1415",
     "nombre": "Real Madrid Retro 14-15",
-    "precioFan": 375,
+    "precioFan": 420,
     "precioJugador": null,
     "categoria": "Retro",
     "subcategoria": "Clubes",
@@ -97,7 +97,7 @@
   {
     "id": "retro-real-madrid-9800",
     "nombre": "Real Madrid Retro 98-00",
-    "precioFan": 375,
+    "precioFan": 420,
     "precioJugador": null,
     "categoria": "Retro",
     "subcategoria": "Clubes",
@@ -110,7 +110,7 @@
   {
     "id": "especial-real-madrid-baseball",
     "nombre": "Real Madrid Baseball",
-    "precioFan": 375,
+    "precioFan": 420,
     "precioJugador": null,
     "categoria": "Especiales",
     "imagenesFan": [

@@ -9,6 +9,7 @@ const API_SECRET = process.env.CLOUDINARY_API_SECRET;
 const OUTPUT_FILE = "src/data/productos.json";
 const PRECIO_FAN = 375;
 const PRECIO_JUGADOR = 400;
+const PRECIO_RETRO_ESPECIAL = 420;
 const TEMPORADA_DEFAULT = "26-27";
 
 function slug(str: string): string {
@@ -276,9 +277,10 @@ async function main() {
         };
       }
 
-      // ✅ Para Retro y Especiales, todo va a imagenesFan
+      // ✅ Asignar precios según versión y categoría
       if (version === "fan") {
-        products[productId].precioFan = PRECIO_FAN;
+        // Para Retro y Especiales, precio 420; para otros, 375
+        products[productId].precioFan = (categoria === 'Retro' || categoria === 'Especiales') ? PRECIO_RETRO_ESPECIAL : PRECIO_FAN;
         if (!products[productId].imagenesFan.includes(url)) {
           products[productId].imagenesFan.push(url);
         }
