@@ -30,7 +30,7 @@ const esEdicionEspecial = esRetro || esEspecial;
 
 // ✅ SEO
 const productTitle = `${prod.nombre} | CamiZonas`;
-const productDescription = `${prod.nombre} - Desde Q.${precioInicial}. Personalización gratis. Envío a toda Guatemala.`;
+const productDescription = `${prod.nombre} - Desde Q.${precioInicial}. Personalización +Q.25. Parches gratis. Envío a toda Guatemala.`;
 const productImage = imagenesIniciales[0];
 const productUrl = `https://camizonas.com/producto/${prod.id}`;
 
@@ -127,9 +127,11 @@ const productosRelacionados = productos
                     ))}
                 </div>
                 
-                <div class="absolute bottom-5 left-1/2 -translate-x-1/2">
-                     <span class="text-[9px] font-black bg-black text-white px-3 py-1 rounded-full tracking-widest border border-white/20 backdrop-blur-sm shadow-xl">VERSION JUGADOR</span>
-                </div>
+                {!esEdicionEspecial && (
+                  <div class="absolute bottom-5 left-1/2 -translate-x-1/2">
+                       <span class="text-[9px] font-black bg-black text-white px-3 py-1 rounded-full tracking-widest border border-white/20 backdrop-blur-sm shadow-xl">VERSION JUGADOR</span>
+                  </div>
+                )}
             </section>
           )}
       </div>
@@ -168,49 +170,61 @@ const productosRelacionados = productos
         <!-- ✅ BADGES PARA EDICIONES ESPECIALES -->
         {esRetro && (
           <div class="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 text-center">
-            <span class="text-xs font-bold text-amber-700"> Edición Retro Clásica - Colección Limitada</span>
+            <span class="text-xs font-bold text-amber-700">🏆 Edición Retro Clásica - Colección Limitada</span>
           </div>
         )}
         
         {esEspecial && (
           <div class="bg-purple-50 border border-purple-200 rounded-xl px-4 py-3 text-center">
-            <span class="text-xs font-bold text-purple-700"> Edición Especial Limitada</span>
+            <span class="text-xs font-bold text-purple-700">✨ Edición Especial Limitada</span>
           </div>
         )}
 
         {soloFan && !esEdicionEspecial && (
           <div class="bg-blue-50 border border-blue-200 rounded-xl px-4 py-2 text-center">
-            <span class="text-xs font-bold text-blue-700"> Solo disponible en Versión Fan</span>
+            <span class="text-xs font-bold text-blue-700">📦 Solo disponible en Versión Fan</span>
           </div>
         )}
         
         {soloJugador && !esEdicionEspecial && (
           <div class="bg-purple-50 border border-purple-200 rounded-xl px-4 py-2 text-center">
-            <span class="text-xs font-bold text-purple-700"> Solo disponible en Versión Jugador</span>
+            <span class="text-xs font-bold text-purple-700">⭐ Solo disponible en Versión Jugador</span>
           </div>
         )}
 
-        <!-- Personalización -->
+        <!-- ✅ PERSONALIZACIÓN: Ahora cuesta Q.25 -->
         <div class="space-y-2 sm:space-y-3">
            <div class="flex items-center gap-2">
               <span class="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-gray-400">Personalización</span>
-              <span class="bg-blue-50 text-blue-600 text-[8px] sm:text-[9px] font-bold px-1.5 sm:px-2 py-0.5 rounded border border-blue-100">GRATIS</span>
+              <span class="bg-gradient-to-r from-blue-500 to-purple-500 text-white text-[8px] sm:text-[9px] font-bold px-1.5 sm:px-2 py-0.5 rounded border border-white/20 backdrop-blur-sm shadow-sm">+Q.25</span>
            </div>
            
            <div class="grid grid-cols-3 gap-2 sm:gap-3">
                <div class="col-span-2">
-                   <input type="text" id="input-nombre" placeholder="Nombre (Ej. MESSI)" class="w-full bg-gray-50 border border-gray-200 rounded-lg sm:rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm font-bold placeholder:font-medium placeholder:text-gray-400 outline-none focus:border-black focus:ring-1 ring-black transition-all uppercase" />
+                   <input type="text" id="input-nombre" placeholder="Nombre (Ej. MESSI)" class="w-full bg-gray-50 border border-gray-200 rounded-lg sm:rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm font-bold placeholder:font-medium placeholder:text-gray-400 outline-none focus:border-purple-500 focus:ring-2 ring-purple-500/20 transition-all uppercase" />
                </div>
                <div class="col-span-1">
-                   <input type="number" id="input-numero" placeholder="#" class="w-full bg-gray-50 border border-gray-200 rounded-lg sm:rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm font-bold placeholder:font-medium placeholder:text-gray-400 outline-none focus:border-black focus:ring-1 ring-black transition-all text-center" />
+                   <input type="number" id="input-numero" placeholder="#" class="w-full bg-gray-50 border border-gray-200 rounded-lg sm:rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm font-bold placeholder:font-medium placeholder:text-gray-400 outline-none focus:border-purple-500 focus:ring-2 ring-purple-500/20 transition-all text-center" />
                </div>
+           </div>
+
+           <!-- ✅ NUEVO: Indicador de costo de personalización -->
+           <div id="personalizacion-notice" class="hidden bg-purple-50 border border-purple-200 rounded-lg px-3 py-2 text-center transition-all duration-300">
+             <p class="text-[10px] font-bold text-purple-700 flex items-center justify-center gap-1">
+              
+              Personalización agregada (+Q.25)
+            </p>
+
            </div>
         </div>
 
-        <!-- ✅ PARCHE: Solo para productos de Clubes y Selecciones -->
+        <!-- ✅ PARCHE: Ahora GRATIS -->
         {!esEdicionEspecial && (
           <div class="space-y-2 sm:space-y-3">
-              <label class="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-gray-400 block">Parche Oficial (+Q.25)</label>
+              <div class="flex items-center gap-2">
+                <label class="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-gray-400 block">Parche Oficial</label>
+                <span class="bg-green-50 text-green-600 text-[8px] sm:text-[9px] font-bold px-1.5 sm:px-2 py-0.5 rounded border border-green-100">GRATIS</span>
+              </div>
               
               <div class="flex gap-2 sm:gap-3 items-start">
                 <div class="relative flex-1">
@@ -246,7 +260,7 @@ const productosRelacionados = productos
                             <p class="text-[8px] sm:text-[10px] text-gray-400">UEFA Official</p>
                           </div>
                         </div>
-                        <span class="text-[10px] sm:text-xs font-bold text-gray-500">+Q.25</span>
+                        <span class="text-[10px] sm:text-xs font-bold text-green-600">Gratis</span>
                       </button>
 
                       <button type="button" class="parche-option w-full text-left px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl hover:bg-orange-50 transition-colors flex items-center justify-between group" data-value="La Liga">
@@ -259,7 +273,7 @@ const productosRelacionados = productos
                             <p class="text-[8px] sm:text-[10px] text-gray-400">España Official</p>
                           </div>
                         </div>
-                        <span class="text-[10px] sm:text-xs font-bold text-gray-500">+Q.25</span>
+                        <span class="text-[10px] sm:text-xs font-bold text-green-600">Gratis</span>
                       </button>
 
                       <button type="button" class="parche-option w-full text-left px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl hover:bg-purple-50 transition-colors flex items-center justify-between group" data-value="Premier">
@@ -272,7 +286,7 @@ const productosRelacionados = productos
                             <p class="text-[8px] sm:text-[10px] text-gray-400">England Official</p>
                           </div>
                         </div>
-                        <span class="text-[10px] sm:text-xs font-bold text-gray-500">+Q.25</span>
+                        <span class="text-[10px] sm:text-xs font-bold text-green-600">Gratis</span>
                       </button>
 
                       <button type="button" class="parche-option w-full text-left px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl hover:bg-yellow-50 transition-colors flex items-center justify-between group" data-value="Mundial">
@@ -285,7 +299,7 @@ const productosRelacionados = productos
                             <p class="text-[8px] sm:text-[10px] text-gray-400">FIFA Official</p>
                           </div>
                         </div>
-                        <span class="text-[10px] sm:text-xs font-bold text-gray-500">+Q.25</span>
+                        <span class="text-[10px] sm:text-xs font-bold text-green-600">Gratis</span>
                       </button>
                     </div>
                   </div>
@@ -313,28 +327,28 @@ const productosRelacionados = productos
           </div>
         </div>
 
-        <!-- ✅ DISCLAIMER DINÁMICO -->
+        <!-- ✅ DISCLAIMER DINÁMICO ACTUALIZADO -->
         <div class={`rounded-xl p-4 border ${esRetro ? 'bg-amber-50 border-amber-100' : esEspecial ? 'bg-purple-50 border-purple-100' : 'bg-gray-50 border-gray-100'}`}>
           <p class="text-[10px] sm:text-xs text-gray-600 leading-relaxed">
             {esRetro ? (
               <span>
                 <span class="font-bold text-amber-700">🏆 Edición Retro:</span>
-                Réplica de alta calidad inspirada en los diseños clásicos. Material premium y acabados de colección.
+                Réplica de alta calidad inspirada en los diseños clásicos. Material premium y acabados de colección. Parches gratis.
               </span>
             ) : esEspecial ? (
               <span>
                 <span class="font-bold text-purple-700">✨ Edición Especial:</span>
-                Diseño exclusivo de edición limitada. Materiales premium y detalles únicos que no encontrarás en otra parte.
+                Diseño exclusivo de edición limitada. Materiales premium y detalles únicos. Parches gratis.
               </span>
             ) : (
               <>
                 <span class="block sm:inline">
                   <span class="font-bold text-gray-700">📦 Versión Fan:</span>
-                  Ideal para uso diario, tela cómoda y liviana. Corte recto y relajado.
+                  Ideal para uso diario, tela cómoda y liviana. Parches gratis • Personalización +Q.25
                 </span>
                 <span class="block sm:inline sm:ml-2">
                   <span class="font-bold text-gray-700">⭐ Versión Jugador:</span>
-                  Tecnología profesional para secado rápido, misma que usan los jugadores en cancha. Corte ajustado.
+                  Tecnología profesional para secado rápido. Parches gratis • Personalización +Q.25
                 </span>
               </>
             )}
@@ -430,11 +444,56 @@ const productosRelacionados = productos
 }}>
   // ============ VARIABLES DE ESTADO ============
   let versionActual = versionInicial;
-  let precioActual = versionInicial === 'Fan' ? precioFan : precioJugador;
+  let precioBase = versionInicial === 'Fan' ? precioFan : precioJugador;
+  let precioActual = precioBase;
   let tallaActual = '';
   let parcheSeleccionado = '';
+  let tienePersonalizacion = false;
 
   // ============ ELEMENTOS DEL DOM ============
+  const inputNombre = document.getElementById('input-nombre');
+  const inputNumero = document.getElementById('input-numero');
+  const precioDisplay = document.getElementById('precio-display');
+  const personalizacionNotice = document.getElementById('personalizacion-notice');
+
+  // ============ FUNCIÓN ACTUALIZAR PRECIO ============
+  function actualizarPrecio() {
+    const hayNombre = inputNombre?.value.trim().length > 0;
+    const hayNumero = inputNumero?.value.trim().length > 0;
+    tienePersonalizacion = hayNombre || hayNumero;
+
+    precioActual = precioBase;
+    if (tienePersonalizacion) {
+      precioActual += 25;
+    }
+
+    if (precioDisplay) {
+      precioDisplay.innerText = `Q.${precioActual}`;
+      
+      // Animación sutil al cambiar precio
+      precioDisplay.classList.remove('scale-110');
+      void precioDisplay.offsetWidth;
+      precioDisplay.classList.add('scale-110');
+      setTimeout(() => precioDisplay.classList.remove('scale-110'), 200);
+    }
+
+    // Mostrar/ocultar aviso de personalización
+    if (personalizacionNotice) {
+      if (tienePersonalizacion) {
+        personalizacionNotice.classList.remove('hidden');
+        setTimeout(() => personalizacionNotice.classList.add('opacity-100'), 10);
+      } else {
+        personalizacionNotice.classList.remove('opacity-100');
+        setTimeout(() => personalizacionNotice.classList.add('hidden'), 300);
+      }
+    }
+  }
+
+  // ============ LISTENERS PARA INPUTS DE PERSONALIZACIÓN ============
+  inputNombre?.addEventListener('input', actualizarPrecio);
+  inputNumero?.addEventListener('input', actualizarPrecio);
+
+  // ============ PARCHE DROPDOWN ============
   const parcheToggle = document.getElementById('parche-toggle');
   const parcheDropdown = document.getElementById('parche-dropdown');
   const parcheSelected = document.getElementById('parche-selected');
@@ -458,7 +517,6 @@ const productosRelacionados = productos
     'Mundial': 'Campeón Mundial'
   };
 
-  // ============ PARCHE DROPDOWN (Solo si existe) ============
   if (parcheToggle && !esEdicionEspecial) {
     parcheToggle.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -547,10 +605,8 @@ const productosRelacionados = productos
     if (!tieneAmbas || esEdicionEspecial) return;
     
     versionActual = version;
-    precioActual = (version === 'Fan') ? precioFan : precioJugador;
-    
-    const precioDisplay = document.getElementById('precio-display');
-    if (precioDisplay) precioDisplay.innerText = `Q.${precioActual}`;
+    precioBase = (version === 'Fan') ? precioFan : precioJugador;
+    actualizarPrecio();
 
     const sliderFan = document.getElementById('slider-fan');
     const sliderJugador = document.getElementById('slider-jugador');
@@ -578,6 +634,101 @@ const productosRelacionados = productos
     setTimeout(setupImageCounter, 100);
   }
 
+  // ============ FUNCIÓN WHATSAPP ACTUALIZADA ============
+  function enviarWhatsApp() {
+    if (!tallaActual) {
+      if (typeof window.showToast === 'function') {
+        window.showToast('⚠️ Por favor selecciona una talla', 'warning', 3000);
+      } else {
+        alert('Por favor selecciona una talla');
+      }
+      
+      botonesTalla.forEach(btn => {
+        btn.classList.add('animate-pulse', 'border-red-400');
+        setTimeout(() => btn.classList.remove('animate-pulse', 'border-red-400'), 1000);
+      });
+      return;
+    }
+
+    const telefono = "50232650539";
+    const nombrePers = inputNombre?.value.toUpperCase() || '';
+    const numeroPers = inputNumero?.value || '';
+    
+    let extraTexto = '';
+
+    if(nombrePers || numeroPers) {
+      extraTexto += `\n✨ Personalizado: ${nombrePers} ${numeroPers ? '#' + numeroPers : ''} (+Q.25)`;
+    }
+    if(parcheSeleccionado && !esEdicionEspecial) {
+      extraTexto += `\n🛡️ Parche: ${nombresParches[parcheSeleccionado] || parcheSeleccionado} (GRATIS)`;
+    }
+
+    const versionTexto = esEdicionEspecial ? '' : `\n💎 Versión: *${versionActual.toUpperCase()}*`;
+
+    const mensaje = `Hola 👋, quiero pedir: \n\n⚽ *${nombreProd}*${versionTexto}\n📏 Talla: ${tallaActual}${extraTexto}\n\n💰 Precio Total: Q.${precioActual}`;
+    window.open(`https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`, '_blank');
+  }
+
+  // ============ FUNCIÓN AGREGAR AL CARRITO ACTUALIZADA ============
+  function agregarAlCarrito(btnElement) {
+    if (!tallaActual) {
+      if (typeof window.showToast === 'function') {
+        window.showToast('⚠️ Por favor selecciona una talla', 'warning', 3000);
+      } else {
+        alert('Por favor selecciona una talla');
+      }
+      
+      botonesTalla.forEach(btn => {
+        btn.classList.add('animate-pulse', 'border-red-400');
+        setTimeout(() => btn.classList.remove('animate-pulse', 'border-red-400'), 1000);
+      });
+      return;
+    }
+
+    const nombrePers = inputNombre?.value.toUpperCase() || '';
+    const numeroPers = inputNumero?.value || '';
+
+    const containerClass = versionActual === 'Fan' ? '.snap-container-fan img' : '.snap-container-jugador img';
+    const primeraImagen = document.querySelector(containerClass)?.src || '';
+    
+    const productoCarrito = {
+      id: Date.now(),
+      nombre: nombreProd,
+      version: esEdicionEspecial ? 'Única' : versionActual,
+      talla: tallaActual,
+      precio: precioActual,
+      imagen: primeraImagen,
+      personalizacion: (nombrePers || numeroPers) ? { nombre: nombrePers, numero: numeroPers } : null,
+      parche: (!esEdicionEspecial && parcheSeleccionado) ? parcheSeleccionado : null
+    };
+
+    let carrito = JSON.parse(localStorage.getItem('carrito') || '[]');
+    carrito.push(productoCarrito);
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+
+    if (typeof window.flyToCart === 'function') {
+      window.flyToCart(btnElement);
+    }
+
+    btnElement.classList.add('bg-green-500', 'border-green-500', 'scale-95');
+    
+    setTimeout(() => {
+      btnElement.classList.remove('bg-green-500', 'border-green-500', 'scale-95');
+    }, 600);
+
+    let mensaje = `🛒 ${nombreProd} agregado al carrito`;
+    if (nombrePers || numeroPers) {
+      mensaje = `✨ ${nombreProd} personalizado agregado`;
+    }
+    
+    if (typeof window.showToast === 'function') {
+      window.showToast(mensaje, 'success', 3000);
+    }
+
+    window.dispatchEvent(new CustomEvent('cartUpdated'));
+  }
+
+  // ============ EVENT LISTENERS ============
   document.addEventListener('DOMContentLoaded', () => {
     setupImageCounter();
   });
@@ -619,107 +770,6 @@ const productosRelacionados = productos
     });
   });
 
-  // ============ FUNCIÓN WHATSAPP ============
-  function enviarWhatsApp() {
-    if (!tallaActual) {
-      if (typeof window.showToast === 'function') {
-        window.showToast('⚠️ Por favor selecciona una talla', 'warning', 3000);
-      } else {
-        alert('Por favor selecciona una talla');
-      }
-      
-      botonesTalla.forEach(btn => {
-        btn.classList.add('animate-pulse', 'border-red-400');
-        setTimeout(() => btn.classList.remove('animate-pulse', 'border-red-400'), 1000);
-      });
-      return;
-    }
-
-    const telefono = "50232650539";
-    const nombrePers = document.getElementById('input-nombre')?.value.toUpperCase() || '';
-    const numeroPers = document.getElementById('input-numero')?.value || '';
-    
-    let extraTexto = '';
-    let precioFinal = precioActual;
-
-    if(nombrePers || numeroPers) {
-      extraTexto += `\n✨ Personalizado: ${nombrePers} ${numeroPers ? '#' + numeroPers : ''}`;
-    }
-    if(parcheSeleccionado && !esEdicionEspecial) {
-      extraTexto += `\n🛡️ Parche: ${nombresParches[parcheSeleccionado] || parcheSeleccionado}`;
-      precioFinal += 25;
-    }
-
-    // Para ediciones especiales no mencionar versión
-    const versionTexto = esEdicionEspecial ? '' : `\n💎 Versión: *${versionActual.toUpperCase()}*`;
-
-    const mensaje = `Hola 👋, quiero pedir: \n\n⚽ *${nombreProd}*${versionTexto}\n📏 Talla: ${tallaActual}${extraTexto}\n\n💰 Precio Total: Q.${precioFinal}`;
-    window.open(`https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`, '_blank');
-  }
-
-  // ============ FUNCIÓN AGREGAR AL CARRITO ============
-  function agregarAlCarrito(btnElement) {
-    if (!tallaActual) {
-      if (typeof window.showToast === 'function') {
-        window.showToast(' Por favor selecciona una talla', 'warning', 3000);
-      } else {
-        alert('Por favor selecciona una talla');
-      }
-      
-      botonesTalla.forEach(btn => {
-        btn.classList.add('animate-pulse', 'border-red-400');
-        setTimeout(() => btn.classList.remove('animate-pulse', 'border-red-400'), 1000);
-      });
-      return;
-    }
-
-    const nombrePers = document.getElementById('input-nombre')?.value.toUpperCase() || '';
-    const numeroPers = document.getElementById('input-numero')?.value || '';
-
-    let precioFinal = precioActual;
-    if (parcheSeleccionado && !esEdicionEspecial) precioFinal += 25;
-
-    const containerClass = versionActual === 'Fan' ? '.snap-container-fan img' : '.snap-container-jugador img';
-    const primeraImagen = document.querySelector(containerClass)?.src || '';
-    
-    const productoCarrito = {
-      id: Date.now(),
-      nombre: nombreProd,
-      version: esEdicionEspecial ? 'Única' : versionActual,
-      talla: tallaActual,
-      precio: precioFinal,
-      imagen: primeraImagen,
-      personalizacion: (nombrePers || numeroPers) ? { nombre: nombrePers, numero: numeroPers } : null,
-      parche: (!esEdicionEspecial && parcheSeleccionado) ? parcheSeleccionado : null
-    };
-
-    let carrito = JSON.parse(localStorage.getItem('carrito') || '[]');
-    carrito.push(productoCarrito);
-    localStorage.setItem('carrito', JSON.stringify(carrito));
-
-    if (typeof window.flyToCart === 'function') {
-      window.flyToCart(btnElement);
-    }
-
-    btnElement.classList.add('bg-green-500', 'border-green-500', 'scale-95');
-    
-    setTimeout(() => {
-      btnElement.classList.remove('bg-green-500', 'border-green-500', 'scale-95');
-    }, 600);
-
-    let mensaje = ` ${nombreProd} agregado al carrito`;
-    if (nombrePers || numeroPers) {
-      mensaje = ` ${nombreProd} personalizado agregado`;
-    }
-    
-    if (typeof window.showToast === 'function') {
-      window.showToast(mensaje, 'success', 3000);
-    }
-
-    window.dispatchEvent(new CustomEvent('cartUpdated'));
-  }
-
-  // ============ EVENT LISTENERS ============
   document.getElementById('whatsapp-btn')?.addEventListener('click', enviarWhatsApp);
   document.getElementById('whatsapp-btn-desktop')?.addEventListener('click', enviarWhatsApp);
 
@@ -739,5 +789,10 @@ const productosRelacionados = productos
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+  
+  /* ✅ Animación para el precio */
+  #precio-display {
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 </style>

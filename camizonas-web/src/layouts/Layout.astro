@@ -3,6 +3,7 @@ import '../styles/global.css';
 import BottomNav from '../components/BottomNav.astro';
 import Toast from '../components/Toast.astro';
 import ConfirmModal from '../components/ConfirmModal.astro';
+import Footer from '../components/Footer.astro';
 import { ViewTransitions } from 'astro:transitions';
 
 interface Props {
@@ -17,7 +18,7 @@ interface Props {
 const { 
   title = 'CamiZonas | Camisetas de Fútbol Premium',
   description = 'Las mejores camisetas de fútbol con personalización gratis. Envío a toda Guatemala.',
-  image = '/img/og-image.webp',
+  image = 'https://camizonas.com/img/og-image.webp',
   url = 'https://camizonas.com',
   showBackButton = false,
   breadcrumbs = []
@@ -36,21 +37,33 @@ const isHomePage = currentPath === '/';
   <title>{title}</title>
   <meta name="description" content={description} />
   
+  <!-- ✅ Open Graph Mejorado -->
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:image" content={image} />
   <meta property="og:url" content={url} />
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="CamiZonas" />
+  <meta property="og:locale" content="es_GT" />
   
+  <!-- ✅ Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={image} />
   
+  <!-- ✅ SEO Adicional -->
+  <meta name="keywords" content="camisetas de fútbol, camisetas deportivas, Guatemala, personalización gratis, envío nacional" />
+  <meta name="author" content="CamiZonas" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href={url} />
+  
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   
+  <!-- ✅ Preconnect para fuentes con font-display: swap -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <ViewTransitions />
 </head>
@@ -114,7 +127,7 @@ const isHomePage = currentPath === '/';
           <a href="/" class="hover:text-black transition-colors whitespace-nowrap">Inicio</a>
           {breadcrumbs.map((crumb, index) => (
             <>
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0"><path d="m9 18 6-6-6-6"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
               {index === breadcrumbs.length - 1 ? (
                 <span class="text-black font-medium truncate max-w-[200px]">{crumb.label}</span>
               ) : (
@@ -164,17 +177,20 @@ const isHomePage = currentPath === '/';
 
       <div class="mt-auto pt-6 border-t border-gray-100">
         <a href="https://wa.me/50232650539" class="bg-black text-white py-4 rounded-xl flex justify-center items-center gap-2 font-bold text-sm hover:bg-gray-900 transition-all shadow-lg shadow-black/10 hover:shadow-xl hover:translate-y-[-2px]">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#25D366">
+            <path d="M12 2C6.486 2 2 6.486 2 12c0 1.994.574 3.84 1.566 5.396L2 22l4.78-1.538A9.93 9.93 0 0 0 12 22c5.514 0 10-4.486 10-10S17.514 2 12 2zm0 18.182a8.13 8.13 0 0 1-4.144-1.127l-.297-.176-2.834.911.923-2.761-.194-.306A8.126 8.126 0 1 1 12 20.182zm4.47-5.693c-.244-.122-1.444-.713-1.667-.794-.223-.082-.386-.122-.549.122-.163.245-.632.794-.774.958-.142.163-.284.183-.528.061-.244-.122-1.03-.38-1.96-1.21-.724-.646-1.212-1.444-1.354-1.688-.142-.244-.015-.375.107-.497.11-.11.244-.285.366-.427.122-.143.163-.244.244-.407.081-.163.041-.305-.02-.427-.061-.122-.549-1.326-.752-1.815-.198-.476-.399-.412-.549-.42-.142-.007-.305-.009-.467-.009-.163 0-.427.061-.651.305-.223.244-.854.834-.854 2.034s.875 2.36.997 2.523c.122.163 1.72 2.628 4.168 3.684.582.251 1.037.401 1.391.513.584.186 1.115.16 1.535.097.468-.07 1.444-.591 1.647-1.163.203-.571.203-1.061.142-1.163-.061-.102-.223-.163-.467-.285z"/>
+          </svg>
           WhatsApp
         </a>
       </div>
     </div>
   </aside>
 
+  <!-- MODALES (tallas, envíos, faq) - mantengo igual -->
   <div id="tallas-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/50 backdrop-blur-sm transition-opacity duration-300">
     <div class="bg-white rounded-3xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-fade-in-scale">
       <div class="sticky top-0 bg-white p-4 border-b border-gray-100 flex justify-between items-center rounded-t-3xl z-10">
-        <h2 class="text-lg font-black"> Guía de Tallas</h2>
+        <h2 class="text-lg font-black">📏 Guía de Tallas</h2>
         <button id="close-tallas-modal" class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
         </button>
@@ -183,7 +199,7 @@ const isHomePage = currentPath === '/';
       <div class="p-5 space-y-5">
         <div class="bg-orange-50 border border-orange-200 rounded-xl p-4">
           <p class="text-sm text-orange-800">
-            <span class="font-bold"> Tip:</span> Si estás entre dos tallas, te recomendamos elegir la más grande para mayor comodidad.
+            <span class="font-bold">💡 Tip:</span> Si estás entre dos tallas, te recomendamos elegir la más grande para mayor comodidad.
           </p>
         </div>
 
@@ -193,38 +209,38 @@ const isHomePage = currentPath === '/';
             <table class="w-full text-xs border-collapse">
               <thead>
                 <tr class="bg-gray-100">
-                  <th class="p-2 text-left font-bold rounded-tl-lg">Talla</th>
+                  <th class="p-2 text-left rounded-tl-lg font-bold">Talla</th>
                   <th class="p-2 text-center font-bold">Altura</th>
                   <th class="p-2 text-center font-bold">Peso</th>
-                  <th class="p-2 text-center font-bold rounded-tr-lg">Pecho</th>
+                  <th class="p-2 text-center rounded-tr-lg font-bold">Pecho</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr class="border-b border-gray-100">
+              <tbody class="divide-y divide-gray-200">
+                <tr class="hover:bg-gray-50">
                   <td class="p-2 font-bold">S</td>
-                  <td class="p-2 text-center">1.60 - 1.68 m</td>
-                  <td class="p-2 text-center">55 - 65 kg</td>
-                  <td class="p-2 text-center">88 - 94 cm</td>
+                  <td class="p-2 text-center">1.60 - 1.70 m</td>
+                  <td class="p-2 text-center">60 - 70 kg</td>
+                  <td class="p-2 text-center">88 - 92 cm</td>
                 </tr>
-                <tr class="border-b border-gray-100 bg-gray-50">
+                <tr class="hover:bg-gray-50">
                   <td class="p-2 font-bold">M</td>
-                  <td class="p-2 text-center">1.68 - 1.75 m</td>
-                  <td class="p-2 text-center">65 - 75 kg</td>
-                  <td class="p-2 text-center">94 - 100 cm</td>
+                  <td class="p-2 text-center">1.68 - 1.78 m</td>
+                  <td class="p-2 text-center">70 - 80 kg</td>
+                  <td class="p-2 text-center">92 - 100 cm</td>
                 </tr>
-                <tr class="border-b border-gray-100">
+                <tr class="hover:bg-gray-50">
                   <td class="p-2 font-bold">L</td>
-                  <td class="p-2 text-center">1.75 - 1.82 m</td>
-                  <td class="p-2 text-center">75 - 85 kg</td>
-                  <td class="p-2 text-center">100 - 106 cm</td>
+                  <td class="p-2 text-center">1.75 - 1.85 m</td>
+                  <td class="p-2 text-center">80 - 90 kg</td>
+                  <td class="p-2 text-center">100 - 108 cm</td>
                 </tr>
-                <tr class="border-b border-gray-100 bg-gray-50">
+                <tr class="hover:bg-gray-50">
                   <td class="p-2 font-bold">XL</td>
-                  <td class="p-2 text-center">1.82 - 1.88 m</td>
-                  <td class="p-2 text-center">85 - 95 kg</td>
-                  <td class="p-2 text-center">106 - 112 cm</td>
+                  <td class="p-2 text-center">1.83 - 1.93 m</td>
+                  <td class="p-2 text-center">90 - 95 kg</td>
+                  <td class="p-2 text-center">108 - 112 cm</td>
                 </tr>
-                <tr>
+                <tr class="hover:bg-gray-50">
                   <td class="p-2 font-bold rounded-bl-lg">XXL</td>
                   <td class="p-2 text-center">1.88+ m</td>
                   <td class="p-2 text-center">95+ kg</td>
@@ -255,7 +271,7 @@ const isHomePage = currentPath === '/';
   <div id="envios-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/50 backdrop-blur-sm transition-opacity duration-300">
     <div class="bg-white rounded-3xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-fade-in-scale">
       <div class="sticky top-0 bg-white p-4 border-b border-gray-100 flex justify-between items-center rounded-t-3xl z-10">
-        <h2 class="text-lg font-black">Información de Envíos</h2>
+        <h2 class="text-lg font-black">🚚 Información de Envíos</h2>
         <button id="close-envios-modal" class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
         </button>
@@ -263,47 +279,31 @@ const isHomePage = currentPath === '/';
       
       <div class="p-5 space-y-5">
         <div class="bg-green-50 border border-green-200 rounded-xl p-4 text-center">
-          <p class="text-2xl font-black text-green-700">Q.20 - Q.35</p>
-          <p class="text-sm text-green-600 mt-1">Costo aproximado de envío</p>
+          <p class="text-sm text-green-800 font-bold mb-1">📦 Envío a toda Guatemala</p>
+          <p class="text-xs text-green-700">Tiempo estimado: 2-4 días hábiles</p>
         </div>
 
         <div class="space-y-3">
-          <p class="text-sm text-gray-600 leading-relaxed">
-            El costo del envío varía dependiendo de la zona donde te encuentres. 
-            <span class="font-bold">Cuéntanos tu ubicación</span> y te daremos el precio exacto junto con tu total.
-          </p>
-
-          <div class="bg-gray-50 rounded-xl p-4 space-y-2">
-            <div class="flex items-center gap-3">
-              <span class="text-xl">🏙️</span>
-              <div>
-                <p class="font-bold text-sm">Ciudad de Guatemala</p>
-                <p class="text-xs text-gray-500">Q.20 - Q.25</p>
-              </div>
+          <h3 class="font-bold text-sm text-gray-700">Costos de envío (aproximados):</h3>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <div class="bg-gray-50 p-3 rounded-lg">
+              <p class="font-bold text-gray-700">Ciudad de Guatemala</p>
+              <p class="text-gray-600">Q.25 - Q.35</p>
             </div>
-            <div class="flex items-center gap-3">
-              <span class="text-xl">🏘️</span>
-              <div>
-                <p class="font-bold text-sm">Municipios cercanos</p>
-                <p class="text-xs text-gray-500">Q.25 - Q.30</p>
-              </div>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="text-xl">🌄</span>
-              <div>
-                <p class="font-bold text-sm">Departamentos</p>
-                <p class="text-xs text-gray-500">Q.30 - Q.35</p>
-              </div>
+            <div class="bg-gray-50 p-3 rounded-lg">
+              <p class="font-bold text-gray-700">Interior del país</p>
+              <p class="text-gray-600">Q.35 - Q.50</p>
             </div>
           </div>
         </div>
 
         <div class="flex items-center gap-3 p-4 bg-blue-50 rounded-xl">
-          <span class="text-2xl">⏱️</span>
-          <div>
-            <p class="font-bold text-sm text-blue-800">Tiempo de entrega</p>
-            <p class="text-xs text-blue-600">2-4 días hábiles después de confirmar tu pedido</p>
-          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-blue-600 flex-shrink-0">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="16" x2="12" y2="12"/>
+            <line x1="12" y1="8" x2="12.01" y2="8"/>
+          </svg>
+          <p class="text-xs text-gray-700">El costo exacto se confirma por WhatsApp según tu ubicación.</p>
         </div>
 
         <a href="https://wa.me/50232650539?text=Hola,%20quiero%20saber%20el%20costo%20de%20envío%20a%20mi%20zona:%20___" class="block w-full bg-black text-white text-center py-3 rounded-xl font-bold text-sm hover:bg-gray-800 transition-colors">
@@ -316,7 +316,7 @@ const isHomePage = currentPath === '/';
   <div id="faq-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/50 backdrop-blur-sm transition-opacity duration-300">
     <div class="bg-white rounded-3xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-fade-in-scale">
       <div class="sticky top-0 bg-white p-4 border-b border-gray-100 flex justify-between items-center rounded-t-3xl z-10">
-        <h2 class="text-lg font-black">Preguntas Frecuentes</h2>
+        <h2 class="text-lg font-black">❓ Preguntas Frecuentes</h2>
         <button id="close-faq-modal" class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
         </button>
@@ -339,18 +339,7 @@ const isHomePage = currentPath === '/';
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="transform transition-transform duration-300 group-open:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
           </summary>
           <div class="px-4 pb-4 text-sm text-gray-600 animate-fadeIn">
-            ¡Sí! Puedes poner el nombre y número que quieras. Ya sea tu jugador favorito o tu propio nombre. La personalización es <span class="font-bold text-green-600">GRATIS</span>.
-          </div>
-        </details>
-
-        <details class="group border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-sm">
-          <summary class="flex justify-between items-center p-4 cursor-pointer font-bold text-sm hover:bg-gray-50 transition-colors select-none">
-            ¿Cuál es la diferencia entre Fan y Jugador?
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="transform transition-transform duration-300 group-open:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
-          </summary>
-          <div class="px-4 pb-4 text-sm text-gray-600 animate-fadeIn">
-            <span class="font-bold">Fan:</span> Corte recto, tela cómoda para uso diario. <br>
-            <span class="font-bold">Jugador:</span> Corte ajustado, tecnología profesional para secado rapido, igual que los profesionales.
+            ¡Sí! Puedes poner el nombre y número que quieras. Ya sea tu jugador favorito o tu propio nombre. La personalización tiene un costo adicional de Q.25.
           </div>
         </details>
 
@@ -388,6 +377,9 @@ const isHomePage = currentPath === '/';
   </div>
   
   <slot />
+  
+  <!-- ✅ Footer -->
+  <Footer />
   
   <BottomNav currentPath={currentPath} />
 
@@ -449,7 +441,6 @@ const isHomePage = currentPath === '/';
             const newCloseBtn = document.getElementById(closeBtnId);
 
             newOpenBtn?.addEventListener('click', () => {
-                if(window.closeSideMenu) window.closeSideMenu();
                 modal.classList.remove('hidden');
                 modal.classList.add('flex');
             });
@@ -475,6 +466,9 @@ const isHomePage = currentPath === '/';
 
         // --- CARRITO BADGE ---
         updateNavCartBadge();
+        
+        // ✅ LAZY LOADING DE IMÁGENES
+        setupLazyLoading();
     }
 
     // --- FUNCIONES UTILITARIAS ---
@@ -490,6 +484,30 @@ const isHomePage = currentPath === '/';
         badge.classList.remove('hidden');
       } else {
         badge.classList.add('hidden');
+      }
+    }
+
+    // ✅ LAZY LOADING MEJORADO
+    function setupLazyLoading() {
+      const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+      
+      if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              img.addEventListener('load', () => {
+                img.classList.add('loaded');
+              });
+              observer.unobserve(img);
+            }
+          });
+        });
+
+        lazyImages.forEach(img => imageObserver.observe(img));
+      } else {
+        // Fallback para navegadores antiguos
+        lazyImages.forEach(img => img.classList.add('loaded'));
       }
     }
 

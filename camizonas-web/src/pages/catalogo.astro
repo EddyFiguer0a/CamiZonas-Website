@@ -1,11 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ProductCard from '../components/ProductCard.astro';
+import RequestJersey from '../components/RequestJersey.astro';
 import productos from '../data/productos.json';
 
 const categorias = ['Todas', 'Clubes', 'Selecciones', 'Retro', 'Especiales'];
 
-// ✅ Conteo por categoría
 const conteos = {
   Todas: productos.length,
   Clubes: productos.filter(p => p.categoria === 'Clubes').length,
@@ -18,7 +18,6 @@ const conteos = {
 <Layout title="Catálogo Completo | CamiZonas">
   <main class="bg-white min-h-screen pb-24 md:pb-12">
 
-    <!-- ✅ HEADER RESPONSIVE -->
     <header class="sticky top-0 bg-white/95 backdrop-blur-md z-40 border-b border-gray-100">
       <div class="p-3 sm:p-4 md:p-6 lg:px-12 flex justify-between items-center">
         <a href="/" class="w-9 h-9 sm:w-10 sm:h-10 bg-gray-50 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
@@ -28,7 +27,6 @@ const conteos = {
         <div class="w-9 sm:w-10"></div>
       </div>
 
-      <!-- 🔍 BARRA DE BÚSQUEDA (ESTILO INDEX) -->
       <div class="px-3 sm:px-4 md:px-6 lg:px-12 pb-3">
         <div class="relative group w-full md:max-w-2xl md:mx-auto">
           <input 
@@ -53,7 +51,6 @@ const conteos = {
         </div>
       </div>
 
-      <!-- TABS CON CONTEO -->
       <div class="px-3 sm:px-4 md:px-6 lg:px-12 pb-3 sm:pb-4 flex gap-2 overflow-x-auto no-scrollbar">
         {categorias.map(cat => (
           <button
@@ -67,7 +64,6 @@ const conteos = {
       </div>
     </header>
 
-    <!-- INFO -->
     <div class="px-3 sm:px-4 md:px-6 lg:px-12 py-3 sm:py-4 flex justify-between items-center">
       <p class="text-xs sm:text-sm text-gray-500">
         <span id="producto-count" class="font-bold text-black">{productos.length}</span> productos
@@ -75,7 +71,6 @@ const conteos = {
       </p>
     </div>
 
-    <!-- ✅ GRID RESPONSIVE -->
     <section class="px-3 sm:px-4 md:px-6 lg:px-12 pb-6">
       <div id="productos-grid" class="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4 md:gap-5 lg:gap-6">
         {productos.map(prod => {
@@ -105,7 +100,6 @@ const conteos = {
         })}
       </div>
 
-      <!-- EMPTY -->
       <div id="empty-state" class="hidden flex-col items-center justify-center py-12 sm:py-16 text-center">
         <div class="w-16 h-16 sm:w-20 sm:h-20 bg-gray-100 rounded-full flex items-center justify-center mb-4">
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
@@ -118,149 +112,172 @@ const conteos = {
       </div>
     </section>
 
+    <RequestJersey />
+
   </main>
 </Layout>
 
 <script>
-  let categoriaActual = 'Todas';
-  let terminoBusqueda = '';
+  document.addEventListener('astro:page-load', () => {
+    console.log('✅ Catálogo cargado correctamente');
 
-  const categorias = ['Todas', 'Clubes', 'Selecciones', 'Retro', 'Especiales'];
-  const tabs = document.querySelectorAll('.filter-tab');
-  const grid = document.getElementById('productos-grid');
-  const productoCount = document.getElementById('producto-count');
-  const emptyState = document.getElementById('empty-state');
-  const searchCatalog = document.getElementById('search-catalog') as HTMLInputElement;
-  const searchInfo = document.getElementById('search-info');
-  const clearSearch = document.getElementById('clear-search');
+    let categoriaActual = 'Todas';
+    let terminoBusqueda = '';
 
-  function filtrar() {
-    const items = Array.from(grid?.querySelectorAll('.producto-item') || []);
-    let visibles: Element[] = [];
+    const categorias = ['Todas', 'Clubes', 'Selecciones', 'Retro', 'Especiales'];
+    const tabs = document.querySelectorAll('.filter-tab');
+    const grid = document.getElementById('productos-grid');
+    const productoCount = document.getElementById('producto-count');
+    const emptyState = document.getElementById('empty-state');
+    const searchCatalog = document.getElementById('search-catalog') as HTMLInputElement;
+    const searchInfo = document.getElementById('search-info');
+    const clearSearch = document.getElementById('clear-search');
 
-    items.forEach(item => {
-      const el = item as HTMLElement;
-      const cat = el.dataset.categoria || '';
-      const name = el.dataset.nombre || '';
+    function filtrar() {
+      const items = Array.from(grid?.querySelectorAll('.producto-item') || []);
+      let visibles: Element[] = [];
 
-      const okCat = categoriaActual === 'Todas' || cat === categoriaActual;
-      const okSearch = !terminoBusqueda || name.includes(terminoBusqueda.toLowerCase());
+      items.forEach(item => {
+        const el = item as HTMLElement;
+        const cat = el.dataset.categoria || '';
+        const name = el.dataset.nombre || '';
 
-      if (okCat && okSearch) {
-        el.style.display = '';
-        el.style.animation = 'fadeIn 0.3s ease-out';
-        visibles.push(item);
-      } else {
-        el.style.display = 'none';
+        const okCat = categoriaActual === 'Todas' || cat === categoriaActual;
+        const okSearch = !terminoBusqueda || name.includes(terminoBusqueda.toLowerCase());
+
+        if (okCat && okSearch) {
+          el.style.display = '';
+          el.style.animation = 'fadeIn 0.3s ease-out';
+          visibles.push(item);
+        } else {
+          el.style.display = 'none';
+        }
+      });
+
+      if (productoCount) productoCount.textContent = String(visibles.length);
+
+      if (searchInfo) {
+        if (terminoBusqueda) {
+          searchInfo.textContent = `para "${terminoBusqueda}"`;
+          searchInfo.classList.remove('hidden');
+        } else {
+          searchInfo.classList.add('hidden');
+        }
       }
-    });
 
-    if (productoCount) productoCount.textContent = String(visibles.length);
-
-    if (searchInfo) {
-      if (terminoBusqueda) {
-        searchInfo.textContent = `para "${terminoBusqueda}"`;
-        searchInfo.classList.remove('hidden');
-      } else {
-        searchInfo.classList.add('hidden');
+      if (emptyState && grid) {
+        emptyState.classList.toggle('hidden', visibles.length > 0);
+        emptyState.classList.toggle('flex', visibles.length === 0);
+        grid.classList.toggle('hidden', visibles.length === 0);
       }
+
+      console.log(`✅ Filtrado: ${visibles.length} productos visibles`);
     }
 
-    if (emptyState && grid) {
-      emptyState.classList.toggle('hidden', visibles.length > 0);
-      emptyState.classList.toggle('flex', visibles.length === 0);
-      grid.classList.toggle('hidden', visibles.length === 0);
+    function actualizarTabs() {
+      tabs.forEach(tab => {
+        const cat = (tab as HTMLElement).dataset.categoria;
+        if (cat === categoriaActual) {
+          tab.classList.add('bg-black', 'text-white', 'border-black');
+          tab.classList.remove('border-gray-200', 'text-gray-600');
+        } else {
+          tab.classList.remove('bg-black', 'text-white', 'border-black');
+          tab.classList.add('border-gray-200', 'text-gray-600');
+        }
+      });
+      console.log(`✅ Categoría activa: ${categoriaActual}`);
     }
-  }
 
-  function actualizarTabs() {
-    tabs.forEach(tab => {
-      const cat = (tab as HTMLElement).dataset.categoria;
-      if (cat === categoriaActual) {
-        tab.classList.add('bg-black', 'text-white', 'border-black');
-        tab.classList.remove('border-gray-200', 'text-gray-600');
-      } else {
-        tab.classList.remove('bg-black', 'text-white', 'border-black');
-        tab.classList.add('border-gray-200', 'text-gray-600');
-      }
-    });
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
+    // Leer parámetros URL
     const params = new URLSearchParams(window.location.search);
     const catURL = params.get('categoria');
     const searchURL = params.get('search');
 
     if (catURL && categorias.includes(catURL)) {
       categoriaActual = catURL;
+      console.log(`✅ Categoría desde URL: ${catURL}`);
     }
 
     if (searchURL && searchCatalog) {
       terminoBusqueda = searchURL;
       searchCatalog.value = searchURL;
+      console.log(`✅ Búsqueda desde URL: ${searchURL}`);
     }
 
     actualizarTabs();
     filtrar();
-  });
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      categoriaActual = (tab as HTMLElement).dataset.categoria || 'Todas';
-      actualizarTabs();
+    // ✅ Eventos tabs (sin cloneNode)
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        categoriaActual = (tab as HTMLElement).dataset.categoria || 'Todas';
+        actualizarTabs();
 
-      const params = new URLSearchParams();
-      if (categoriaActual !== 'Todas') params.set('categoria', categoriaActual);
-      if (terminoBusqueda) params.set('search', terminoBusqueda);
-
-      history.pushState({}, '', params.toString() ? `/catalogo?${params}` : '/catalogo');
-      filtrar();
-    });
-  });
-
-  // ✅ BÚSQUEDA ESTILO INDEX (con timeout)
-  let searchTimeout: ReturnType<typeof setTimeout>;
-
-  searchCatalog?.addEventListener('input', (e) => {
-    const query = (e.target as HTMLInputElement).value.trim();
-    terminoBusqueda = query;
-    
-    clearTimeout(searchTimeout);
-    
-    // Filtrar inmediatamente para feedback visual
-    filtrar();
-    
-    // Actualizar URL después de 800ms
-    if (query.length >= 0) {
-      searchTimeout = setTimeout(() => {
         const params = new URLSearchParams();
         if (categoriaActual !== 'Todas') params.set('categoria', categoriaActual);
-        if (query) params.set('search', query);
-        
+        if (terminoBusqueda) params.set('search', terminoBusqueda);
+
         history.pushState({}, '', params.toString() ? `/catalogo?${params}` : '/catalogo');
-      }, 800);
-    }
-  });
+        filtrar();
+      });
+    });
 
-  searchCatalog?.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-      clearTimeout(searchTimeout);
-      
-      const params = new URLSearchParams();
-      if (categoriaActual !== 'Todas') params.set('categoria', categoriaActual);
-      if (terminoBusqueda) params.set('search', terminoBusqueda);
-      
-      history.pushState({}, '', params.toString() ? `/catalogo?${params}` : '/catalogo');
-    }
-  });
+    // Búsqueda
+    let searchTimeout: ReturnType<typeof setTimeout>;
 
-  clearSearch?.addEventListener('click', () => {
-    terminoBusqueda = '';
-    categoriaActual = 'Todas';
-    if (searchCatalog) searchCatalog.value = '';
-    actualizarTabs();
-    history.pushState({}, '', '/catalogo');
-    filtrar();
+    if (searchCatalog) {
+      const newSearchCatalog = searchCatalog.cloneNode(true) as HTMLInputElement;
+      searchCatalog.parentNode?.replaceChild(newSearchCatalog, searchCatalog);
+      
+      const finalSearchCatalog = document.getElementById('search-catalog') as HTMLInputElement;
+      if (searchURL) finalSearchCatalog.value = searchURL;
+
+      finalSearchCatalog?.addEventListener('input', (e) => {
+        const query = (e.target as HTMLInputElement).value.trim();
+        terminoBusqueda = query;
+        
+        clearTimeout(searchTimeout);
+        filtrar();
+        
+        if (query.length >= 0) {
+          searchTimeout = setTimeout(() => {
+            const params = new URLSearchParams();
+            if (categoriaActual !== 'Todas') params.set('categoria', categoriaActual);
+            if (query) params.set('search', query);
+            
+            history.pushState({}, '', params.toString() ? `/catalogo?${params}` : '/catalogo');
+            console.log(`✅ URL actualizada con búsqueda: ${query}`);
+          }, 800);
+        }
+      });
+
+      finalSearchCatalog?.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          clearTimeout(searchTimeout);
+          
+          const params = new URLSearchParams();
+          if (categoriaActual !== 'Todas') params.set('categoria', categoriaActual);
+          if (terminoBusqueda) params.set('search', terminoBusqueda);
+          
+          history.pushState({}, '', params.toString() ? `/catalogo?${params}` : '/catalogo');
+        }
+      });
+    }
+
+    // Clear search
+    if (clearSearch) {
+      const newClearSearch = clearSearch.cloneNode(true);
+      clearSearch.parentNode?.replaceChild(newClearSearch, clearSearch);
+      
+      document.getElementById('clear-search')?.addEventListener('click', () => {
+        terminoBusqueda = '';
+        categoriaActual = 'Todas';
+        if (searchCatalog) searchCatalog.value = '';
+        actualizarTabs();
+        history.pushState({}, '', '/catalogo');
+        filtrar();
+      });
+    }
   });
 </script>
 
@@ -273,7 +290,6 @@ const conteos = {
     scrollbar-width: none;
   }
   
-  /* ✅ Animación suave para productos */
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -289,3 +305,4 @@ const conteos = {
     animation: fadeIn 0.3s ease-out;
   }
 </style>
+</Layout>

@@ -3,10 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import ProductCard from '../components/ProductCard.astro';
 import productos from '../data/productos.json';
 
-// Novedades: últimos 8 productos
 const novedades = productos.slice(0, 8);
 
-// Configuración de Categorías
 const categorias = [
     { name: 'Clubes', image: '/img/categories/bg-clubes.jpg', count: productos.filter(p => p.categoria === 'Clubes').length },
     { name: 'Selecciones', image: '/img/categories/bg-selecciones.jpg', count: productos.filter(p => p.categoria === 'Selecciones').length },
@@ -49,29 +47,29 @@ const banners = [
   <main class="bg-white pb-24 md:pb-12 min-h-full">
     
     <!-- 🔍 BARRA DE BÚSQUEDA -->
-        <div class="w-full px-4 sm:px-6 md:px-8 py-4">
-        <div class="relative group w-full md:max-w-2xl md:mx-auto">
-            <input 
-            type="text" 
-            id="search-input"
-            placeholder="Buscar tu equipo (ej: Real Madrid)..." 
-            class="w-full bg-gray-50 border border-gray-200 rounded-2xl 
-                    py-3.5 pl-12 pr-4 
-                    text-sm font-medium placeholder:text-gray-400 
-                    outline-none transition-all
-                    focus:bg-white focus:border-gray-300 focus:ring-2 ring-black/5
-                    shadow-sm"
-            />
-            <span class="absolute left-4 top-1/2 -translate-y-1/2 
-                        text-gray-400 group-focus-within:text-black 
-                        transition-colors pointer-events-none">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="11" cy="11" r="8"/>
-                <path d="m21 21-4.3-4.3"/>
-            </svg>
-            </span>
-        </div>
-        </div>
+    <div class="w-full px-4 sm:px-6 md:px-8 py-4">
+      <div class="relative group w-full md:max-w-2xl md:mx-auto">
+        <input 
+          type="text" 
+          id="search-input"
+          placeholder="Buscar tu equipo (ej: Real Madrid)..." 
+          class="w-full bg-gray-50 border border-gray-200 rounded-2xl 
+                  py-3.5 pl-12 pr-4 
+                  text-sm font-medium placeholder:text-gray-400 
+                  outline-none transition-all
+                  focus:bg-white focus:border-gray-300 focus:ring-2 ring-black/5
+                  shadow-sm"
+        />
+        <span class="absolute left-4 top-1/2 -translate-y-1/2 
+                    text-gray-400 group-focus-within:text-black 
+                    transition-colors pointer-events-none">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.3-4.3"/>
+          </svg>
+        </span>
+      </div>
+    </div>
 
     <!-- HERO BANNER -->
     <section class="px-4 sm:px-6 md:px-8 lg:px-12 mb-6">
@@ -84,7 +82,7 @@ const banners = [
               }`} 
               data-slide={index}
             >
-              <img src={banner.imagen} class="w-full h-full object-cover" alt={banner.titulo.replace('<br>', ' ')} />
+              <img src={banner.imagen} class="w-full h-full object-cover" alt={banner.titulo.replace('<br>', ' ')} loading={index === 0 ? "eager" : "lazy"} />
               <div class={`absolute inset-0 bg-gradient-to-t ${banner.gradient} flex flex-col justify-end p-6 sm:p-10 pb-16 sm:pb-14`}>
                 <span class="text-yellow-400 font-bold tracking-widest text-xs uppercase mb-3 bg-black/30 backdrop-blur-md px-3 py-1 rounded-full w-fit border border-white/10">{banner.categoria}</span>
                 <h2 class="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black italic uppercase leading-none mb-4" set:html={banner.titulo}></h2>
@@ -112,45 +110,36 @@ const banners = [
       </div>
     </section>
 
-            <!-- CATEGORÍAS -->
-        <section class="px-4 sm:px-6 md:px-8 lg:px-12 mb-10">
-        <h3 class="sr-only">Categorías</h3>
-
-        <div class="grid grid-cols-4 gap-2 sm:gap-4 md:gap-5">
-            {categorias.map(cat => (
-            <a
-                href={`/catalogo?categoria=${cat.name}`}
-                class="group relative w-full aspect-square rounded-xl sm:rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300"
-            >
-
-                <!-- Fallback gradient (DEBAJO) -->
-                <div class="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-900 z-0"></div>
-
-                <!-- Imagen -->
-                <img 
-                src={cat.image}
-                alt={`Camisetas de ${cat.name}`}
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-10"
-                onerror="this.style.display='none'"
-                />
-
-                <!-- Overlay oscuro -->
-                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300 z-20"></div>
-
-                <!-- Texto -->
-                <div class="absolute inset-0 flex flex-col items-center justify-center text-white z-30 p-1 sm:p-4 text-center">
-                <h3 class="text-[10px] sm:text-xl md:text-2xl font-black italic uppercase tracking-tighter leading-none mb-0.5 sm:mb-2 drop-shadow-md">
-                    {cat.name}
-                </h3>
-                <span class="hidden sm:block text-[8px] sm:text-[10px] md:text-xs font-bold uppercase tracking-widest bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded-full border border-white/30">
-                    Ver
-                </span>
-                </div>
-
-            </a>
-            ))}
-        </div>
-        </section>
+    <!-- CATEGORÍAS -->
+    <section class="px-4 sm:px-6 md:px-8 lg:px-12 mb-10">
+      <h3 class="sr-only">Categorías</h3>
+      <div class="grid grid-cols-4 gap-2 sm:gap-4 md:gap-5">
+        {categorias.map(cat => (
+          <a
+            href={`/catalogo?categoria=${cat.name}`}
+            class="group relative w-full aspect-square rounded-xl sm:rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300"
+          >
+            <div class="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-900 z-0"></div>
+            <img 
+              src={cat.image}
+              alt={`Camisetas de ${cat.name}`}
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-10"
+              onerror="this.style.display='none'"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300 z-20"></div>
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-white z-30 p-1 sm:p-4 text-center">
+              <h3 class="text-[10px] sm:text-xl md:text-2xl font-black italic uppercase tracking-tighter leading-none mb-0.5 sm:mb-2 drop-shadow-md">
+                {cat.name}
+              </h3>
+              <span class="hidden sm:block text-[8px] sm:text-[10px] md:text-xs font-bold uppercase tracking-widest bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded-full border border-white/30">
+                Ver
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
 
     <!-- NOVEDADES -->
     <section class="px-4 sm:px-6 md:px-8 lg:px-12 pb-6">
@@ -166,7 +155,7 @@ const banners = [
       </div>
       
       <div class="grid grid-cols-2 gap-x-3 gap-y-8 sm:gap-x-4 sm:gap-y-10 md:grid-cols-3 lg:grid-cols-4 lg:gap-8">
-        {novedades.map((prod, index) => (
+        {novedades.map((prod) => (
           <ProductCard 
             id={prod.id}
             nombre={prod.nombre}
@@ -175,8 +164,6 @@ const banners = [
             imagenesFan={prod.imagenesFan}
             imagenesJugador={prod.imagenesJugador}
             categoria={prod.categoria}
-            isNew={index < 2}
-            isPopular={index === 2 || index === 3}
           />
         ))}
       </div>
@@ -189,7 +176,7 @@ const banners = [
       </div>
     </section>
 
-    <!-- NUEVO: Sección de ayuda -->
+    <!-- AYUDA WHATSAPP -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-12 md:py-16 bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl my-12">
       <div class="text-center max-w-2xl mx-auto">
         <div class="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
@@ -217,17 +204,17 @@ const banners = [
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
         <div class="text-center group">
           <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-sm group-hover:scale-110 transition-transform duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <h4 class="font-bold text-sm">Personalización Gratis</h4>
-          <p class="text-xs text-gray-400 mt-1">Nombre y número incluido</p>
+          <h4 class="font-bold text-sm">Parches Gratis</h4>
+          <p class="text-xs text-gray-400 mt-1">Champions, Liga, Premier</p>
         </div>
         <div class="text-center group">
           <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-sm group-hover:scale-110 transition-transform duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
           </div>
-          <h4 class="font-bold text-sm">Calidad Premium</h4>
-          <p class="text-xs text-gray-400 mt-1">Materiales de alta gama</p>
+          <h4 class="font-bold text-sm">Personalización Q.25</h4>
+          <p class="text-xs text-gray-400 mt-1">Nombre y número</p>
         </div>
         <div class="text-center group">
           <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-sm group-hover:scale-110 transition-transform duration-300">
@@ -248,7 +235,7 @@ const banners = [
     
   </main>
 
-  <!-- NUEVO: Modal de ayuda WhatsApp (compartido con catálogo) -->
+  <!-- Modal de ayuda WhatsApp -->
   <div id="help-modal-index" class="fixed inset-0 z-[70] hidden items-center justify-center p-4 bg-black/50">
     <div class="bg-white rounded-2xl w-full max-w-lg p-6">
       <h3 class="font-black text-lg mb-2">No encuentro mi CAMIZONA</h3>
@@ -263,83 +250,106 @@ const banners = [
 </Layout>
 
 <script>
-  // SLIDER DEL HERO
-  let currentSlide = 0;
-  const slides = document.querySelectorAll('.hero-slide');
-  const indicators = document.querySelectorAll('.slider-indicator');
-  const totalSlides = slides.length;
+  // ✅ INICIALIZACIÓN CORRECTA CON astro:page-load
+  document.addEventListener('astro:page-load', () => {
+    console.log('✅ Index cargado correctamente');
 
-  function updateSlider() {
-    slides.forEach((slide, index) => {
-      if (index === currentSlide) {
-        slide.classList.add('opacity-100', 'pointer-events-auto');
-        slide.classList.remove('opacity-0', 'pointer-events-none');
-      } else {
-        slide.classList.add('opacity-0', 'pointer-events-none');
-        slide.classList.remove('opacity-100', 'pointer-events-auto');
-      }
-    });
+    // SLIDER DEL HERO
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.hero-slide');
+    const indicators = document.querySelectorAll('.slider-indicator');
+    const totalSlides = slides.length;
+
+    function updateSlider() {
+      slides.forEach((slide, index) => {
+        if (index === currentSlide) {
+          slide.classList.add('opacity-100', 'pointer-events-auto');
+          slide.classList.remove('opacity-0', 'pointer-events-none');
+        } else {
+          slide.classList.add('opacity-0', 'pointer-events-none');
+          slide.classList.remove('opacity-100', 'pointer-events-auto');
+        }
+      });
+
+      indicators.forEach((indicator, index) => {
+        if (index === currentSlide) {
+          indicator.classList.remove('bg-white/50', 'w-2');
+          indicator.classList.add('bg-white', 'w-8');
+        } else {
+          indicator.classList.remove('bg-white', 'w-8');
+          indicator.classList.add('bg-white/50', 'w-2');
+        }
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateSlider();
+    }
+
+    let autoPlayInterval = setInterval(nextSlide, 5000);
+
+    const nextBtn = document.getElementById('next-slide');
+    if (nextBtn) {
+      // Limpiar evento anterior
+      const newBtn = nextBtn.cloneNode(true);
+      nextBtn.parentNode?.replaceChild(newBtn, nextBtn);
+      
+      document.getElementById('next-slide')?.addEventListener('click', () => {
+        clearInterval(autoPlayInterval);
+        nextSlide();
+        autoPlayInterval = setInterval(nextSlide, 5000);
+      });
+    }
 
     indicators.forEach((indicator, index) => {
-      if (index === currentSlide) {
-        indicator.classList.remove('bg-white/50', 'w-2');
-        indicator.classList.add('bg-white', 'w-8');
-      } else {
-        indicator.classList.remove('bg-white', 'w-8');
-        indicator.classList.add('bg-white/50', 'w-2');
-      }
+      const newIndicator = indicator.cloneNode(true);
+      indicator.parentNode?.replaceChild(newIndicator, indicator);
+      
+      document.querySelectorAll('.slider-indicator')[index]?.addEventListener('click', () => {
+        clearInterval(autoPlayInterval);
+        currentSlide = index;
+        updateSlider();
+        autoPlayInterval = setInterval(nextSlide, 5000);
+      });
     });
-  }
 
-  function nextSlide() {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    updateSlider();
-  }
+    // ✅ BÚSQUEDA CORREGIDA
+    const searchInput = document.getElementById('search-input') as HTMLInputElement;
+    let searchTimeout: ReturnType<typeof setTimeout>;
 
-  let autoPlayInterval = setInterval(nextSlide, 5000);
+    if (searchInput) {
+      // Limpiar evento anterior
+      const newSearchInput = searchInput.cloneNode(true) as HTMLInputElement;
+      searchInput.parentNode?.replaceChild(newSearchInput, searchInput);
+      
+      const finalSearchInput = document.getElementById('search-input') as HTMLInputElement;
 
-  document.getElementById('next-slide')?.addEventListener('click', () => {
-    clearInterval(autoPlayInterval);
-    nextSlide();
-    autoPlayInterval = setInterval(nextSlide, 5000);
-  });
-
-  indicators.forEach((indicator, index) => {
-    indicator.addEventListener('click', () => {
-      clearInterval(autoPlayInterval);
-      currentSlide = index;
-      updateSlider();
-      autoPlayInterval = setInterval(nextSlide, 5000);
-    });
-  });
-
-  // BÚSQUEDA
-  const searchInput = document.getElementById('search-input');
-  let searchTimeout: ReturnType<typeof setTimeout>;
-
-  searchInput?.addEventListener('input', (e) => {
-    const query = (e.target as HTMLInputElement).value.trim();
-    clearTimeout(searchTimeout);
-    
-    if (query.length >= 2) {
-      searchTimeout = setTimeout(() => {
-        window.location.href = `/catalogo?search=${encodeURIComponent(query)}`;
-      }, 800);
-    }
-  });
-
-  searchInput?.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-      const query = (e.target as HTMLInputElement).value.trim();
-      if (query.length > 0) {
+      finalSearchInput?.addEventListener('input', (e) => {
+        const query = (e.target as HTMLInputElement).value.trim();
         clearTimeout(searchTimeout);
-        window.location.href = `/catalogo?search=${encodeURIComponent(query)}`;
-      }
-    }
-  });
+        
+        if (query.length >= 2) {
+          searchTimeout = setTimeout(() => {
+            console.log('🔍 Buscando:', query);
+            window.location.href = `/catalogo?search=${encodeURIComponent(query)}`;
+          }, 800);
+        }
+      });
 
-  // ======= HELP WHATSAPP INDEX (NUEVO) =======
-  (function() {
+      finalSearchInput?.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          const query = (e.target as HTMLInputElement).value.trim();
+          if (query.length > 0) {
+            clearTimeout(searchTimeout);
+            console.log('🔍 Enter - Buscando:', query);
+            window.location.href = `/catalogo?search=${encodeURIComponent(query)}`;
+          }
+        }
+      });
+    }
+
+    // ✅ HELP WHATSAPP
     const telefono = "50232650539";
     const helpBtn = document.getElementById('help-index-btn');
     const helpModal = document.getElementById('help-modal-index');
@@ -367,9 +377,24 @@ const banners = [
       closeHelpModal();
     }
 
-    helpBtn?.addEventListener('click', openHelpModal);
-    helpCancel?.addEventListener('click', closeHelpModal);
-    helpSend?.addEventListener('click', sendHelpWhatsApp);
+    // Limpiar eventos anteriores
+    if (helpBtn) {
+      const newHelpBtn = helpBtn.cloneNode(true);
+      helpBtn.parentNode?.replaceChild(newHelpBtn, helpBtn);
+      document.getElementById('help-index-btn')?.addEventListener('click', openHelpModal);
+    }
+
+    if (helpCancel) {
+      const newHelpCancel = helpCancel.cloneNode(true);
+      helpCancel.parentNode?.replaceChild(newHelpCancel, helpCancel);
+      document.getElementById('help-cancel-index')?.addEventListener('click', closeHelpModal);
+    }
+
+    if (helpSend) {
+      const newHelpSend = helpSend.cloneNode(true);
+      helpSend.parentNode?.replaceChild(newHelpSend, helpSend);
+      document.getElementById('help-send-index')?.addEventListener('click', sendHelpWhatsApp);
+    }
 
     helpModal?.addEventListener('click', (e) => {
       if (e.target === helpModal) closeHelpModal();
@@ -378,5 +403,6 @@ const banners = [
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && helpModal && !helpModal.classList.contains('hidden')) closeHelpModal();
     });
-  })();
+  });
 </script>
+</Layout>

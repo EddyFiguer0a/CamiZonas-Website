@@ -1,0 +1,87 @@
+
+<button 
+  id="dark-mode-toggle" 
+  class="fixed bottom-24 right-4 md:bottom-6 md:right-6 z-50 w-12 h-12 bg-gray-900 dark:bg-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-300 group border-2 border-white/20 dark:border-black/20"
+  aria-label="Cambiar modo oscuro/claro"
+  title="Cambiar tema"
+>
+  <!-- Sol (visible en dark mode) -->
+  <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-black hidden">
+    <circle cx="12" cy="12" r="4"/>
+    <path d="M12 2v2"/>
+    <path d="M12 20v2"/>
+    <path d="m4.93 4.93 1.41 1.41"/>
+    <path d="m17.66 17.66 1.41 1.41"/>
+    <path d="M2 12h2"/>
+    <path d="M20 12h2"/>
+    <path d="m6.34 17.66-1.41 1.41"/>
+    <path d="m19.07 4.93-1.41 1.41"/>
+  </svg>
+  <!-- Luna (visible en light mode) -->
+  <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+  </svg>
+</button>
+
+<script is:inline>
+  // Cargar tema guardado inmediatamente (antes de render)
+  (function() {
+    const theme = localStorage.getItem('theme');
+    const html = document.documentElement;
+    
+    if (theme === 'dark') {
+      html.classList.add('dark');
+    } else {
+      html.classList.remove('dark');
+    }
+
+    function updateIcons() {
+      const isDark = html.classList.contains('dark');
+      const sunIcon = document.getElementById('sun-icon');
+      const moonIcon = document.getElementById('moon-icon');
+      
+      if (sunIcon && moonIcon) {
+        if (isDark) {
+          sunIcon.classList.remove('hidden');
+          moonIcon.classList.add('hidden');
+        } else {
+          sunIcon.classList.add('hidden');
+          moonIcon.classList.remove('hidden');
+        }
+      }
+    }
+
+    // Actualizar iconos cuando DOM esté listo
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', updateIcons);
+    } else {
+      updateIcons();
+    }
+
+    // También en transiciones de Astro
+    document.addEventListener('astro:page-load', () => {
+      updateIcons();
+      
+      const toggle = document.getElementById('dark-mode-toggle');
+      if (!toggle) return;
+      
+      // Limpiar listener previo
+      const newToggle = toggle.cloneNode(true);
+      toggle.parentNode?.replaceChild(newToggle, toggle);
+      
+      newToggle.addEventListener('click', () => {
+        html.classList.toggle('dark');
+        const newTheme = html.classList.contains('dark') ? 'dark' : 'light';
+        localStorage.setItem('theme', newTheme);
+        
+        // Animación de rotación
+        newToggle.style.transform = 'scale(1.1) rotate(180deg)';
+        setTimeout(() => {
+          newToggle.style.transform = '';
+        }, 300);
+        
+        updateIcons();
+      });
+    });
+  })();
+</script>

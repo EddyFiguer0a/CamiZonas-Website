@@ -1,5 +1,20 @@
 [
   {
+    "id": "real-madrid-visitante-2526",
+    "nombre": "Real Madrid Visitante 25/26",
+    "precioFan": 375,
+    "precioJugador": 400,
+    "categoria": "Clubes",
+    "imagenesFan": [
+      "https://res.cloudinary.com/dbydbxlbw/image/upload/v1769562279/CAMISOLAS/CLUBES/EUROPA/REAL%20MADRID/25-26/VISITANTE/Versi%C3%B3n%20Fan/frontal_vist_vixdng.jpg",
+      "https://res.cloudinary.com/dbydbxlbw/image/upload/v1769562278/CAMISOLAS/CLUBES/EUROPA/REAL%20MADRID/25-26/VISITANTE/Versi%C3%B3n%20Fan/espalda_vist_dcxje5.jpg"
+    ],
+    "imagenesJugador": [
+      "https://res.cloudinary.com/dbydbxlbw/image/upload/v1770349549/CAMISOLAS/CLUBES/EUROPA/REAL%20MADRID/25-26/VISITANTE/Versi%C3%B3n%20Jugador/rm_frontal.jpg",
+      "https://res.cloudinary.com/dbydbxlbw/image/upload/v1770349549/CAMISOLAS/CLUBES/EUROPA/REAL%20MADRID/25-26/VISITANTE/Versi%C3%B3n%20Jugador/rm_espalda.jpg"
+    ]
+  },
+  {
     "id": "inter-miami-visitante-2526",
     "nombre": "Inter Miami Visitante 25/26",
     "precioFan": 375,
@@ -365,23 +380,6 @@
       "https://res.cloudinary.com/dbydbxlbw/image/upload/v1769562290/CAMISOLAS/SELECCIONES/AMERICA/ARGENTINA/Versi%C3%B3n%20JUGADOR/Argentina_Local_26-27_Jugador_Espalda_qtyqo0.webp",
       "https://res.cloudinary.com/dbydbxlbw/image/upload/v1769562289/CAMISOLAS/SELECCIONES/AMERICA/ARGENTINA/Versi%C3%B3n%20JUGADOR/Argentina_Local_26-27_Jugador_DetalleTela_g5barp.webp",
       "https://res.cloudinary.com/dbydbxlbw/image/upload/v1769562288/CAMISOLAS/SELECCIONES/AMERICA/ARGENTINA/Versi%C3%B3n%20JUGADOR/Argentina_Local_26-27_Jugador_DetalleEscudo_ejl8eq.webp"
-    ]
-  },
-  {
-    "id": "real-madrid-visitante-2526",
-    "nombre": "Real Madrid Visitante 25/26",
-    "precioFan": 375,
-    "precioJugador": 400,
-    "categoria": "Clubes",
-    "imagenesFan": [
-      "https://res.cloudinary.com/dbydbxlbw/image/upload/v1769562279/CAMISOLAS/CLUBES/EUROPA/REAL%20MADRID/25-26/VISITANTE/Versi%C3%B3n%20Fan/frontal_vist_vixdng.jpg",
-      "https://res.cloudinary.com/dbydbxlbw/image/upload/v1769562278/CAMISOLAS/CLUBES/EUROPA/REAL%20MADRID/25-26/VISITANTE/Versi%C3%B3n%20Fan/espalda_vist_dcxje5.jpg"
-    ],
-    "imagenesJugador": [
-      "https://res.cloudinary.com/dbydbxlbw/image/upload/v1769562284/CAMISOLAS/CLUBES/EUROPA/REAL%20MADRID/25-26/VISITANTE/Versi%C3%B3n%20Jugador/frontal_ee7b3b.jpg",
-      "https://res.cloudinary.com/dbydbxlbw/image/upload/v1769562283/CAMISOLAS/CLUBES/EUROPA/REAL%20MADRID/25-26/VISITANTE/Versi%C3%B3n%20Jugador/espalda_oh5lud.jpg",
-      "https://res.cloudinary.com/dbydbxlbw/image/upload/v1769562282/CAMISOLAS/CLUBES/EUROPA/REAL%20MADRID/25-26/VISITANTE/Versi%C3%B3n%20Jugador/detalle-tela_sluu9y.jpg",
-      "https://res.cloudinary.com/dbydbxlbw/image/upload/v1769562281/CAMISOLAS/CLUBES/EUROPA/REAL%20MADRID/25-26/VISITANTE/Versi%C3%B3n%20Jugador/detalle-escudo_h1aobc.jpg"
     ]
   },
   {
