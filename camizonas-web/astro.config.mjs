@@ -1,12 +1,10 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
-import node from '@astrojs/node';
+import vercel from '@astrojs/vercel/serverless';
 
 export default defineConfig({
-  output: 'server',  // ← CAMBIO: de 'hybrid' a 'server'
-  adapter: node({
-    mode: 'standalone'
-  }),
+  output: 'server',
+  adapter: vercel(),
   integrations: [tailwind()],
   image: {
     domains: ['res.cloudinary.com'],
