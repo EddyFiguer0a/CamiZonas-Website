@@ -1,7 +1,14 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
+import node from '@astrojs/node';
 
 export default defineConfig({
+  output: 'server',  // ← CAMBIO: de 'hybrid' a 'server'
+  adapter: node({
+    mode: 'standalone'
+  }),
   integrations: [tailwind()],
-  output: 'static'
+  image: {
+    domains: ['res.cloudinary.com'],
+  },
 });

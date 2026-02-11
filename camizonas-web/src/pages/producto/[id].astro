@@ -3,14 +3,14 @@ import Layout from '../../layouts/Layout.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import productos from '../../data/productos.json';
 
-export async function getStaticPaths() {
-  return productos.map((prod) => ({
-    params: { id: prod.id },
-    props: { prod },
-  }));
-}
+// ✅ ELIMINAMOS getStaticPaths() y obtenemos el producto directamente
+const { id } = Astro.params;
+const prod = productos.find(p => p.id === id);
 
-const { prod } = Astro.props;
+// ✅ Si no existe el producto, redirigir a 404
+if (!prod) {
+  return Astro.redirect('/404');
+}
 
 // ✅ DETECTAR VERSIONES DISPONIBLES
 const tieneFan = prod.imagenesFan && prod.imagenesFan.length > 0;

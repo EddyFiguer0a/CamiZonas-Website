@@ -25,3 +25,5 @@ pnpm-debug.log*
 
 # Imágenes de productos (están en Cloudinary)
 public/img/CAMISOLAS/
+
+.backups/
